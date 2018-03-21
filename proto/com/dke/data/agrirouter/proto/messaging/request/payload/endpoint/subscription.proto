@@ -1,0 +1,12 @@
+syntax = "proto3";
+package agrirouter.request.payload.endpoint;
+
+message Subscription {    
+    message MessageTypeSubscriptionItem {
+        string technical_message_type = 1; // Technical Message type from DKE Data-Hub
+        repeated uint32 ddis = 2;          // Applicable only for Telemetry Messages these are the DDI Codes
+        bool position = 3;                 // Applicable only for Telemetry Messages if they want to subscribe to GeoLocation Position information
+    }
+
+    repeated MessageTypeSubscriptionItem technical_message_types = 1; // List of requested subscriptions
+}

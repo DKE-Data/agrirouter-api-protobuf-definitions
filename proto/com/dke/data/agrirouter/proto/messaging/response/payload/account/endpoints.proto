@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package agrirouter.response.payload.account;
+
+message ListEndpointsResponse {
+  enum Direction {  
+    SEND = 0;
+    RECEIVE = 1;
+    SEND_RECEIVE = 2;
+  }
+
+  message MessageType {
+    string technical_message_type = 1; 
+    Direction direction = 2;
+  }
+
+  message Endpoint {
+    string endpoint_id = 1;
+    string endpoint_name = 2;
+    string endpoint_type = 3;
+    string status = 4;
+    repeated MessageType messageTypes = 5;
+  }
+
+  repeated Endpoint endpoints = 1;
+}
