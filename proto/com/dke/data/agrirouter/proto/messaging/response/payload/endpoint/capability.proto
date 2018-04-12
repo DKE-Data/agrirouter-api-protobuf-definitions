@@ -3,7 +3,7 @@ syntax = "proto3";
 package agrirouter.response.payload.endpoint;
 
 message CapabilityResponse {
-    message Recipient {
+    message Recipient {                             
       string id = 1;
       repeated string technical_message_type = 2;
     }
