@@ -33,12 +33,12 @@ Here are some external resources for the development:
 
 #### How to install Protobuf C++ Compiler
 
-The following instructions are optimized for Unix based systems. For Windows I recommend to install Cygwin (https://www.cygwin.com/) and do the same steps as if you were on a Unix based system.
+The following instructions are based on the [Google Protobuf installation guide](https://github.com/google/protobuf/blob/master/src/README.md) and are optimized for Unix based systems. For Windows I recommend to install [Cygwin](https://www.cygwin.com/) and do the same steps as if you were on a Unix based system.
 
 #### Download packages
 
-You can download protoc and protobuf packages from https://github.com/google/protobuf/releases.
-Make sure you use downloaded the same versions of protoc and protobuf.
+You can download protoc and protobuf packages from [Google Protobuf Releases](https://github.com/google/protobuf/releases).
+Make sure you use downloaded **the same versions** of protoc and protobuf.
 
 E.g. *protoc-3.5.0-linux-x86_64.zip* and *protobuf-cpp-3.5.0.zip*
 
@@ -57,33 +57,33 @@ E.g. *protoc-3.5.0-linux-x86_64.zip* and *protobuf-cpp-3.5.0.zip*
 
 #### Install Protobuf
 
-Based on https://github.com/google/protobuf/blob/master/src/README.md:
-
 1. Unzip package <br>
    `unzip protobuf-cpp-3.* -d protobuf3`
 2. Go to folder *profobuf3* and make file configure executable <br>
    `chmod +x configure`
 3. Execute following commands <br>
-   `$ ./configure
-   $ make
-   $ make check
-   $ sudo make install
-   $ sudo ldconfig` <br>
+   `./configure` <br>
+   `make` <br>
+   `make check` <br>
+   `sudo make install` <br>
+   `sudo ldconfig` <br>
    Note: If "make check" fails, you can still install, but it is likely that some features of this library will not work correctly on your system. Proceed at your own risk.
 
 #### Use Protoc
 
-If you want to compile some proto files use e.g. `protoc --cpp_out=. ./*.proto` <br>
-`--cpp_out` indicates the destination of compiled files. In this case it is the same folder. <br>
-`./*.proto` will compile every proto file in this folder.
+If you want to compile some proto files use `protoc [OPTIONS] PROTO_FILES` <br>
+
+The `[OPTIONS]` part indicates the destination of compiled file. You can use relative and absolute paths. <br>
+In the `PROTO_FILES` part you can define which protobuf files will be compiled.
+
+E.g. the command `protoc --cpp_out=. ./*.proto` compiles every every proto file in this folder and places the compiled ones within this folder.
 
 #### Cross compiling
 
 If you want to use cross compiling you have to use `--host` option when executing `./configure`. <br>
 E.g. `./configure --host=powerpc-linux CC=powerpc-linux-gnu-gcc CXX=powerpc-linux-gnu-g++  --with-protoc=/usr/bin/protoc` <br>
 
-
-Also see https://github.com/eurotech/edc-examples/wiki/Cross-compiling-protobuf-for-ARM-architecture
+Also see [Cross-compiling hints](https://github.com/eurotech/edc-examples/wiki/Cross-compiling-protobuf-for-ARM-architecture).
 
 
 
