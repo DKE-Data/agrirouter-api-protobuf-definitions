@@ -23,13 +23,67 @@ Here are some external resources for the development:
 
 ## Development hints
 
-### Language spcific compiling of the `*.proto` definitions
+### Language specific compiling of the `*.proto` definitions
 
 #### Java
 
 `not yet defined`
 
-#### C++
+### C++
 
-`not yet defined`
+#### How to install Protobuf C++ Compiler
+
+The following instructions are optimized for Unix based systems. For Windows I recommend to install Cygwin (https://www.cygwin.com/) and do the same steps as if you were on a Unix based system.
+
+#### Download packages
+
+You can download protoc and protobuf packages from https://github.com/google/protobuf/releases.
+Make sure you use downloaded the same versions of protoc and protobuf.
+
+E.g. *protoc-3.5.0-linux-x86_64.zip* and *protobuf-cpp-3.5.0.zip*
+
+#### Prepare Protoc
+
+1. Unzip package <br>
+   `unzip protoc-3.* -d protoc3`
+2. Move protoc to /usr/bin/ <br>
+   `sudo mv protoc3/bin/protoc /usr/bin/`
+3. Move included packages to /usr/include/ <br>
+   `sudo mv protoc3/include/* /usr/include/`
+4. Optional: make protoc executable for everyone <br>
+   `sudo chmod +x /usr/bin/protoc`
+5. Optional: make includes readable for everyone <br>
+   `sudo chmod +r /usr/include/google/*`
+
+#### Install Protobuf
+
+Based on https://github.com/google/protobuf/blob/master/src/README.md:
+
+1. Unzip package <br>
+   `unzip protobuf-cpp-3.* -d protobuf3`
+2. Go to folder *profobuf3* and make file configure executable <br>
+   `chmod +x configure`
+3. Execute following commands <br>
+   `$ ./configure
+   $ make
+   $ make check
+   $ sudo make install
+   $ sudo ldconfig` <br>
+   Note: If "make check" fails, you can still install, but it is likely that some features of this library will not work correctly on your system. Proceed at your own risk.
+
+#### Use Protoc
+
+If you want to compile some proto files use e.g. `protoc --cpp_out=. ./*.proto` <br>
+`--cpp_out` indicates the destination of compiled files. In this case it is the same folder. <br>
+`./*.proto` will compile every proto file in this folder.
+
+#### Cross compiling
+
+If you want to use cross compiling you have to use `--host` option when executing `./configure`. <br>
+E.g. `./configure --host=powerpc-linux CC=powerpc-linux-gnu-gcc CXX=powerpc-linux-gnu-g++  --with-protoc=/usr/bin/protoc` <br>
+
+
+Also see https://github.com/eurotech/edc-examples/wiki/Cross-compiling-protobuf-for-ARM-architecture
+
+
 
