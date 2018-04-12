@@ -33,12 +33,12 @@ Here are some external resources for the development:
 
 #### How to install Protobuf C++ Compiler
 
-The following instructions are based on the [Google Protobuf installation guide](https://github.com/google/protobuf/blob/master/src/README.md) and are optimized for Unix based systems. For Windows I recommend to install [Cygwin](https://www.cygwin.com/) and do the same steps as if you were on a Unix based system.
+The following instructions are based on the [Google Protobuf installation guide](https://github.com/google/protobuf/blob/master/src/README.md) and are optimized for Unix based systems. For Windows it is recommended to install [Cygwin](https://www.cygwin.com/) and do the same steps as if you were on a Unix based system.
 
 #### Download packages
 
 You can download protoc and protobuf packages from [Google Protobuf Releases](https://github.com/google/protobuf/releases).
-Make sure you use downloaded **the same versions** of protoc and protobuf.
+Make sure you download **the same versions** of protoc and protobuf otherwise the installation won't work.
 
 E.g. *protoc-3.5.0-linux-x86_64.zip* and *protobuf-cpp-3.5.0.zip*
 
