@@ -5,8 +5,8 @@ import "commons/chunk.proto";
 
 package agrirouter.request;
 
-// Envelope for ALL requests sent into the data-hub by applications
-// Mode describes how the data-hub should treat the message
+// Envelope for ALL requests sent into the agrirouter by applications
+// Mode describes how the agrirouter should treat the message
 // The request payload wrapper provides a hook for protobufed payload content and should
 // correspond to the content required per the Technical Message Type specificion as this will
 // be used to determine how decoding would take place.
@@ -20,14 +20,14 @@ message RequestEnvelope{
 
     string application_message_id = 1;                                         // Client generated Message ID it would use to uniquly identify the message it is sending
     int64 application_message_seq_no = 2;                                      // Sequence Number from the client indicating the order in which it has sent messages
-    string technical_message_type = 3;                                         // Data-Hub technical message type
+    string technical_message_type = 3;                                         // agrirouter technical message type
     string team_set_context_id = 4;                                            // If this message is in reference to a team-set context the ID would be placed here
-    Mode mode = 5;                                                             // The sending mode so the Data-Hub can properly process the message.     
-    repeated string recipients = 6;  		                                   // Directly Addressed Data-Hub Endpoint Addresses
-    agrirouter.commons.ChunkComponent chunk_info = 7;                             // If this is part of a chunked message details are here
-    google.protobuf.Timestamp timestamp = 8;                                   // UTC Timestamp at which the client sent the message
+    Mode mode = 5;                                                             // The sending mode so the agrirouter can properly process the message.     
+    repeated string recipients = 6;  		                                   // Directly Addressed agrirouter Endpoint ID's
+    agrirouter.commons.ChunkComponent chunk_info = 7;                          // If this is part of a chunked message details are here
+    google.protobuf.Timestamp timestamp = 8;                                   // Client generated UTC Timestamp at which the client sent the message
 }
 
 message RequestPayloadWrapper {
-    google.protobuf.Any details = 1;
+    google.protobuf.Any details = 1;                                           // Content relevant for the technical message type
 }

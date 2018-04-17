@@ -16,9 +16,7 @@ package agrirouter.cloud.registration;
 message OnboardingRequest {
     message EnpointRegistrationDetails {
         string id = 1;                                          // External ID from the cloud provider - REQUIRED
-        string application_id = 2;                              // Application ID from the agrirouter - REQUIRED      
-        string certification_version_id = 3;                    // Certification Version ID from the agrirouter - REQUIRED
-        string name = 4;                                        // Name of this virtualized application from the cloud provider. Is mapped to the Endpoints name of the agrirouter - REQUIRED
+        string name = 2;                                        // Name of this virtualized application from the cloud provider. Is mapped to the Endpoints name of the agrirouter - REQUIRED
     }
 
     repeated EnpointRegistrationDetails onboardingRequests = 1; // Collection of virtualized endpoint the external cloud is managing for the associated agrirouter account. At least one valid request is required

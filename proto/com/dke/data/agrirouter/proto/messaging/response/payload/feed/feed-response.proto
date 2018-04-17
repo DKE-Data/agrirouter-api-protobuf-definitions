@@ -11,58 +11,58 @@ message Page {
 }
 
 message QueryMetrics {
-  int32 total_messages_in_query = 1;
-  int32 max_count_restriction = 2;
+  int32 total_messages_in_query = 1;                                      // Specifies the overall messages applicable for the as the response would be capped
+  int32 max_count_restriction = 2;                                        // What the max cap is for the amount of possible messages within a response
 }
 
 message HeaderQueryResponse {
   message Header {
-    string message_id = 1;                                                  // Internal AgriRouter message ID representing this message and its payload
-    string technical_message_type = 2;                                      // Technical Message Type ID
-    string team_set_context_id = 3;                                         // If associated with a team set context (Device Description) this is the linkage ID
-    string chunk_context_id = 4;                                            // If this is part of a large set of messages the chunk context ID. Refer to the Chunk Contexts section fo the complete details of the chunk as to not repeat it over and over
-    int64 payload_size = 5;                                                 // Expected size of the payload associated with this message
-    google.protobuf.Timestamp sent_timestamp = 6;                           // The timestamp in UTC that the sender has sent this message
+    string message_id = 1;                                                // Internal AgriRouter message ID representing this message and its payload
+    string technical_message_type = 2;                                    // Technical Message Type ID
+    string team_set_context_id = 3;                                       // If associated with a team set context (Device Description) this is the linkage ID
+    string chunk_context_id = 4;                                          // If this is part of a large set of messages the chunk context ID. Refer to the Chunk Contexts section fo the complete details of the chunk as to not repeat it over and over
+    int64 payload_size = 5;                                               // Expected size of the payload associated with this message
+    google.protobuf.Timestamp sent_timestamp = 6;                         // The timestamp in UTC that the sender has sent this message
   }
 
   message Feed {
-    string sender_id = 1;                                               // Sender for the group of messages
-    string receiver_id = 2;                                             // Receiver for the group of messages
-    repeated Header headers = 3;                                        // Message header information for messages of the sender_id in combination with receiver_id based on the queried request
+    string sender_id = 1;                                                 // Sender for the group of messages
+    string receiver_id = 2;                                               // Receiver for the group of messages
+    repeated Header headers = 3;                                          // Message header information for messages of the sender_id in combination with receiver_id based on the queried request
   }
 
-  QueryMetrics queryMetrics = 1;                                        // Refer to Statistics
-  Page page = 2;                                                        // Refer to Paging
-  repeated agrirouter.commons.ChunkComponent chunk_contexts = 3;           // Refer to agrirouter.commons.ChunkComponent
-  repeated Feed feed = 4;                                               // Refer to Feed
+  QueryMetrics queryMetrics = 1;                                          // Refer to Statistics
+  Page page = 2;                                                          // Refer to Paging
+  repeated agrirouter.commons.ChunkComponent chunk_contexts = 3;          // Refer to agrirouter.commons.ChunkComponent
+  repeated Feed feed = 4;                                                 // Refer to Feed
 }
 
 message MessageQueryResponse { 
   message Header {
-    string receiver_id = 1;                                                 // Receiver of this message
-    string technical_message_type = 2;                                      // Technical Message Type ID
-    string team_set_context_id = 3;                                         // If associated with a team set context (Device Description) this is the linkage ID
-    agrirouter.commons.ChunkComponent chunk_context = 4;                       // Refer to agrirouter.commons.ChunkComponent
-    int64 payload_size = 5;                                                 // Expected size of the payload associated with this message
-    google.protobuf.Timestamp sent_timestamp = 6;                           // The timestamp in UTC that the sender has sent this message
+    string receiver_id = 1;                                               // Receiver of this message
+    string technical_message_type = 2;                                    // Technical Message Type ID
+    string team_set_context_id = 3;                                       // If associated with a team set context (Device Description) this is the linkage ID
+    agrirouter.commons.ChunkComponent chunk_context = 4;                  // Refer to agrirouter.commons.ChunkComponent
+    int64 payload_size = 5;                                               // Expected size of the payload associated with this message
+    google.protobuf.Timestamp sent_timestamp = 6;                         // The timestamp in UTC that the sender has sent this message
   }
 
   QueryMetrics queryMetrics = 1;
-  Page page = 2;                                                         // Page number of total pages to be delievered for initial query
-  Header header = 3;                                                     // Message Header Information for identification purposes
-  google.protobuf.Any content = 4;                                       // The actual payload content to be decoded
+  Page page = 2;                                                          // Page number of total pages to be delievered for initial query
+  Header header = 3;                                                      // Message Header Information for identification purposes
+  google.protobuf.Any content = 4;                                        // The actual payload content to be decoded
 }
 
 message FailedMessageQueryResponse {
   message Header {
-    string technical_message_type = 1;                                      // Technical Message Type ID
-    string team_set_context_id = 2;                                         // If associated with a team set context (Device Description) this is the linkage ID
-    int64 payload_size = 3;                                                 // Expected size of the payload associated with this message
-    google.protobuf.Timestamp sent_timestamp = 4;                           // The timestamp in UTC that the sender has sent this message
+    string technical_message_type = 1;                                    // Technical Message Type ID
+    string team_set_context_id = 2;                                       // If associated with a team set context (Device Description) this is the linkage ID
+    int64 payload_size = 3;                                               // Expected size of the payload associated with this message
+    google.protobuf.Timestamp sent_timestamp = 4;                         // The timestamp in UTC that the sender has sent this message
   }
 
-  QueryMetrics queryMetrics = 1;
-  Page page = 2;
-  Header header = 3;                                                     // Message Header Information for identification purposes
-  repeated agrirouter.commons.Message reasons = 4;  
+  QueryMetrics queryMetrics = 1;                                          // Refer to Statistics
+  Page page = 2;                                                          // Refer to Paging
+  Header header = 3;                                                      // Message Header Information for identification purposes
+  repeated agrirouter.commons.Message reasons = 4;                        // Message information related to the failed query
 }
