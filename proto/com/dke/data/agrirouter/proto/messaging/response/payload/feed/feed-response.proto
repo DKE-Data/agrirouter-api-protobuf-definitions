@@ -23,6 +23,7 @@ message HeaderQueryResponse {
     string chunk_context_id = 4;                                          // If this is part of a large set of messages the chunk context ID. Refer to the Chunk Contexts section fo the complete details of the chunk as to not repeat it over and over
     int64 payload_size = 5;                                               // Expected size of the payload associated with this message
     google.protobuf.Timestamp sent_timestamp = 6;                         // The timestamp in UTC that the sender has sent this message
+    int64 sequence_number = 7;                                            // Message sequence number
   }
 
   message Feed {
@@ -45,12 +46,19 @@ message MessageQueryResponse {
     agrirouter.commons.ChunkComponent chunk_context = 4;                  // Refer to agrirouter.commons.ChunkComponent
     int64 payload_size = 5;                                               // Expected size of the payload associated with this message
     google.protobuf.Timestamp sent_timestamp = 6;                         // The timestamp in UTC that the sender has sent this message
+    int64 sequence_number = 7;                                            // Message sequence number
+    string sender_id = 8;                                                 // Sender for the group of messages
+    google.protobuf.Timestamp created_at = 9;                             // The time at which the message was inserted into the endpoints feed within the agrirouter
   }
 
-  QueryMetrics queryMetrics = 1;
+  message FeedMessage {
+    Header header = 1;                                                    // Message Header Information for identification purposes
+    google.protobuf.Any content = 2;                                      // The actual payload content to be decoded
+  }
+
+  QueryMetrics queryMetrics = 1;                                          // Refer to Statistics
   Page page = 2;                                                          // Page number of total pages to be delievered for initial query
-  Header header = 3;                                                      // Message Header Information for identification purposes
-  google.protobuf.Any content = 4;                                        // The actual payload content to be decoded
+  repeated FeedMessage messages = 3;                                      // Collection of messages allocated to this page
 }
 
 message FailedMessageQueryResponse {
