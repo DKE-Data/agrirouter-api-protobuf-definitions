@@ -18,8 +18,8 @@ This project contains the internal Google Protocol Buffer (protobuf) definitions
 
 Here are some external resources for the development:
 
-* [My Agrirouter Website](http://www.my-agrirouter.com) 
-* [EFDI Protobuf Definition](http://www.lmgtfy.com)
+* [My Agrirouter Website](https://my-agrirouter.com) 
+* [EFDI Protobuf Definition](https://www.aef-online.org)
 
 ## Development hints
 
