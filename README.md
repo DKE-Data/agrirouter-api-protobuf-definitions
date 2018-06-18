@@ -27,7 +27,11 @@ Here are some external resources for the development:
 
 #### Java
 
-`not yet defined`
+Generating the Java classes for the given `*.proto` is quite simple. The project contain a Maven `pom.xml` which references a simple plugin to generate the classes. Just call</br>
+
+`mvn clean package -Pgenerate-protobuf-api`
+
+and the generated source files will be placed underneath `src/main/generated`. Additional references - like native Google APIs - are resolved by the plugin itself.
 
 ### C++
 

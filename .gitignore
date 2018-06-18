@@ -23,3 +23,6 @@ buildNumber.properties
 .classpath
 .project
 .settings
+
+# GENERATED #
+src/main/generated
