@@ -24,6 +24,8 @@ message HeaderQueryResponse {
     int64 payload_size = 5;                                               // Expected size of the payload associated with this message
     google.protobuf.Timestamp sent_timestamp = 6;                         // The timestamp in UTC that the sender has sent this message
     int64 sequence_number = 7;                                            // Message sequence number
+    int64 current_chunk = 8; 		                                          // Number of this entry within the chunk context ordering
+    google.protobuf.Timestamp created_at = 9;                             // The time at which the message was inserted into the endpoints feed within the agrirouter
   }
 
   message Feed {
@@ -49,6 +51,8 @@ message MessageQueryResponse {
     int64 sequence_number = 7;                                            // Message sequence number
     string sender_id = 8;                                                 // Sender for the group of messages
     google.protobuf.Timestamp created_at = 9;                             // The time at which the message was inserted into the endpoints feed within the agrirouter
+    string message_id = 10;                                               // Internal AgriRouter message ID representing this message and its payload
+
   }
 
   message FeedMessage {
