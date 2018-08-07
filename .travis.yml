@@ -1,0 +1,11 @@
+install: mvn clean install
+script: mvn clean package
+cache:
+  directories:
+  - "~/.m2/repository"
+language: java
+jdk:
+  - oraclejdk8
+  - oraclejdk9
+  - oraclejdk10
+  - oraclejdk-ea
