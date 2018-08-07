@@ -2,6 +2,10 @@
 
 # agrirouter-api-protobuf-definitions
 
+## Project status
+
+![Build status](https://travis-ci.com/DKE-Data/agrirouter-api-protobuf-definitions.svg?branch=develop)
+
 ## Project description
 
 ### The agrirouter
