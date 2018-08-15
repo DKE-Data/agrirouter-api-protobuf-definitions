@@ -3,14 +3,48 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <name>AGRIROUTER - API Protobuf Definitions</name>
     <groupId>com.dke.data.api.protobuf</groupId>
     <artifactId>definitions</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
+    <name>AGRIROUTER - API Protobuf Definitions</name>
+    <description>This project contains a simple toolset for working with the agrirouter protobuf files to ensure easy
+        development, testing and debugging. See the README.md for more details.
+    </description>
+    <url>https://github.com/DKE-Data/agrirouter-api-protobuf-definitions</url>
+    <licenses>
+        <license>
+            <name>Apache License Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <id>saschadoemer</id>
+            <name>Sascha Doemer</name>
+            <email>Cf4ThQgxcnxAovOUXTNv@saschadoemer.de</email>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git:github.com/DKE-Data/agrirouter-api-protobuf-definitions.git</connection>
+        <developerConnection>scm:git:git@github.com:DKE-Data/agrirouter-api-protobuf-definitions.git</developerConnection>
+        <url>https://github.com/DKE-Data/agrirouter-api-protobuf-definitions</url>
+    </scm>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <properties>
         <protobuf-java.version>3.5.1</protobuf-java.version>
         <protoc-jar-maven-plugin.version>3.5.1.1</protoc-jar-maven-plugin.version>
+        <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
+        <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
+        <maven-javadoc-plugin.version>2.10.3</maven-javadoc-plugin.version>
     </properties>
 
     <dependencies>
@@ -53,6 +87,50 @@
                                         </outputTarget>
                                     </outputTargets>
                                 </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>snapshot</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <version>${nexus-staging-maven-plugin.version}</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <serverId>ossrh</serverId>
+                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>${maven-source-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>${maven-javadoc-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
                             </execution>
                         </executions>
                     </plugin>
