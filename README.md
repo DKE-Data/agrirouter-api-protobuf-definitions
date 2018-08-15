@@ -37,6 +37,33 @@ Generating the Java classes for the given `*.proto` is quite simple. The project
 
 and the generated source files will be placed underneath `src/main/generated`. Additional references - like native Google APIs - are resolved by the plugin itself.
 
+If you want to add a Maven dependency feel free to fetch the latest snapshot from Maven Central. Just add the following repository:
+
+```xml
+<repositories>
+    <repository>
+        <id>snapshots-repo</id>
+        <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+    </repository>
+</repositories>
+```
+
+After adding the snapshot repository feel free to add the Maven dependency:
+
+```xml
+<dependency>
+    <groupId>com.agrirouter.proto</groupId>
+    <artifactId>definitions</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+</dependency>
+```
+
 ### C++
 
 #### How to install Protobuf C++ Compiler
