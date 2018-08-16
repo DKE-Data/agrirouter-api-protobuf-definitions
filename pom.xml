@@ -5,13 +5,16 @@
 
     <name>AGRIROUTER - API Protobuf Definitions</name>
     <groupId>com.dke.data.api.protobuf</groupId>
-    <artifactId>definitions</artifactId>
+    <artifactId>agrirouter-api-protobuf-definitions</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>
         <protobuf-java.version>3.5.1</protobuf-java.version>
         <protoc-jar-maven-plugin.version>3.5.1.1</protoc-jar-maven-plugin.version>
-    </properties>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+   </properties>
 
     <dependencies>
         <dependency>
@@ -21,44 +24,32 @@
         </dependency>
     </dependencies>
 
-    <profiles>
-        <profile>
-            <id>generate-protobuf-api</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>com.github.os72</groupId>
-                        <artifactId>protoc-jar-maven-plugin</artifactId>
-                        <version>${protoc-jar-maven-plugin.version}</version>
-                        <executions>
-                            <execution>
-                                <phase>generate-sources</phase>
-                                <goals>
-                                    <goal>run</goal>
-                                </goals>
-                                <configuration>
-                                    <addProtoSources>all</addProtoSources>
-                                    <includeStdTypes>true</includeStdTypes>
-                                    <inputDirectories>
-                                        <include>src/main/resources/com/dke/data/agrirouter/proto</include>
-                                    </inputDirectories>
-                                    <includeDirectories>
-                                        <include>src/main/resources/com/dke/data/agrirouter/proto</include>
-                                    </includeDirectories>
-                                    <outputTargets>
-                                        <outputTarget>
-                                            <type>java</type>
-                                            <addSources>none</addSources>
-                                            <outputDirectory>src/main/generated</outputDirectory>
-                                        </outputTarget>
-                                    </outputTargets>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.github.os72</groupId>
+                <artifactId>protoc-jar-maven-plugin</artifactId>
+                <version>${protoc-jar-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                       <phase>generate-sources</phase>
+                       <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <addProtoSources>all</addProtoSources>
+                            <includeStdTypes>true</includeStdTypes>
+                            <inputDirectories>
+                                <include>src/main/resources/com/dke/data/agrirouter/proto</include>
+                            </inputDirectories>
+                            <includeDirectories>
+                                <include>src/main/resources/com/dke/data/agrirouter/proto</include>
+                            </includeDirectories>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
