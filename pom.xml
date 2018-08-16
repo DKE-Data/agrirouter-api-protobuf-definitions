@@ -8,9 +8,6 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <name>AGRIROUTER - API Protobuf Definitions</name>
-    <description>This project contains a simple toolset for working with the agrirouter protobuf files to ensure easy
-        development, testing and debugging. See the README.md for more details.
-    </description>
     <url>https://github.com/DKE-Data/agrirouter-api-protobuf-definitions</url>
     <licenses>
         <license>
