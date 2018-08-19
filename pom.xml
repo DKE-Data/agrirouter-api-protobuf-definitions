@@ -40,6 +40,8 @@
     <properties>
         <jdk.dependent.jar.classifier>default</jdk.dependent.jar.classifier>
 
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
         <protobuf-java.version>3.5.1</protobuf-java.version>
         <protoc-jar-maven-plugin.version>3.5.1.1</protoc-jar-maven-plugin.version>
         <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
