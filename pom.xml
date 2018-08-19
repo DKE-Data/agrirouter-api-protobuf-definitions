@@ -185,7 +185,7 @@
             <id>jdk8</id>
             <activation>
                 <activeByDefault>false</activeByDefault>
-                <jdk>8</jdk>
+                <jdk>1.8</jdk>
             </activation>
             <properties>
                 <jdk.dependent.jar.classifier>jdk8</jdk.dependent.jar.classifier>
