@@ -1,23 +1,16 @@
+install:
+- mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 script:
-  # JDK 10 / Build and eventually deploy
-  - jdk_switcher use oraclejdk10
-  - mvn clean package -P !snapshot jdk10 -B
-  - "./cd/deploy-jdk10.sh"
-  # JDK 9 / Build and eventually deploy
-  - jdk_switcher use oraclejdk9
-    mvn clean package -P !snapshot jdk9 -B
-  - "./cd/deploy-jdk9.sh"
-  # JDK 8 / Build and eventually deploy
-  - jdk_switcher use oraclejdk8
-    mvn clean package -P !snapshot jdk8 -B
-  - "./cd/deploy-jdk8.sh"
+- mvn clean package -P !snapshot -B
 cache:
   directories:
   - "~/.m2/repository"
 before_install:
-- chmod +x ./cd/deploy-jdk8.sh
-- chmod +x ./cd/deploy-jdk9.sh
-- chmod +x ./cd/deploy-jdk10.sh
+- chmod +x ./cd/deploy.sh
+after_success:
+- "./cd/deploy.sh"
 language: java
 jdk:
-  - oraclejdk10
+- oraclejdk10
+- oraclejdk9
+- oraclejdk8
