@@ -2,6 +2,7 @@
 = agrirouter-api-protobuf-definitions
 :imagesdir: assets/images
 :toc:
+:toc-title:
 :toclevels: 4
 
 [abstract]
