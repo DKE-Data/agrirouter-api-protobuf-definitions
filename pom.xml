@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.agrirouter.proto</groupId>
-    <artifactId>definitions</artifactId>
+    <artifactId>agrirouter-api-protobuf-definitions</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <name>AGRIROUTER - API Protobuf Definitions</name>
