@@ -1,5 +1,5 @@
 install:
-- mvn install -DskipTests=true -Dmaven.javadoc.skip=true -P !snapshot -B -V
+- mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true -P !snapshot -B -V
 script:
 - mvn clean package -P !snapshot -B
 cache:
