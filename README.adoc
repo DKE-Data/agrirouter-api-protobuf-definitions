@@ -28,8 +28,7 @@ Here are some external resources for the development:
 
 *Important*
 
-If you receive a 404 HTTP status, this means, that you are currently not allowed to view this repository, because you do not have access.
-If you are AEF member and do not have access, please ask the AEF office to grant you access to the repository.
+If you receive a 404 HTTP status, this means that you are currently not allowed to view this repository because you do not have access. If you are an AEF member and do not have access, please ask the AEF office to grant you access to the repository.
 
 
 == Language specific compiling of the `*.proto` definitions
