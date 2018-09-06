@@ -23,9 +23,13 @@ image::https://travis-ci.com/DKE-Data/agrirouter-api-protobuf-definitions.svg?br
 
 Here are some external resources for the development:
 
-* https://my-agrirouter.com[My Agrirouter Website]
-* https://github.com/aefev/fmisei-spec/blob/master/proto-v3-grpc/iso11783-10.proto[EFDI Protobuf Definition (working draft)] currently only available for AEF members - will be pulished when the working draft of the guideline documents is finished.
-If you are AEF member and do not have access, please ask the AEF office to grant you access to the repository.
+* https://my-agrirouter.com[my-agrirouter.com Website]
+* https://github.com/aefev/fmisei-spec/blob/master/proto-v3-grpc/iso11783-10.proto[EFDI Protobuf Definition (working draft)] currently only available for AEF members - will be published when the working draft of the guideline documents is finished.
+
+*Important*
+
+If you receive a 404 HTTP status, this means that you are currently not allowed to view this repository because you do not have access. If you are an AEF member and do not have access, please ask the AEF office to grant you access to the repository.
+
 
 == Language specific compiling of the `*.proto` definitions
 
