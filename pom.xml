@@ -41,6 +41,8 @@
         <jdk.dependent.jar.classifier>default</jdk.dependent.jar.classifier>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>10</maven.compiler.source>
+        <maven.compiler.target>10</maven.compiler.target>
 
         <protobuf-java.version>3.5.1</protobuf-java.version>
         <protoc-jar-maven-plugin.version>3.5.1.1</protoc-jar-maven-plugin.version>
@@ -107,7 +109,7 @@
                                         <outputTarget>
                                             <type>java</type>
                                             <addSources>none</addSources>
-                                            <outputDirectory>src/main/generated</outputDirectory>
+                                            <outputDirectory>src/main/java</outputDirectory>
                                         </outputTarget>
                                     </outputTargets>
                                 </configuration>
@@ -169,6 +171,8 @@
             </activation>
             <properties>
                 <jdk.dependent.jar.classifier>jdk10</jdk.dependent.jar.classifier>
+                <maven.compiler.source>10</maven.compiler.source>
+                <maven.compiler.target>10</maven.compiler.target>
             </properties>
         </profile>
         <profile>
@@ -179,6 +183,8 @@
             </activation>
             <properties>
                 <jdk.dependent.jar.classifier>jdk9</jdk.dependent.jar.classifier>
+                <maven.compiler.source>9</maven.compiler.source>
+                <maven.compiler.target>9</maven.compiler.target>
             </properties>
         </profile>
         <profile>
@@ -189,6 +195,8 @@
             </activation>
             <properties>
                 <jdk.dependent.jar.classifier>jdk8</jdk.dependent.jar.classifier>
+                <maven.compiler.source>8</maven.compiler.source>
+                <maven.compiler.target>8</maven.compiler.target>
             </properties>
         </profile>
     </profiles>
