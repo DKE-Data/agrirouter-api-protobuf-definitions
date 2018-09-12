@@ -109,7 +109,7 @@
                                         <outputTarget>
                                             <type>java</type>
                                             <addSources>none</addSources>
-                                            <outputDirectory>src/main/java</outputDirectory>
+                                            <outputDirectory>src/main/java/com/dke/data</outputDirectory>
                                         </outputTarget>
                                     </outputTargets>
                                 </configuration>
