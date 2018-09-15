@@ -1,5 +1,7 @@
 
 = agrirouter-api-protobuf-definitions
+
+image:https://api.codacy.com/project/badge/Grade/948ffef528ae4d5595fb6d71e64a6693[link="https://app.codacy.com/app/cf4thqgxcnxaovouxtnv/agrirouter-api-protobuf-definitions?utm_source=github.com&utm_medium=referral&utm_content=DKE-Data/agrirouter-api-protobuf-definitions&utm_campaign=Badge_Grade_Dashboard"]
 :imagesdir: assets/images
 :toc:
 :toc-title:
