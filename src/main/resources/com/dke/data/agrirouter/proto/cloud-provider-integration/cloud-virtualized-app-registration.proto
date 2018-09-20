@@ -14,16 +14,16 @@ package agrirouter.cloud.registration;
 */
 
 message OnboardingRequest {
-    message EnpointRegistrationDetails {
+    message EndpointRegistrationDetails {
         string id = 1;                                          // External ID from the cloud provider - REQUIRED
         string name = 2;                                        // Name of this virtualized application from the cloud provider. Is mapped to the Endpoints name of the agrirouter - REQUIRED
     }
 
-    repeated EnpointRegistrationDetails onboardingRequests = 1; // Collection of virtualized endpoint the external cloud is managing for the associated agrirouter account. At least one valid request is required
+    repeated EndpointRegistrationDetails onboardingRequests = 1; // Collection of virtualized endpoint the external cloud is managing for the associated agrirouter account. At least one valid request is required
 }
 
 message OnboardingResponse {
-    message EnpointRegistrationDetails {
+    message EndpointRegistrationDetails {
         string id = 1;                                          // External ID from the cloud provider
         string deviceAlternateId = 2;                           // The ID for the device used for managing the communication channel with the cloud provider for the associated agrirouter account.
         string sensorAlternateId = 3;                           // The ID to use for messages related to a specific virtualized endpoint. Would always be 1..1 with the External ID
@@ -36,7 +36,7 @@ message OnboardingResponse {
         agrirouter.commons.Message reason = 2;                  // Information as to why it failed
     }
 
-    repeated EnpointRegistrationDetails onboardedEndpoints = 1; // Collection of details to enable communication of the virtualized endpoints the cloud provider is integrating with the agrirouter for the account   
+    repeated EndpointRegistrationDetails onboardedEndpoints = 1; // Collection of details to enable communication of the virtualized endpoints the cloud provider is integrating with the agrirouter for the account   
     repeated Failures failures = 2;                             // For any which were not able to be onboarded the information would be here along with the external ID provided from the cloud provider        
 }
 
