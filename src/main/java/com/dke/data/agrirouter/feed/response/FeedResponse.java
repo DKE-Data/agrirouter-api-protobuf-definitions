@@ -1263,6 +1263,41 @@ public final class FeedResponse {
      */
     agrirouter.feed.response.FeedResponse.HeaderQueryResponse.FeedOrBuilder getFeedOrBuilder(
         int index);
+
+    /**
+     * <pre>
+     * List of message ids in pending confirmation status
+     * </pre>
+     *
+     * <code>repeated string pending_message_ids = 5;</code>
+     */
+    java.util.List<java.lang.String>
+        getPendingMessageIdsList();
+    /**
+     * <pre>
+     * List of message ids in pending confirmation status
+     * </pre>
+     *
+     * <code>repeated string pending_message_ids = 5;</code>
+     */
+    int getPendingMessageIdsCount();
+    /**
+     * <pre>
+     * List of message ids in pending confirmation status
+     * </pre>
+     *
+     * <code>repeated string pending_message_ids = 5;</code>
+     */
+    java.lang.String getPendingMessageIds(int index);
+    /**
+     * <pre>
+     * List of message ids in pending confirmation status
+     * </pre>
+     *
+     * <code>repeated string pending_message_ids = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getPendingMessageIdsBytes(int index);
   }
   /**
    * Protobuf type {@code agrirouter.feed.response.HeaderQueryResponse}
@@ -1279,6 +1314,7 @@ public final class FeedResponse {
     private HeaderQueryResponse() {
       chunkContexts_ = java.util.Collections.emptyList();
       feed_ = java.util.Collections.emptyList();
+      pendingMessageIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -1356,6 +1392,15 @@ public final class FeedResponse {
                   input.readMessage(agrirouter.feed.response.FeedResponse.HeaderQueryResponse.Feed.parser(), extensionRegistry));
               break;
             }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                pendingMessageIds_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              pendingMessageIds_.add(s);
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -1369,6 +1414,9 @@ public final class FeedResponse {
         }
         if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
           feed_ = java.util.Collections.unmodifiableList(feed_);
+        }
+        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+          pendingMessageIds_ = pendingMessageIds_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -4621,6 +4669,51 @@ public final class FeedResponse {
       return feed_.get(index);
     }
 
+    public static final int PENDING_MESSAGE_IDS_FIELD_NUMBER = 5;
+    private com.google.protobuf.LazyStringList pendingMessageIds_;
+    /**
+     * <pre>
+     * List of message ids in pending confirmation status
+     * </pre>
+     *
+     * <code>repeated string pending_message_ids = 5;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getPendingMessageIdsList() {
+      return pendingMessageIds_;
+    }
+    /**
+     * <pre>
+     * List of message ids in pending confirmation status
+     * </pre>
+     *
+     * <code>repeated string pending_message_ids = 5;</code>
+     */
+    public int getPendingMessageIdsCount() {
+      return pendingMessageIds_.size();
+    }
+    /**
+     * <pre>
+     * List of message ids in pending confirmation status
+     * </pre>
+     *
+     * <code>repeated string pending_message_ids = 5;</code>
+     */
+    public java.lang.String getPendingMessageIds(int index) {
+      return pendingMessageIds_.get(index);
+    }
+    /**
+     * <pre>
+     * List of message ids in pending confirmation status
+     * </pre>
+     *
+     * <code>repeated string pending_message_ids = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPendingMessageIdsBytes(int index) {
+      return pendingMessageIds_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -4645,6 +4738,9 @@ public final class FeedResponse {
       for (int i = 0; i < feed_.size(); i++) {
         output.writeMessage(4, feed_.get(i));
       }
+      for (int i = 0; i < pendingMessageIds_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, pendingMessageIds_.getRaw(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -4668,6 +4764,14 @@ public final class FeedResponse {
       for (int i = 0; i < feed_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, feed_.get(i));
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < pendingMessageIds_.size(); i++) {
+          dataSize += computeStringSizeNoTag(pendingMessageIds_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getPendingMessageIdsList().size();
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4699,6 +4803,8 @@ public final class FeedResponse {
           .equals(other.getChunkContextsList());
       result = result && getFeedList()
           .equals(other.getFeedList());
+      result = result && getPendingMessageIdsList()
+          .equals(other.getPendingMessageIdsList());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -4725,6 +4831,10 @@ public final class FeedResponse {
       if (getFeedCount() > 0) {
         hash = (37 * hash) + FEED_FIELD_NUMBER;
         hash = (53 * hash) + getFeedList().hashCode();
+      }
+      if (getPendingMessageIdsCount() > 0) {
+        hash = (37 * hash) + PENDING_MESSAGE_IDS_FIELD_NUMBER;
+        hash = (53 * hash) + getPendingMessageIdsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -4881,6 +4991,8 @@ public final class FeedResponse {
         } else {
           feedBuilder_.clear();
         }
+        pendingMessageIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -4933,6 +5045,11 @@ public final class FeedResponse {
         } else {
           result.feed_ = feedBuilder_.build();
         }
+        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+          pendingMessageIds_ = pendingMessageIds_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.pendingMessageIds_ = pendingMessageIds_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -5032,6 +5149,16 @@ public final class FeedResponse {
               feedBuilder_.addAllMessages(other.feed_);
             }
           }
+        }
+        if (!other.pendingMessageIds_.isEmpty()) {
+          if (pendingMessageIds_.isEmpty()) {
+            pendingMessageIds_ = other.pendingMessageIds_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensurePendingMessageIdsIsMutable();
+            pendingMessageIds_.addAll(other.pendingMessageIds_);
+          }
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5989,6 +6116,136 @@ public final class FeedResponse {
           feed_ = null;
         }
         return feedBuilder_;
+      }
+
+      private com.google.protobuf.LazyStringList pendingMessageIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensurePendingMessageIdsIsMutable() {
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+          pendingMessageIds_ = new com.google.protobuf.LazyStringArrayList(pendingMessageIds_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+      /**
+       * <pre>
+       * List of message ids in pending confirmation status
+       * </pre>
+       *
+       * <code>repeated string pending_message_ids = 5;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getPendingMessageIdsList() {
+        return pendingMessageIds_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * List of message ids in pending confirmation status
+       * </pre>
+       *
+       * <code>repeated string pending_message_ids = 5;</code>
+       */
+      public int getPendingMessageIdsCount() {
+        return pendingMessageIds_.size();
+      }
+      /**
+       * <pre>
+       * List of message ids in pending confirmation status
+       * </pre>
+       *
+       * <code>repeated string pending_message_ids = 5;</code>
+       */
+      public java.lang.String getPendingMessageIds(int index) {
+        return pendingMessageIds_.get(index);
+      }
+      /**
+       * <pre>
+       * List of message ids in pending confirmation status
+       * </pre>
+       *
+       * <code>repeated string pending_message_ids = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPendingMessageIdsBytes(int index) {
+        return pendingMessageIds_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * List of message ids in pending confirmation status
+       * </pre>
+       *
+       * <code>repeated string pending_message_ids = 5;</code>
+       */
+      public Builder setPendingMessageIds(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensurePendingMessageIdsIsMutable();
+        pendingMessageIds_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * List of message ids in pending confirmation status
+       * </pre>
+       *
+       * <code>repeated string pending_message_ids = 5;</code>
+       */
+      public Builder addPendingMessageIds(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensurePendingMessageIdsIsMutable();
+        pendingMessageIds_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * List of message ids in pending confirmation status
+       * </pre>
+       *
+       * <code>repeated string pending_message_ids = 5;</code>
+       */
+      public Builder addAllPendingMessageIds(
+          java.lang.Iterable<java.lang.String> values) {
+        ensurePendingMessageIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, pendingMessageIds_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * List of message ids in pending confirmation status
+       * </pre>
+       *
+       * <code>repeated string pending_message_ids = 5;</code>
+       */
+      public Builder clearPendingMessageIds() {
+        pendingMessageIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * List of message ids in pending confirmation status
+       * </pre>
+       *
+       * <code>repeated string pending_message_ids = 5;</code>
+       */
+      public Builder addPendingMessageIdsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensurePendingMessageIdsIsMutable();
+        pendingMessageIds_.add(value);
+        onChanged();
+        return this;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -13270,51 +13527,52 @@ public final class FeedResponse {
       "to\032\023commons/chunk.proto\"%\n\004Page\022\016\n\006numbe" +
       "r\030\001 \001(\005\022\r\n\005total\030\002 \001(\005\"N\n\014QueryMetrics\022\037" +
       "\n\027total_messages_in_query\030\001 \001(\005\022\035\n\025max_c" +
-      "ount_restriction\030\002 \001(\005\"\226\005\n\023HeaderQueryRe" +
+      "ount_restriction\030\002 \001(\005\"\263\005\n\023HeaderQueryRe" +
       "sponse\022<\n\014queryMetrics\030\001 \001(\0132&.agriroute" +
       "r.feed.response.QueryMetrics\022,\n\004page\030\002 \001" +
       "(\0132\036.agrirouter.feed.response.Page\022:\n\016ch" +
       "unk_contexts\030\003 \003(\0132\".agrirouter.commons." +
       "ChunkComponent\022@\n\004feed\030\004 \003(\01322.agriroute" +
       "r.feed.response.HeaderQueryResponse.Feed" +
-      "\032\235\002\n\006Header\022\022\n\nmessage_id\030\001 \001(\t\022\036\n\026techn" +
-      "ical_message_type\030\002 \001(\t\022\033\n\023team_set_cont" +
-      "ext_id\030\003 \001(\t\022\030\n\020chunk_context_id\030\004 \001(\t\022\024" +
-      "\n\014payload_size\030\005 \001(\003\0222\n\016sent_timestamp\030\006" +
-      " \001(\0132\032.google.protobuf.Timestamp\022\027\n\017sequ" +
-      "ence_number\030\007 \001(\003\022\025\n\rcurrent_chunk\030\010 \001(\003" +
-      "\022.\n\ncreated_at\030\t \001(\0132\032.google.protobuf.T" +
-      "imestamp\032u\n\004Feed\022\021\n\tsender_id\030\001 \001(\t\022\023\n\013r" +
-      "eceiver_id\030\002 \001(\t\022E\n\007headers\030\003 \003(\01324.agri" +
-      "router.feed.response.HeaderQueryResponse" +
-      ".Header\"\237\005\n\024MessageQueryResponse\022<\n\014quer" +
-      "yMetrics\030\001 \001(\0132&.agrirouter.feed.respons" +
-      "e.QueryMetrics\022,\n\004page\030\002 \001(\0132\036.agriroute" +
-      "r.feed.response.Page\022L\n\010messages\030\003 \003(\0132:" +
-      ".agrirouter.feed.response.MessageQueryRe" +
-      "sponse.FeedMessage\032\317\002\n\006Header\022\023\n\013receive" +
-      "r_id\030\001 \001(\t\022\036\n\026technical_message_type\030\002 \001" +
-      "(\t\022\033\n\023team_set_context_id\030\003 \001(\t\0229\n\rchunk" +
-      "_context\030\004 \001(\0132\".agrirouter.commons.Chun" +
-      "kComponent\022\024\n\014payload_size\030\005 \001(\003\0222\n\016sent" +
-      "_timestamp\030\006 \001(\0132\032.google.protobuf.Times" +
-      "tamp\022\027\n\017sequence_number\030\007 \001(\003\022\021\n\tsender_" +
-      "id\030\010 \001(\t\022.\n\ncreated_at\030\t \001(\0132\032.google.pr" +
-      "otobuf.Timestamp\022\022\n\nmessage_id\030\n \001(\t\032{\n\013" +
-      "FeedMessage\022E\n\006header\030\001 \001(\01325.agrirouter" +
-      ".feed.response.MessageQueryResponse.Head" +
-      "er\022%\n\007content\030\002 \001(\0132\024.google.protobuf.An" +
-      "y\"\225\003\n\032FailedMessageQueryResponse\022<\n\014quer" +
-      "yMetrics\030\001 \001(\0132&.agrirouter.feed.respons" +
-      "e.QueryMetrics\022,\n\004page\030\002 \001(\0132\036.agriroute" +
-      "r.feed.response.Page\022K\n\006header\030\003 \001(\0132;.a" +
-      "grirouter.feed.response.FailedMessageQue" +
-      "ryResponse.Header\022,\n\007reasons\030\004 \003(\0132\033.agr" +
-      "irouter.commons.Message\032\217\001\n\006Header\022\036\n\026te" +
-      "chnical_message_type\030\001 \001(\t\022\033\n\023team_set_c" +
-      "ontext_id\030\002 \001(\t\022\024\n\014payload_size\030\003 \001(\003\0222\n" +
-      "\016sent_timestamp\030\004 \001(\0132\032.google.protobuf." +
-      "Timestampb\006proto3"
+      "\022\033\n\023pending_message_ids\030\005 \003(\t\032\235\002\n\006Header" +
+      "\022\022\n\nmessage_id\030\001 \001(\t\022\036\n\026technical_messag" +
+      "e_type\030\002 \001(\t\022\033\n\023team_set_context_id\030\003 \001(" +
+      "\t\022\030\n\020chunk_context_id\030\004 \001(\t\022\024\n\014payload_s" +
+      "ize\030\005 \001(\003\0222\n\016sent_timestamp\030\006 \001(\0132\032.goog" +
+      "le.protobuf.Timestamp\022\027\n\017sequence_number" +
+      "\030\007 \001(\003\022\025\n\rcurrent_chunk\030\010 \001(\003\022.\n\ncreated" +
+      "_at\030\t \001(\0132\032.google.protobuf.Timestamp\032u\n" +
+      "\004Feed\022\021\n\tsender_id\030\001 \001(\t\022\023\n\013receiver_id\030" +
+      "\002 \001(\t\022E\n\007headers\030\003 \003(\01324.agrirouter.feed" +
+      ".response.HeaderQueryResponse.Header\"\237\005\n" +
+      "\024MessageQueryResponse\022<\n\014queryMetrics\030\001 " +
+      "\001(\0132&.agrirouter.feed.response.QueryMetr" +
+      "ics\022,\n\004page\030\002 \001(\0132\036.agrirouter.feed.resp" +
+      "onse.Page\022L\n\010messages\030\003 \003(\0132:.agrirouter" +
+      ".feed.response.MessageQueryResponse.Feed" +
+      "Message\032\317\002\n\006Header\022\023\n\013receiver_id\030\001 \001(\t\022" +
+      "\036\n\026technical_message_type\030\002 \001(\t\022\033\n\023team_" +
+      "set_context_id\030\003 \001(\t\0229\n\rchunk_context\030\004 " +
+      "\001(\0132\".agrirouter.commons.ChunkComponent\022" +
+      "\024\n\014payload_size\030\005 \001(\003\0222\n\016sent_timestamp\030" +
+      "\006 \001(\0132\032.google.protobuf.Timestamp\022\027\n\017seq" +
+      "uence_number\030\007 \001(\003\022\021\n\tsender_id\030\010 \001(\t\022.\n" +
+      "\ncreated_at\030\t \001(\0132\032.google.protobuf.Time" +
+      "stamp\022\022\n\nmessage_id\030\n \001(\t\032{\n\013FeedMessage" +
+      "\022E\n\006header\030\001 \001(\01325.agrirouter.feed.respo" +
+      "nse.MessageQueryResponse.Header\022%\n\007conte" +
+      "nt\030\002 \001(\0132\024.google.protobuf.Any\"\225\003\n\032Faile" +
+      "dMessageQueryResponse\022<\n\014queryMetrics\030\001 " +
+      "\001(\0132&.agrirouter.feed.response.QueryMetr" +
+      "ics\022,\n\004page\030\002 \001(\0132\036.agrirouter.feed.resp" +
+      "onse.Page\022K\n\006header\030\003 \001(\0132;.agrirouter.f" +
+      "eed.response.FailedMessageQueryResponse." +
+      "Header\022,\n\007reasons\030\004 \003(\0132\033.agrirouter.com" +
+      "mons.Message\032\217\001\n\006Header\022\036\n\026technical_mes" +
+      "sage_type\030\001 \001(\t\022\033\n\023team_set_context_id\030\002" +
+      " \001(\t\022\024\n\014payload_size\030\003 \001(\003\0222\n\016sent_times" +
+      "tamp\030\004 \001(\0132\032.google.protobuf.Timestampb\006" +
+      "proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -13349,7 +13607,7 @@ public final class FeedResponse {
     internal_static_agrirouter_feed_response_HeaderQueryResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_agrirouter_feed_response_HeaderQueryResponse_descriptor,
-        new java.lang.String[] { "QueryMetrics", "Page", "ChunkContexts", "Feed", });
+        new java.lang.String[] { "QueryMetrics", "Page", "ChunkContexts", "Feed", "PendingMessageIds", });
     internal_static_agrirouter_feed_response_HeaderQueryResponse_Header_descriptor =
       internal_static_agrirouter_feed_response_HeaderQueryResponse_descriptor.getNestedTypes().get(0);
     internal_static_agrirouter_feed_response_HeaderQueryResponse_Header_fieldAccessorTable = new
