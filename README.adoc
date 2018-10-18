@@ -63,7 +63,7 @@ After adding the snapshot repository feel free to add the Maven dependency:
 ```xml
 <dependency>
     <groupId>com.agrirouter.proto</groupId>
-    <artifactId>definitions</artifactId>
+    <artifactId>agrirouter-api-protobuf-definitions</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <classifier>jdk10</classifier>
 </dependency>
@@ -78,7 +78,7 @@ After adding the snapshot repository feel free to add the following Maven depend
 ```xml
 <dependency>
     <groupId>com.agrirouter.proto</groupId>
-    <artifactId>definitions</artifactId>
+    <artifactId>agrirouter-api-protobuf-definitions</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <classifier>jdk8</classifier>
 </dependency>
@@ -91,7 +91,7 @@ After adding the snapshot repository feel free to add the following Maven depend
 ```xml
 <dependency>
     <groupId>com.agrirouter.proto</groupId>
-    <artifactId>definitions</artifactId>
+    <artifactId>agrirouter-api-protobuf-definitions</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <classifier>jdk9</classifier>
 </dependency>
@@ -104,7 +104,7 @@ After adding the snapshot repository feel free to add the following Maven depend
 ```xml
 <dependency>
     <groupId>com.agrirouter.proto</groupId>
-    <artifactId>definitions</artifactId>
+    <artifactId>agrirouter-api-protobuf-definitions</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <classifier>jdk10</classifier>
 </dependency>
