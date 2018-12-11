@@ -20,7 +20,7 @@ message ListEndpointsResponse {
     string endpoint_name = 2;                 // Text name of the endpoint
     string endpoint_type = 3;                 // The type of end point IE: Application, Paired Account, Virtual CU, etc
     string status = 4;                        // Specifies if the endpoint is active or inactive
-    repeated MessageType messageTypes = 5;    // Details of the message types as detailed above
+    repeated MessageType message_types = 5;   // Details of the message types as detailed above
     string external_id = 6;                   // External id of the endpoint
   }
 

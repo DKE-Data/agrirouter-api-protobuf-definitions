@@ -2,7 +2,7 @@ syntax = "proto3";
 package agrirouter.request.payload.endpoint;
 
 message CapabilitySpecification {
-    enum Direction{                             // Specifies which way the messages are to flow for the capabilities when sending the message this shoudl be aligned with the application certification
+    enum Direction {                            // Specifies which way the messages are to flow for the capabilities when sending the message this shoudl be aligned with the application certification
         SEND = 0;
         RECEIVE = 1;
         SEND_RECEIVE = 2;
