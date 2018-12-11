@@ -11,6 +11,7 @@ after_success:
 - "./cd/deploy.sh"
 language: java
 jdk:
+- oraclejdk7
 - openjdk8
 - openjdk9
 - openjdk10
