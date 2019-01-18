@@ -34,7 +34,7 @@ message HeaderQueryResponse {
     repeated Header headers = 3;                                          // Message header information for messages of the sender_id in combination with receiver_id based on the queried request
   }
 
-  QueryMetrics queryMetrics = 1;                                          // Refer to Statistics
+  QueryMetrics query_metrics = 1;                                         // Refer to Statistics
   Page page = 2;                                                          // Refer to Paging
   repeated agrirouter.commons.ChunkComponent chunk_contexts = 3;          // Refer to agrirouter.commons.ChunkComponent
   repeated Feed feed = 4;                                                 // Refer to Feed
@@ -53,7 +53,6 @@ message MessageQueryResponse {
     string sender_id = 8;                                                 // Sender for the group of messages
     google.protobuf.Timestamp created_at = 9;                             // The time at which the message was inserted into the endpoints feed within the agrirouter
     string message_id = 10;                                               // Internal AgriRouter message ID representing this message and its payload
-
   }
 
   message FeedMessage {
@@ -61,7 +60,7 @@ message MessageQueryResponse {
     google.protobuf.Any content = 2;                                      // The actual payload content to be decoded
   }
 
-  QueryMetrics queryMetrics = 1;                                          // Refer to Statistics
+  QueryMetrics query_metrics = 1;                                         // Refer to Statistics
   Page page = 2;                                                          // Page number of total pages to be delievered for initial query
   repeated FeedMessage messages = 3;                                      // Collection of messages allocated to this page
 }
@@ -74,7 +73,7 @@ message FailedMessageQueryResponse {
     google.protobuf.Timestamp sent_timestamp = 4;                         // The timestamp in UTC that the sender has sent this message
   }
 
-  QueryMetrics queryMetrics = 1;                                          // Refer to Statistics
+  QueryMetrics query_metrics = 1;                                         // Refer to Statistics
   Page page = 2;                                                          // Refer to Paging
   Header header = 3;                                                      // Message Header Information for identification purposes
   repeated agrirouter.commons.Message reasons = 4;                        // Message information related to the failed query

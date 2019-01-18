@@ -3,8 +3,8 @@ package agrirouter.feed.request;
 import "google/protobuf/timestamp.proto";
 
 message ValidityPeriod {
-  google.protobuf.Timestamp sentFrom = 1;       // From date for the query should be UTC
-  google.protobuf.Timestamp sentTo = 2;         // To date for the query should be UTC
+  google.protobuf.Timestamp sent_from = 1;      // From date for the query should be UTC
+  google.protobuf.Timestamp sent_to = 2;        // To date for the query should be UTC
 }
 
 message MessageQuery {
