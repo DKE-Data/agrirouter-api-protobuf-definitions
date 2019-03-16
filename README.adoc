@@ -75,6 +75,7 @@ Currently we are supporting JDK 8, JDK 9 and JDK 10 by using classifiers.
 
 After adding the snapshot repository feel free to add the following Maven dependency:
 
+
 ```xml
 <dependency>
     <groupId>com.agrirouter.proto</groupId>
