@@ -20,6 +20,7 @@ message ResponseEnvelope {
     ACK_FOR_FEED_FAILED_MESSAGE = 8;                // Response for failed requests to feed queries
     ENDPOINTS_LISTING = 10;                         // Used for a response which contains the endpoint listing query results
     CLOUD_REGISTRATIONS = 11;                       // Used for the response body type for agrirouter.cloud.registration.OnboardingResponse
+    PUSH_NOTIFICATION = 12;                         // Used for push notification messages
   }
 
   int32 response_code = 1;                          // HTTP Response Codes will be used here (200, 400, 201, etc)
