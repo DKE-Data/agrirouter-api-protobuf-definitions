@@ -97,6 +97,23 @@ public final class Capabilities {
      */
     com.google.protobuf.ByteString
         getAppCertificationVersionIdBytes();
+
+    /**
+     * <pre>
+     * Enables/disables push notifications for the endpoint
+     * </pre>
+     *
+     * <code>.agrirouter.request.payload.endpoint.CapabilitySpecification.PushNotification enable_push_notifications = 4;</code>
+     */
+    int getEnablePushNotificationsValue();
+    /**
+     * <pre>
+     * Enables/disables push notifications for the endpoint
+     * </pre>
+     *
+     * <code>.agrirouter.request.payload.endpoint.CapabilitySpecification.PushNotification enable_push_notifications = 4;</code>
+     */
+    agrirouter.request.payload.endpoint.Capabilities.CapabilitySpecification.PushNotification getEnablePushNotifications();
   }
   /**
    * Protobuf type {@code agrirouter.request.payload.endpoint.CapabilitySpecification}
@@ -114,6 +131,7 @@ public final class Capabilities {
       capabilities_ = java.util.Collections.emptyList();
       appCertificationId_ = "";
       appCertificationVersionId_ = "";
+      enablePushNotifications_ = 0;
     }
 
     @java.lang.Override
@@ -166,6 +184,12 @@ public final class Capabilities {
               java.lang.String s = input.readStringRequireUtf8();
 
               appCertificationVersionId_ = s;
+              break;
+            }
+            case 32: {
+              int rawValue = input.readEnum();
+
+              enablePushNotifications_ = rawValue;
               break;
             }
           }
@@ -304,6 +328,113 @@ public final class Capabilities {
       }
 
       // @@protoc_insertion_point(enum_scope:agrirouter.request.payload.endpoint.CapabilitySpecification.Direction)
+    }
+
+    /**
+     * Protobuf enum {@code agrirouter.request.payload.endpoint.CapabilitySpecification.PushNotification}
+     */
+    public enum PushNotification
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>DISABLED = 0;</code>
+       */
+      DISABLED(0),
+      /**
+       * <code>ENABLED = 1;</code>
+       */
+      ENABLED(1),
+      /**
+       * <code>ENABLED_HIGH_FREQUENCY = 2;</code>
+       */
+      ENABLED_HIGH_FREQUENCY(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>DISABLED = 0;</code>
+       */
+      public static final int DISABLED_VALUE = 0;
+      /**
+       * <code>ENABLED = 1;</code>
+       */
+      public static final int ENABLED_VALUE = 1;
+      /**
+       * <code>ENABLED_HIGH_FREQUENCY = 2;</code>
+       */
+      public static final int ENABLED_HIGH_FREQUENCY_VALUE = 2;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static PushNotification valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static PushNotification forNumber(int value) {
+        switch (value) {
+          case 0: return DISABLED;
+          case 1: return ENABLED;
+          case 2: return ENABLED_HIGH_FREQUENCY;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<PushNotification>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          PushNotification> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<PushNotification>() {
+              public PushNotification findValueByNumber(int number) {
+                return PushNotification.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return agrirouter.request.payload.endpoint.Capabilities.CapabilitySpecification.getDescriptor().getEnumTypes().get(1);
+      }
+
+      private static final PushNotification[] VALUES = values();
+
+      public static PushNotification valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private PushNotification(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:agrirouter.request.payload.endpoint.CapabilitySpecification.PushNotification)
     }
 
     public interface CapabilityOrBuilder extends
@@ -1135,6 +1266,30 @@ public final class Capabilities {
       }
     }
 
+    public static final int ENABLE_PUSH_NOTIFICATIONS_FIELD_NUMBER = 4;
+    private int enablePushNotifications_;
+    /**
+     * <pre>
+     * Enables/disables push notifications for the endpoint
+     * </pre>
+     *
+     * <code>.agrirouter.request.payload.endpoint.CapabilitySpecification.PushNotification enable_push_notifications = 4;</code>
+     */
+    public int getEnablePushNotificationsValue() {
+      return enablePushNotifications_;
+    }
+    /**
+     * <pre>
+     * Enables/disables push notifications for the endpoint
+     * </pre>
+     *
+     * <code>.agrirouter.request.payload.endpoint.CapabilitySpecification.PushNotification enable_push_notifications = 4;</code>
+     */
+    public agrirouter.request.payload.endpoint.Capabilities.CapabilitySpecification.PushNotification getEnablePushNotifications() {
+      agrirouter.request.payload.endpoint.Capabilities.CapabilitySpecification.PushNotification result = agrirouter.request.payload.endpoint.Capabilities.CapabilitySpecification.PushNotification.valueOf(enablePushNotifications_);
+      return result == null ? agrirouter.request.payload.endpoint.Capabilities.CapabilitySpecification.PushNotification.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -1156,6 +1311,9 @@ public final class Capabilities {
       if (!getAppCertificationVersionIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, appCertificationVersionId_);
       }
+      if (enablePushNotifications_ != agrirouter.request.payload.endpoint.Capabilities.CapabilitySpecification.PushNotification.DISABLED.getNumber()) {
+        output.writeEnum(4, enablePushNotifications_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1173,6 +1331,10 @@ public final class Capabilities {
       }
       if (!getAppCertificationVersionIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, appCertificationVersionId_);
+      }
+      if (enablePushNotifications_ != agrirouter.request.payload.endpoint.Capabilities.CapabilitySpecification.PushNotification.DISABLED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(4, enablePushNotifications_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1196,6 +1358,7 @@ public final class Capabilities {
           .equals(other.getAppCertificationId());
       result = result && getAppCertificationVersionId()
           .equals(other.getAppCertificationVersionId());
+      result = result && enablePushNotifications_ == other.enablePushNotifications_;
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -1215,6 +1378,8 @@ public final class Capabilities {
       hash = (53 * hash) + getAppCertificationId().hashCode();
       hash = (37 * hash) + APP_CERTIFICATION_VERSION_ID_FIELD_NUMBER;
       hash = (53 * hash) + getAppCertificationVersionId().hashCode();
+      hash = (37 * hash) + ENABLE_PUSH_NOTIFICATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + enablePushNotifications_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1355,6 +1520,8 @@ public final class Capabilities {
 
         appCertificationVersionId_ = "";
 
+        enablePushNotifications_ = 0;
+
         return this;
       }
 
@@ -1390,6 +1557,7 @@ public final class Capabilities {
         }
         result.appCertificationId_ = appCertificationId_;
         result.appCertificationVersionId_ = appCertificationVersionId_;
+        result.enablePushNotifications_ = enablePushNotifications_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1465,6 +1633,9 @@ public final class Capabilities {
         if (!other.getAppCertificationVersionId().isEmpty()) {
           appCertificationVersionId_ = other.appCertificationVersionId_;
           onChanged();
+        }
+        if (other.enablePushNotifications_ != 0) {
+          setEnablePushNotificationsValue(other.getEnablePushNotificationsValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1983,6 +2154,70 @@ public final class Capabilities {
         onChanged();
         return this;
       }
+
+      private int enablePushNotifications_ = 0;
+      /**
+       * <pre>
+       * Enables/disables push notifications for the endpoint
+       * </pre>
+       *
+       * <code>.agrirouter.request.payload.endpoint.CapabilitySpecification.PushNotification enable_push_notifications = 4;</code>
+       */
+      public int getEnablePushNotificationsValue() {
+        return enablePushNotifications_;
+      }
+      /**
+       * <pre>
+       * Enables/disables push notifications for the endpoint
+       * </pre>
+       *
+       * <code>.agrirouter.request.payload.endpoint.CapabilitySpecification.PushNotification enable_push_notifications = 4;</code>
+       */
+      public Builder setEnablePushNotificationsValue(int value) {
+        enablePushNotifications_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Enables/disables push notifications for the endpoint
+       * </pre>
+       *
+       * <code>.agrirouter.request.payload.endpoint.CapabilitySpecification.PushNotification enable_push_notifications = 4;</code>
+       */
+      public agrirouter.request.payload.endpoint.Capabilities.CapabilitySpecification.PushNotification getEnablePushNotifications() {
+        agrirouter.request.payload.endpoint.Capabilities.CapabilitySpecification.PushNotification result = agrirouter.request.payload.endpoint.Capabilities.CapabilitySpecification.PushNotification.valueOf(enablePushNotifications_);
+        return result == null ? agrirouter.request.payload.endpoint.Capabilities.CapabilitySpecification.PushNotification.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * Enables/disables push notifications for the endpoint
+       * </pre>
+       *
+       * <code>.agrirouter.request.payload.endpoint.CapabilitySpecification.PushNotification enable_push_notifications = 4;</code>
+       */
+      public Builder setEnablePushNotifications(agrirouter.request.payload.endpoint.Capabilities.CapabilitySpecification.PushNotification value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        enablePushNotifications_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Enables/disables push notifications for the endpoint
+       * </pre>
+       *
+       * <code>.agrirouter.request.payload.endpoint.CapabilitySpecification.PushNotification enable_push_notifications = 4;</code>
+       */
+      public Builder clearEnablePushNotifications() {
+        
+        enablePushNotifications_ = 0;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
@@ -2053,17 +2288,21 @@ public final class Capabilities {
     java.lang.String[] descriptorData = {
       "\n5messaging/request/payload/endpoint/cap" +
       "abilities.proto\022#agrirouter.request.payl" +
-      "oad.endpoint\"\374\002\n\027CapabilitySpecification" +
+      "oad.endpoint\"\271\004\n\027CapabilitySpecification" +
       "\022]\n\014capabilities\030\001 \003(\0132G.agrirouter.requ" +
       "est.payload.endpoint.CapabilitySpecifica" +
       "tion.Capability\022\034\n\024app_certification_id\030" +
       "\002 \001(\t\022$\n\034app_certification_version_id\030\003 " +
-      "\001(\t\032\207\001\n\nCapability\022\036\n\026technical_message_" +
-      "type\030\001 \001(\t\022Y\n\tdirection\030\002 \001(\0162F.agrirout" +
-      "er.request.payload.endpoint.CapabilitySp" +
-      "ecification.Direction\"4\n\tDirection\022\010\n\004SE" +
-      "ND\020\000\022\013\n\007RECEIVE\020\001\022\020\n\014SEND_RECEIVE\020\002b\006pro" +
-      "to3"
+      "\001(\t\022p\n\031enable_push_notifications\030\004 \001(\0162M" +
+      ".agrirouter.request.payload.endpoint.Cap" +
+      "abilitySpecification.PushNotification\032\207\001" +
+      "\n\nCapability\022\036\n\026technical_message_type\030\001" +
+      " \001(\t\022Y\n\tdirection\030\002 \001(\0162F.agrirouter.req" +
+      "uest.payload.endpoint.CapabilitySpecific" +
+      "ation.Direction\"4\n\tDirection\022\010\n\004SEND\020\000\022\013" +
+      "\n\007RECEIVE\020\001\022\020\n\014SEND_RECEIVE\020\002\"I\n\020PushNot" +
+      "ification\022\014\n\010DISABLED\020\000\022\013\n\007ENABLED\020\001\022\032\n\026" +
+      "ENABLED_HIGH_FREQUENCY\020\002b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2082,7 +2321,7 @@ public final class Capabilities {
     internal_static_agrirouter_request_payload_endpoint_CapabilitySpecification_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_agrirouter_request_payload_endpoint_CapabilitySpecification_descriptor,
-        new java.lang.String[] { "Capabilities", "AppCertificationId", "AppCertificationVersionId", });
+        new java.lang.String[] { "Capabilities", "AppCertificationId", "AppCertificationVersionId", "EnablePushNotifications", });
     internal_static_agrirouter_request_payload_endpoint_CapabilitySpecification_Capability_descriptor =
       internal_static_agrirouter_request_payload_endpoint_CapabilitySpecification_descriptor.getNestedTypes().get(0);
     internal_static_agrirouter_request_payload_endpoint_CapabilitySpecification_Capability_fieldAccessorTable = new
