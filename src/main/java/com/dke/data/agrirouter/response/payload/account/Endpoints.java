@@ -1050,7 +1050,7 @@ public final class Endpoints {
        * Details of the message types as detailed above
        * </pre>
        *
-       * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType messageTypes = 5;</code>
+       * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType message_types = 5;</code>
        */
       java.util.List<agrirouter.response.payload.account.Endpoints.ListEndpointsResponse.MessageType> 
           getMessageTypesList();
@@ -1059,7 +1059,7 @@ public final class Endpoints {
        * Details of the message types as detailed above
        * </pre>
        *
-       * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType messageTypes = 5;</code>
+       * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType message_types = 5;</code>
        */
       agrirouter.response.payload.account.Endpoints.ListEndpointsResponse.MessageType getMessageTypes(int index);
       /**
@@ -1067,7 +1067,7 @@ public final class Endpoints {
        * Details of the message types as detailed above
        * </pre>
        *
-       * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType messageTypes = 5;</code>
+       * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType message_types = 5;</code>
        */
       int getMessageTypesCount();
       /**
@@ -1075,7 +1075,7 @@ public final class Endpoints {
        * Details of the message types as detailed above
        * </pre>
        *
-       * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType messageTypes = 5;</code>
+       * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType message_types = 5;</code>
        */
       java.util.List<? extends agrirouter.response.payload.account.Endpoints.ListEndpointsResponse.MessageTypeOrBuilder> 
           getMessageTypesOrBuilderList();
@@ -1084,7 +1084,7 @@ public final class Endpoints {
        * Details of the message types as detailed above
        * </pre>
        *
-       * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType messageTypes = 5;</code>
+       * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType message_types = 5;</code>
        */
       agrirouter.response.payload.account.Endpoints.ListEndpointsResponse.MessageTypeOrBuilder getMessageTypesOrBuilder(
           int index);
@@ -1394,14 +1394,14 @@ public final class Endpoints {
         }
       }
 
-      public static final int MESSAGETYPES_FIELD_NUMBER = 5;
+      public static final int MESSAGE_TYPES_FIELD_NUMBER = 5;
       private java.util.List<agrirouter.response.payload.account.Endpoints.ListEndpointsResponse.MessageType> messageTypes_;
       /**
        * <pre>
        * Details of the message types as detailed above
        * </pre>
        *
-       * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType messageTypes = 5;</code>
+       * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType message_types = 5;</code>
        */
       public java.util.List<agrirouter.response.payload.account.Endpoints.ListEndpointsResponse.MessageType> getMessageTypesList() {
         return messageTypes_;
@@ -1411,7 +1411,7 @@ public final class Endpoints {
        * Details of the message types as detailed above
        * </pre>
        *
-       * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType messageTypes = 5;</code>
+       * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType message_types = 5;</code>
        */
       public java.util.List<? extends agrirouter.response.payload.account.Endpoints.ListEndpointsResponse.MessageTypeOrBuilder> 
           getMessageTypesOrBuilderList() {
@@ -1422,7 +1422,7 @@ public final class Endpoints {
        * Details of the message types as detailed above
        * </pre>
        *
-       * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType messageTypes = 5;</code>
+       * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType message_types = 5;</code>
        */
       public int getMessageTypesCount() {
         return messageTypes_.size();
@@ -1432,7 +1432,7 @@ public final class Endpoints {
        * Details of the message types as detailed above
        * </pre>
        *
-       * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType messageTypes = 5;</code>
+       * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType message_types = 5;</code>
        */
       public agrirouter.response.payload.account.Endpoints.ListEndpointsResponse.MessageType getMessageTypes(int index) {
         return messageTypes_.get(index);
@@ -1442,7 +1442,7 @@ public final class Endpoints {
        * Details of the message types as detailed above
        * </pre>
        *
-       * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType messageTypes = 5;</code>
+       * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType message_types = 5;</code>
        */
       public agrirouter.response.payload.account.Endpoints.ListEndpointsResponse.MessageTypeOrBuilder getMessageTypesOrBuilder(
           int index) {
@@ -1596,7 +1596,7 @@ public final class Endpoints {
         hash = (37 * hash) + STATUS_FIELD_NUMBER;
         hash = (53 * hash) + getStatus().hashCode();
         if (getMessageTypesCount() > 0) {
-          hash = (37 * hash) + MESSAGETYPES_FIELD_NUMBER;
+          hash = (37 * hash) + MESSAGE_TYPES_FIELD_NUMBER;
           hash = (53 * hash) + getMessageTypesList().hashCode();
         }
         hash = (37 * hash) + EXTERNAL_ID_FIELD_NUMBER;
@@ -2274,7 +2274,7 @@ public final class Endpoints {
          * Details of the message types as detailed above
          * </pre>
          *
-         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType messageTypes = 5;</code>
+         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType message_types = 5;</code>
          */
         public java.util.List<agrirouter.response.payload.account.Endpoints.ListEndpointsResponse.MessageType> getMessageTypesList() {
           if (messageTypesBuilder_ == null) {
@@ -2288,7 +2288,7 @@ public final class Endpoints {
          * Details of the message types as detailed above
          * </pre>
          *
-         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType messageTypes = 5;</code>
+         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType message_types = 5;</code>
          */
         public int getMessageTypesCount() {
           if (messageTypesBuilder_ == null) {
@@ -2302,7 +2302,7 @@ public final class Endpoints {
          * Details of the message types as detailed above
          * </pre>
          *
-         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType messageTypes = 5;</code>
+         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType message_types = 5;</code>
          */
         public agrirouter.response.payload.account.Endpoints.ListEndpointsResponse.MessageType getMessageTypes(int index) {
           if (messageTypesBuilder_ == null) {
@@ -2316,7 +2316,7 @@ public final class Endpoints {
          * Details of the message types as detailed above
          * </pre>
          *
-         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType messageTypes = 5;</code>
+         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType message_types = 5;</code>
          */
         public Builder setMessageTypes(
             int index, agrirouter.response.payload.account.Endpoints.ListEndpointsResponse.MessageType value) {
@@ -2337,7 +2337,7 @@ public final class Endpoints {
          * Details of the message types as detailed above
          * </pre>
          *
-         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType messageTypes = 5;</code>
+         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType message_types = 5;</code>
          */
         public Builder setMessageTypes(
             int index, agrirouter.response.payload.account.Endpoints.ListEndpointsResponse.MessageType.Builder builderForValue) {
@@ -2355,7 +2355,7 @@ public final class Endpoints {
          * Details of the message types as detailed above
          * </pre>
          *
-         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType messageTypes = 5;</code>
+         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType message_types = 5;</code>
          */
         public Builder addMessageTypes(agrirouter.response.payload.account.Endpoints.ListEndpointsResponse.MessageType value) {
           if (messageTypesBuilder_ == null) {
@@ -2375,7 +2375,7 @@ public final class Endpoints {
          * Details of the message types as detailed above
          * </pre>
          *
-         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType messageTypes = 5;</code>
+         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType message_types = 5;</code>
          */
         public Builder addMessageTypes(
             int index, agrirouter.response.payload.account.Endpoints.ListEndpointsResponse.MessageType value) {
@@ -2396,7 +2396,7 @@ public final class Endpoints {
          * Details of the message types as detailed above
          * </pre>
          *
-         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType messageTypes = 5;</code>
+         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType message_types = 5;</code>
          */
         public Builder addMessageTypes(
             agrirouter.response.payload.account.Endpoints.ListEndpointsResponse.MessageType.Builder builderForValue) {
@@ -2414,7 +2414,7 @@ public final class Endpoints {
          * Details of the message types as detailed above
          * </pre>
          *
-         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType messageTypes = 5;</code>
+         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType message_types = 5;</code>
          */
         public Builder addMessageTypes(
             int index, agrirouter.response.payload.account.Endpoints.ListEndpointsResponse.MessageType.Builder builderForValue) {
@@ -2432,7 +2432,7 @@ public final class Endpoints {
          * Details of the message types as detailed above
          * </pre>
          *
-         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType messageTypes = 5;</code>
+         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType message_types = 5;</code>
          */
         public Builder addAllMessageTypes(
             java.lang.Iterable<? extends agrirouter.response.payload.account.Endpoints.ListEndpointsResponse.MessageType> values) {
@@ -2451,7 +2451,7 @@ public final class Endpoints {
          * Details of the message types as detailed above
          * </pre>
          *
-         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType messageTypes = 5;</code>
+         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType message_types = 5;</code>
          */
         public Builder clearMessageTypes() {
           if (messageTypesBuilder_ == null) {
@@ -2468,7 +2468,7 @@ public final class Endpoints {
          * Details of the message types as detailed above
          * </pre>
          *
-         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType messageTypes = 5;</code>
+         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType message_types = 5;</code>
          */
         public Builder removeMessageTypes(int index) {
           if (messageTypesBuilder_ == null) {
@@ -2485,7 +2485,7 @@ public final class Endpoints {
          * Details of the message types as detailed above
          * </pre>
          *
-         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType messageTypes = 5;</code>
+         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType message_types = 5;</code>
          */
         public agrirouter.response.payload.account.Endpoints.ListEndpointsResponse.MessageType.Builder getMessageTypesBuilder(
             int index) {
@@ -2496,7 +2496,7 @@ public final class Endpoints {
          * Details of the message types as detailed above
          * </pre>
          *
-         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType messageTypes = 5;</code>
+         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType message_types = 5;</code>
          */
         public agrirouter.response.payload.account.Endpoints.ListEndpointsResponse.MessageTypeOrBuilder getMessageTypesOrBuilder(
             int index) {
@@ -2510,7 +2510,7 @@ public final class Endpoints {
          * Details of the message types as detailed above
          * </pre>
          *
-         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType messageTypes = 5;</code>
+         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType message_types = 5;</code>
          */
         public java.util.List<? extends agrirouter.response.payload.account.Endpoints.ListEndpointsResponse.MessageTypeOrBuilder> 
              getMessageTypesOrBuilderList() {
@@ -2525,7 +2525,7 @@ public final class Endpoints {
          * Details of the message types as detailed above
          * </pre>
          *
-         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType messageTypes = 5;</code>
+         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType message_types = 5;</code>
          */
         public agrirouter.response.payload.account.Endpoints.ListEndpointsResponse.MessageType.Builder addMessageTypesBuilder() {
           return getMessageTypesFieldBuilder().addBuilder(
@@ -2536,7 +2536,7 @@ public final class Endpoints {
          * Details of the message types as detailed above
          * </pre>
          *
-         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType messageTypes = 5;</code>
+         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType message_types = 5;</code>
          */
         public agrirouter.response.payload.account.Endpoints.ListEndpointsResponse.MessageType.Builder addMessageTypesBuilder(
             int index) {
@@ -2548,7 +2548,7 @@ public final class Endpoints {
          * Details of the message types as detailed above
          * </pre>
          *
-         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType messageTypes = 5;</code>
+         * <code>repeated .agrirouter.response.payload.account.ListEndpointsResponse.MessageType message_types = 5;</code>
          */
         public java.util.List<agrirouter.response.payload.account.Endpoints.ListEndpointsResponse.MessageType.Builder> 
              getMessageTypesBuilderList() {
@@ -3470,20 +3470,20 @@ public final class Endpoints {
     java.lang.String[] descriptorData = {
       "\n2messaging/response/payload/account/end" +
       "points.proto\022#agrirouter.response.payloa" +
-      "d.account\"\201\004\n\025ListEndpointsResponse\022V\n\te" +
+      "d.account\"\202\004\n\025ListEndpointsResponse\022V\n\te" +
       "ndpoints\030\001 \003(\0132C.agrirouter.response.pay" +
       "load.account.ListEndpointsResponse.Endpo" +
       "int\032\206\001\n\013MessageType\022\036\n\026technical_message" +
       "_type\030\001 \001(\t\022W\n\tdirection\030\002 \001(\0162D.agrirou" +
       "ter.response.payload.account.ListEndpoin" +
-      "tsResponse.Direction\032\320\001\n\010Endpoint\022\023\n\013end" +
+      "tsResponse.Direction\032\321\001\n\010Endpoint\022\023\n\013end" +
       "point_id\030\001 \001(\t\022\025\n\rendpoint_name\030\002 \001(\t\022\025\n" +
-      "\rendpoint_type\030\003 \001(\t\022\016\n\006status\030\004 \001(\t\022\\\n\014" +
-      "messageTypes\030\005 \003(\0132F.agrirouter.response" +
-      ".payload.account.ListEndpointsResponse.M" +
-      "essageType\022\023\n\013external_id\030\006 \001(\t\"4\n\tDirec" +
-      "tion\022\010\n\004SEND\020\000\022\013\n\007RECEIVE\020\001\022\020\n\014SEND_RECE" +
-      "IVE\020\002b\006proto3"
+      "\rendpoint_type\030\003 \001(\t\022\016\n\006status\030\004 \001(\t\022]\n\r" +
+      "message_types\030\005 \003(\0132F.agrirouter.respons" +
+      "e.payload.account.ListEndpointsResponse." +
+      "MessageType\022\023\n\013external_id\030\006 \001(\t\"4\n\tDire" +
+      "ction\022\010\n\004SEND\020\000\022\013\n\007RECEIVE\020\001\022\020\n\014SEND_REC" +
+      "EIVE\020\002b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
