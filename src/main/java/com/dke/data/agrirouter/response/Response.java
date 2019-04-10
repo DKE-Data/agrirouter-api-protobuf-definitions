@@ -20,7 +20,7 @@ public final class Response {
 
     /**
      * <pre>
-     * HTTP Response Codes will be used here (200, 400, 201, etc)
+     * HTTP Response Codes will be used here (200, 400, 201, etc) For push notifications the value would be 0 as it is not a response to anything
      * </pre>
      *
      * <code>int32 response_code = 1;</code>
@@ -64,7 +64,7 @@ public final class Response {
 
     /**
      * <pre>
-     * If this is in reference to a message received by the agrirouter the generate agrirouter ID would be here in reference
+     * If this is in reference to a message received by the agrirouter the generated agrirouter ID would be here in reference
      * </pre>
      *
      * <code>string message_id = 4;</code>
@@ -72,7 +72,7 @@ public final class Response {
     java.lang.String getMessageId();
     /**
      * <pre>
-     * If this is in reference to a message received by the agrirouter the generate agrirouter ID would be here in reference
+     * If this is in reference to a message received by the agrirouter the generated agrirouter ID would be here in reference
      * </pre>
      *
      * <code>string message_id = 4;</code>
@@ -288,6 +288,14 @@ public final class Response {
        * <code>CLOUD_REGISTRATIONS = 11;</code>
        */
       CLOUD_REGISTRATIONS(11),
+      /**
+       * <pre>
+       * Used for push notification messages
+       * </pre>
+       *
+       * <code>PUSH_NOTIFICATION = 12;</code>
+       */
+      PUSH_NOTIFICATION(12),
       UNRECOGNIZED(-1),
       ;
 
@@ -359,6 +367,14 @@ public final class Response {
        * <code>CLOUD_REGISTRATIONS = 11;</code>
        */
       public static final int CLOUD_REGISTRATIONS_VALUE = 11;
+      /**
+       * <pre>
+       * Used for push notification messages
+       * </pre>
+       *
+       * <code>PUSH_NOTIFICATION = 12;</code>
+       */
+      public static final int PUSH_NOTIFICATION_VALUE = 12;
 
 
       public final int getNumber() {
@@ -388,6 +404,7 @@ public final class Response {
           case 8: return ACK_FOR_FEED_FAILED_MESSAGE;
           case 10: return ENDPOINTS_LISTING;
           case 11: return CLOUD_REGISTRATIONS;
+          case 12: return PUSH_NOTIFICATION;
           default: return null;
         }
       }
@@ -444,7 +461,7 @@ public final class Response {
     private int responseCode_;
     /**
      * <pre>
-     * HTTP Response Codes will be used here (200, 400, 201, etc)
+     * HTTP Response Codes will be used here (200, 400, 201, etc) For push notifications the value would be 0 as it is not a response to anything
      * </pre>
      *
      * <code>int32 response_code = 1;</code>
@@ -523,7 +540,7 @@ public final class Response {
     private volatile java.lang.Object messageId_;
     /**
      * <pre>
-     * If this is in reference to a message received by the agrirouter the generate agrirouter ID would be here in reference
+     * If this is in reference to a message received by the agrirouter the generated agrirouter ID would be here in reference
      * </pre>
      *
      * <code>string message_id = 4;</code>
@@ -542,7 +559,7 @@ public final class Response {
     }
     /**
      * <pre>
-     * If this is in reference to a message received by the agrirouter the generate agrirouter ID would be here in reference
+     * If this is in reference to a message received by the agrirouter the generated agrirouter ID would be here in reference
      * </pre>
      *
      * <code>string message_id = 4;</code>
@@ -960,7 +977,7 @@ public final class Response {
       private int responseCode_ ;
       /**
        * <pre>
-       * HTTP Response Codes will be used here (200, 400, 201, etc)
+       * HTTP Response Codes will be used here (200, 400, 201, etc) For push notifications the value would be 0 as it is not a response to anything
        * </pre>
        *
        * <code>int32 response_code = 1;</code>
@@ -970,7 +987,7 @@ public final class Response {
       }
       /**
        * <pre>
-       * HTTP Response Codes will be used here (200, 400, 201, etc)
+       * HTTP Response Codes will be used here (200, 400, 201, etc) For push notifications the value would be 0 as it is not a response to anything
        * </pre>
        *
        * <code>int32 response_code = 1;</code>
@@ -983,7 +1000,7 @@ public final class Response {
       }
       /**
        * <pre>
-       * HTTP Response Codes will be used here (200, 400, 201, etc)
+       * HTTP Response Codes will be used here (200, 400, 201, etc) For push notifications the value would be 0 as it is not a response to anything
        * </pre>
        *
        * <code>int32 response_code = 1;</code>
@@ -1151,7 +1168,7 @@ public final class Response {
       private java.lang.Object messageId_ = "";
       /**
        * <pre>
-       * If this is in reference to a message received by the agrirouter the generate agrirouter ID would be here in reference
+       * If this is in reference to a message received by the agrirouter the generated agrirouter ID would be here in reference
        * </pre>
        *
        * <code>string message_id = 4;</code>
@@ -1170,7 +1187,7 @@ public final class Response {
       }
       /**
        * <pre>
-       * If this is in reference to a message received by the agrirouter the generate agrirouter ID would be here in reference
+       * If this is in reference to a message received by the agrirouter the generated agrirouter ID would be here in reference
        * </pre>
        *
        * <code>string message_id = 4;</code>
@@ -1190,7 +1207,7 @@ public final class Response {
       }
       /**
        * <pre>
-       * If this is in reference to a message received by the agrirouter the generate agrirouter ID would be here in reference
+       * If this is in reference to a message received by the agrirouter the generated agrirouter ID would be here in reference
        * </pre>
        *
        * <code>string message_id = 4;</code>
@@ -1207,7 +1224,7 @@ public final class Response {
       }
       /**
        * <pre>
-       * If this is in reference to a message received by the agrirouter the generate agrirouter ID would be here in reference
+       * If this is in reference to a message received by the agrirouter the generated agrirouter ID would be here in reference
        * </pre>
        *
        * <code>string message_id = 4;</code>
@@ -1220,7 +1237,7 @@ public final class Response {
       }
       /**
        * <pre>
-       * If this is in reference to a message received by the agrirouter the generate agrirouter ID would be here in reference
+       * If this is in reference to a message received by the agrirouter the generated agrirouter ID would be here in reference
        * </pre>
        *
        * <code>string message_id = 4;</code>
@@ -2041,20 +2058,21 @@ public final class Response {
     java.lang.String[] descriptorData = {
       "\n!messaging/response/response.proto\022\023agr" +
       "irouter.response\032\031google/protobuf/any.pr" +
-      "oto\032\037google/protobuf/timestamp.proto\"\264\003\n" +
+      "oto\032\037google/protobuf/timestamp.proto\"\313\003\n" +
       "\020ResponseEnvelope\022\025\n\rresponse_code\030\001 \001(\005" +
       "\022D\n\004type\030\002 \001(\01626.agrirouter.response.Res" +
       "ponseEnvelope.ResponseBodyType\022\036\n\026applic" +
       "ation_message_id\030\003 \001(\t\022\022\n\nmessage_id\030\004 \001" +
       "(\t\022-\n\ttimestamp\030\005 \001(\0132\032.google.protobuf." +
-      "Timestamp\"\337\001\n\020ResponseBodyType\022\014\n\010MESSAG" +
+      "Timestamp\"\366\001\n\020ResponseBodyType\022\014\n\010MESSAG" +
       "ES\020\000\022\007\n\003ACK\020\001\022\025\n\021ACK_WITH_MESSAGES\020\002\022\024\n\020" +
       "ACK_WITH_FAILURE\020\003\022\034\n\030ACK_FOR_FEED_HEADE" +
       "R_LIST\020\006\022\030\n\024ACK_FOR_FEED_MESSAGE\020\007\022\037\n\033AC" +
       "K_FOR_FEED_FAILED_MESSAGE\020\010\022\025\n\021ENDPOINTS" +
-      "_LISTING\020\n\022\027\n\023CLOUD_REGISTRATIONS\020\013\"?\n\026R" +
-      "esponsePayloadWrapper\022%\n\007details\030\001 \001(\0132\024" +
-      ".google.protobuf.Anyb\006proto3"
+      "_LISTING\020\n\022\027\n\023CLOUD_REGISTRATIONS\020\013\022\025\n\021P" +
+      "USH_NOTIFICATION\020\014\"?\n\026ResponsePayloadWra" +
+      "pper\022%\n\007details\030\001 \001(\0132\024.google.protobuf." +
+      "Anyb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
