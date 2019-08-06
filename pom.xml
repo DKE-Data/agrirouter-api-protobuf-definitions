@@ -166,6 +166,18 @@
             </build>
         </profile>
         <profile>
+            <id>jdk11</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+                <jdk>11</jdk>
+            </activation>
+            <properties>
+                <jdk.dependent.jar.classifier>jdk11</jdk.dependent.jar.classifier>
+                <maven.compiler.source>11</maven.compiler.source>
+                <maven.compiler.target>11</maven.compiler.target>
+            </properties>
+        </profile>
+        <profile>
             <id>jdk10</id>
             <activation>
                 <activeByDefault>false</activeByDefault>
