@@ -111,6 +111,19 @@ After adding the snapshot repository feel free to add the following Maven depend
 </dependency>
 ```
 
+==== JDK 11
+
+After adding the snapshot repository feel free to add the following Maven dependency:
+
+```xml
+<dependency>
+    <groupId>com.agrirouter.proto</groupId>
+    <artifactId>definitions</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <classifier>jdk11</classifier>
+</dependency>
+```
+
 === C++
 
 ==== How to install Protobuf C++ Compiler
