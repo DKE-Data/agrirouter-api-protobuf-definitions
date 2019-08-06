@@ -23,24 +23,24 @@ public final class CloudVirtualizedAppRegistration {
      * Collection of virtualized endpoint the external cloud is managing for the associated agrirouter account. At least one valid request is required
      * </pre>
      *
-     * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EnpointRegistrationDetails onboardingRequests = 1;</code>
+     * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EndpointRegistrationDetails onboarding_requests = 1;</code>
      */
-    java.util.List<agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails> 
+    java.util.List<agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails> 
         getOnboardingRequestsList();
     /**
      * <pre>
      * Collection of virtualized endpoint the external cloud is managing for the associated agrirouter account. At least one valid request is required
      * </pre>
      *
-     * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EnpointRegistrationDetails onboardingRequests = 1;</code>
+     * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EndpointRegistrationDetails onboarding_requests = 1;</code>
      */
-    agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails getOnboardingRequests(int index);
+    agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails getOnboardingRequests(int index);
     /**
      * <pre>
      * Collection of virtualized endpoint the external cloud is managing for the associated agrirouter account. At least one valid request is required
      * </pre>
      *
-     * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EnpointRegistrationDetails onboardingRequests = 1;</code>
+     * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EndpointRegistrationDetails onboarding_requests = 1;</code>
      */
     int getOnboardingRequestsCount();
     /**
@@ -48,18 +48,18 @@ public final class CloudVirtualizedAppRegistration {
      * Collection of virtualized endpoint the external cloud is managing for the associated agrirouter account. At least one valid request is required
      * </pre>
      *
-     * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EnpointRegistrationDetails onboardingRequests = 1;</code>
+     * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EndpointRegistrationDetails onboarding_requests = 1;</code>
      */
-    java.util.List<? extends agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetailsOrBuilder> 
+    java.util.List<? extends agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetailsOrBuilder> 
         getOnboardingRequestsOrBuilderList();
     /**
      * <pre>
      * Collection of virtualized endpoint the external cloud is managing for the associated agrirouter account. At least one valid request is required
      * </pre>
      *
-     * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EnpointRegistrationDetails onboardingRequests = 1;</code>
+     * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EndpointRegistrationDetails onboarding_requests = 1;</code>
      */
-    agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetailsOrBuilder getOnboardingRequestsOrBuilder(
+    agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetailsOrBuilder getOnboardingRequestsOrBuilder(
         int index);
   }
   /**
@@ -111,11 +111,11 @@ public final class CloudVirtualizedAppRegistration {
             }
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                onboardingRequests_ = new java.util.ArrayList<agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails>();
+                onboardingRequests_ = new java.util.ArrayList<agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails>();
                 mutable_bitField0_ |= 0x00000001;
               }
               onboardingRequests_.add(
-                  input.readMessage(agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails.parser(), extensionRegistry));
+                  input.readMessage(agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails.parser(), extensionRegistry));
               break;
             }
           }
@@ -145,8 +145,8 @@ public final class CloudVirtualizedAppRegistration {
               agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.class, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.Builder.class);
     }
 
-    public interface EnpointRegistrationDetailsOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:agrirouter.cloud.registration.OnboardingRequest.EnpointRegistrationDetails)
+    public interface EndpointRegistrationDetailsOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:agrirouter.cloud.registration.OnboardingRequest.EndpointRegistrationDetails)
         com.google.protobuf.MessageOrBuilder {
 
       /**
@@ -186,18 +186,18 @@ public final class CloudVirtualizedAppRegistration {
           getNameBytes();
     }
     /**
-     * Protobuf type {@code agrirouter.cloud.registration.OnboardingRequest.EnpointRegistrationDetails}
+     * Protobuf type {@code agrirouter.cloud.registration.OnboardingRequest.EndpointRegistrationDetails}
      */
-    public  static final class EnpointRegistrationDetails extends
+    public  static final class EndpointRegistrationDetails extends
         com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:agrirouter.cloud.registration.OnboardingRequest.EnpointRegistrationDetails)
-        EnpointRegistrationDetailsOrBuilder {
+        // @@protoc_insertion_point(message_implements:agrirouter.cloud.registration.OnboardingRequest.EndpointRegistrationDetails)
+        EndpointRegistrationDetailsOrBuilder {
     private static final long serialVersionUID = 0L;
-      // Use EnpointRegistrationDetails.newBuilder() to construct.
-      private EnpointRegistrationDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // Use EndpointRegistrationDetails.newBuilder() to construct.
+      private EndpointRegistrationDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
       }
-      private EnpointRegistrationDetails() {
+      private EndpointRegistrationDetails() {
         id_ = "";
         name_ = "";
       }
@@ -207,7 +207,7 @@ public final class CloudVirtualizedAppRegistration {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private EnpointRegistrationDetails(
+      private EndpointRegistrationDetails(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -259,14 +259,14 @@ public final class CloudVirtualizedAppRegistration {
       }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return agrirouter.cloud.registration.CloudVirtualizedAppRegistration.internal_static_agrirouter_cloud_registration_OnboardingRequest_EnpointRegistrationDetails_descriptor;
+        return agrirouter.cloud.registration.CloudVirtualizedAppRegistration.internal_static_agrirouter_cloud_registration_OnboardingRequest_EndpointRegistrationDetails_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return agrirouter.cloud.registration.CloudVirtualizedAppRegistration.internal_static_agrirouter_cloud_registration_OnboardingRequest_EnpointRegistrationDetails_fieldAccessorTable
+        return agrirouter.cloud.registration.CloudVirtualizedAppRegistration.internal_static_agrirouter_cloud_registration_OnboardingRequest_EndpointRegistrationDetails_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails.class, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails.Builder.class);
+                agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails.class, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails.Builder.class);
       }
 
       public static final int ID_FIELD_NUMBER = 1;
@@ -395,10 +395,10 @@ public final class CloudVirtualizedAppRegistration {
         if (obj == this) {
          return true;
         }
-        if (!(obj instanceof agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails)) {
+        if (!(obj instanceof agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails)) {
           return super.equals(obj);
         }
-        agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails other = (agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails) obj;
+        agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails other = (agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails) obj;
 
         boolean result = true;
         result = result && getId()
@@ -425,69 +425,69 @@ public final class CloudVirtualizedAppRegistration {
         return hash;
       }
 
-      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails parseFrom(
+      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails parseFrom(
           java.nio.ByteBuffer data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails parseFrom(
+      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails parseFrom(
           java.nio.ByteBuffer data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails parseFrom(
+      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails parseFrom(
+      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails parseFrom(byte[] data)
+      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails parseFrom(
+      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails parseFrom(java.io.InputStream input)
+      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails parseFrom(java.io.InputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input);
       }
-      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails parseFrom(
+      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
-      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails parseDelimitedFrom(java.io.InputStream input)
+      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseDelimitedWithIOException(PARSER, input);
       }
-      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails parseDelimitedFrom(
+      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
       }
-      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails parseFrom(
+      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input);
       }
-      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails parseFrom(
+      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
@@ -499,7 +499,7 @@ public final class CloudVirtualizedAppRegistration {
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
-      public static Builder newBuilder(agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails prototype) {
+      public static Builder newBuilder(agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
       public Builder toBuilder() {
@@ -514,25 +514,25 @@ public final class CloudVirtualizedAppRegistration {
         return builder;
       }
       /**
-       * Protobuf type {@code agrirouter.cloud.registration.OnboardingRequest.EnpointRegistrationDetails}
+       * Protobuf type {@code agrirouter.cloud.registration.OnboardingRequest.EndpointRegistrationDetails}
        */
       public static final class Builder extends
           com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:agrirouter.cloud.registration.OnboardingRequest.EnpointRegistrationDetails)
-          agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetailsOrBuilder {
+          // @@protoc_insertion_point(builder_implements:agrirouter.cloud.registration.OnboardingRequest.EndpointRegistrationDetails)
+          agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetailsOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-          return agrirouter.cloud.registration.CloudVirtualizedAppRegistration.internal_static_agrirouter_cloud_registration_OnboardingRequest_EnpointRegistrationDetails_descriptor;
+          return agrirouter.cloud.registration.CloudVirtualizedAppRegistration.internal_static_agrirouter_cloud_registration_OnboardingRequest_EndpointRegistrationDetails_descriptor;
         }
 
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return agrirouter.cloud.registration.CloudVirtualizedAppRegistration.internal_static_agrirouter_cloud_registration_OnboardingRequest_EnpointRegistrationDetails_fieldAccessorTable
+          return agrirouter.cloud.registration.CloudVirtualizedAppRegistration.internal_static_agrirouter_cloud_registration_OnboardingRequest_EndpointRegistrationDetails_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
-                  agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails.class, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails.Builder.class);
+                  agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails.class, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails.Builder.class);
         }
 
-        // Construct using agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails.newBuilder()
+        // Construct using agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails.newBuilder()
         private Builder() {
           maybeForceBuilderInitialization();
         }
@@ -558,23 +558,23 @@ public final class CloudVirtualizedAppRegistration {
 
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-          return agrirouter.cloud.registration.CloudVirtualizedAppRegistration.internal_static_agrirouter_cloud_registration_OnboardingRequest_EnpointRegistrationDetails_descriptor;
+          return agrirouter.cloud.registration.CloudVirtualizedAppRegistration.internal_static_agrirouter_cloud_registration_OnboardingRequest_EndpointRegistrationDetails_descriptor;
         }
 
-        public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails getDefaultInstanceForType() {
-          return agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails.getDefaultInstance();
+        public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails getDefaultInstanceForType() {
+          return agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails.getDefaultInstance();
         }
 
-        public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails build() {
-          agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails result = buildPartial();
+        public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails build() {
+          agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails result = buildPartial();
           if (!result.isInitialized()) {
             throw newUninitializedMessageException(result);
           }
           return result;
         }
 
-        public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails buildPartial() {
-          agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails result = new agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails(this);
+        public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails buildPartial() {
+          agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails result = new agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails(this);
           result.id_ = id_;
           result.name_ = name_;
           onBuilt();
@@ -608,16 +608,16 @@ public final class CloudVirtualizedAppRegistration {
           return (Builder) super.addRepeatedField(field, value);
         }
         public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails) {
-            return mergeFrom((agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails)other);
+          if (other instanceof agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails) {
+            return mergeFrom((agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails)other);
           } else {
             super.mergeFrom(other);
             return this;
           }
         }
 
-        public Builder mergeFrom(agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails other) {
-          if (other == agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails.getDefaultInstance()) return this;
+        public Builder mergeFrom(agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails other) {
+          if (other == agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails.getDefaultInstance()) return this;
           if (!other.getId().isEmpty()) {
             id_ = other.id_;
             onChanged();
@@ -639,11 +639,11 @@ public final class CloudVirtualizedAppRegistration {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails parsedMessage = null;
+          agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails parsedMessage = null;
           try {
             parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails) e.getUnfinishedMessage();
+            parsedMessage = (agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
             if (parsedMessage != null) {
@@ -841,54 +841,54 @@ public final class CloudVirtualizedAppRegistration {
         }
 
 
-        // @@protoc_insertion_point(builder_scope:agrirouter.cloud.registration.OnboardingRequest.EnpointRegistrationDetails)
+        // @@protoc_insertion_point(builder_scope:agrirouter.cloud.registration.OnboardingRequest.EndpointRegistrationDetails)
       }
 
-      // @@protoc_insertion_point(class_scope:agrirouter.cloud.registration.OnboardingRequest.EnpointRegistrationDetails)
-      private static final agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails DEFAULT_INSTANCE;
+      // @@protoc_insertion_point(class_scope:agrirouter.cloud.registration.OnboardingRequest.EndpointRegistrationDetails)
+      private static final agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails();
+        DEFAULT_INSTANCE = new agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails();
       }
 
-      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails getDefaultInstance() {
+      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static final com.google.protobuf.Parser<EnpointRegistrationDetails>
-          PARSER = new com.google.protobuf.AbstractParser<EnpointRegistrationDetails>() {
-        public EnpointRegistrationDetails parsePartialFrom(
+      private static final com.google.protobuf.Parser<EndpointRegistrationDetails>
+          PARSER = new com.google.protobuf.AbstractParser<EndpointRegistrationDetails>() {
+        public EndpointRegistrationDetails parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new EnpointRegistrationDetails(input, extensionRegistry);
+          return new EndpointRegistrationDetails(input, extensionRegistry);
         }
       };
 
-      public static com.google.protobuf.Parser<EnpointRegistrationDetails> parser() {
+      public static com.google.protobuf.Parser<EndpointRegistrationDetails> parser() {
         return PARSER;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Parser<EnpointRegistrationDetails> getParserForType() {
+      public com.google.protobuf.Parser<EndpointRegistrationDetails> getParserForType() {
         return PARSER;
       }
 
-      public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails getDefaultInstanceForType() {
+      public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
 
     }
 
-    public static final int ONBOARDINGREQUESTS_FIELD_NUMBER = 1;
-    private java.util.List<agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails> onboardingRequests_;
+    public static final int ONBOARDING_REQUESTS_FIELD_NUMBER = 1;
+    private java.util.List<agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails> onboardingRequests_;
     /**
      * <pre>
      * Collection of virtualized endpoint the external cloud is managing for the associated agrirouter account. At least one valid request is required
      * </pre>
      *
-     * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EnpointRegistrationDetails onboardingRequests = 1;</code>
+     * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EndpointRegistrationDetails onboarding_requests = 1;</code>
      */
-    public java.util.List<agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails> getOnboardingRequestsList() {
+    public java.util.List<agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails> getOnboardingRequestsList() {
       return onboardingRequests_;
     }
     /**
@@ -896,9 +896,9 @@ public final class CloudVirtualizedAppRegistration {
      * Collection of virtualized endpoint the external cloud is managing for the associated agrirouter account. At least one valid request is required
      * </pre>
      *
-     * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EnpointRegistrationDetails onboardingRequests = 1;</code>
+     * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EndpointRegistrationDetails onboarding_requests = 1;</code>
      */
-    public java.util.List<? extends agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetailsOrBuilder> 
+    public java.util.List<? extends agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetailsOrBuilder> 
         getOnboardingRequestsOrBuilderList() {
       return onboardingRequests_;
     }
@@ -907,7 +907,7 @@ public final class CloudVirtualizedAppRegistration {
      * Collection of virtualized endpoint the external cloud is managing for the associated agrirouter account. At least one valid request is required
      * </pre>
      *
-     * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EnpointRegistrationDetails onboardingRequests = 1;</code>
+     * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EndpointRegistrationDetails onboarding_requests = 1;</code>
      */
     public int getOnboardingRequestsCount() {
       return onboardingRequests_.size();
@@ -917,9 +917,9 @@ public final class CloudVirtualizedAppRegistration {
      * Collection of virtualized endpoint the external cloud is managing for the associated agrirouter account. At least one valid request is required
      * </pre>
      *
-     * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EnpointRegistrationDetails onboardingRequests = 1;</code>
+     * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EndpointRegistrationDetails onboarding_requests = 1;</code>
      */
-    public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails getOnboardingRequests(int index) {
+    public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails getOnboardingRequests(int index) {
       return onboardingRequests_.get(index);
     }
     /**
@@ -927,9 +927,9 @@ public final class CloudVirtualizedAppRegistration {
      * Collection of virtualized endpoint the external cloud is managing for the associated agrirouter account. At least one valid request is required
      * </pre>
      *
-     * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EnpointRegistrationDetails onboardingRequests = 1;</code>
+     * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EndpointRegistrationDetails onboarding_requests = 1;</code>
      */
-    public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetailsOrBuilder getOnboardingRequestsOrBuilder(
+    public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetailsOrBuilder getOnboardingRequestsOrBuilder(
         int index) {
       return onboardingRequests_.get(index);
     }
@@ -991,7 +991,7 @@ public final class CloudVirtualizedAppRegistration {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getOnboardingRequestsCount() > 0) {
-        hash = (37 * hash) + ONBOARDINGREQUESTS_FIELD_NUMBER;
+        hash = (37 * hash) + ONBOARDING_REQUESTS_FIELD_NUMBER;
         hash = (53 * hash) + getOnboardingRequestsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -1257,26 +1257,26 @@ public final class CloudVirtualizedAppRegistration {
       }
       private int bitField0_;
 
-      private java.util.List<agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails> onboardingRequests_ =
+      private java.util.List<agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails> onboardingRequests_ =
         java.util.Collections.emptyList();
       private void ensureOnboardingRequestsIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          onboardingRequests_ = new java.util.ArrayList<agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails>(onboardingRequests_);
+          onboardingRequests_ = new java.util.ArrayList<agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails>(onboardingRequests_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails.Builder, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetailsOrBuilder> onboardingRequestsBuilder_;
+          agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails.Builder, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetailsOrBuilder> onboardingRequestsBuilder_;
 
       /**
        * <pre>
        * Collection of virtualized endpoint the external cloud is managing for the associated agrirouter account. At least one valid request is required
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EnpointRegistrationDetails onboardingRequests = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EndpointRegistrationDetails onboarding_requests = 1;</code>
        */
-      public java.util.List<agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails> getOnboardingRequestsList() {
+      public java.util.List<agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails> getOnboardingRequestsList() {
         if (onboardingRequestsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(onboardingRequests_);
         } else {
@@ -1288,7 +1288,7 @@ public final class CloudVirtualizedAppRegistration {
        * Collection of virtualized endpoint the external cloud is managing for the associated agrirouter account. At least one valid request is required
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EnpointRegistrationDetails onboardingRequests = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EndpointRegistrationDetails onboarding_requests = 1;</code>
        */
       public int getOnboardingRequestsCount() {
         if (onboardingRequestsBuilder_ == null) {
@@ -1302,9 +1302,9 @@ public final class CloudVirtualizedAppRegistration {
        * Collection of virtualized endpoint the external cloud is managing for the associated agrirouter account. At least one valid request is required
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EnpointRegistrationDetails onboardingRequests = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EndpointRegistrationDetails onboarding_requests = 1;</code>
        */
-      public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails getOnboardingRequests(int index) {
+      public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails getOnboardingRequests(int index) {
         if (onboardingRequestsBuilder_ == null) {
           return onboardingRequests_.get(index);
         } else {
@@ -1316,10 +1316,10 @@ public final class CloudVirtualizedAppRegistration {
        * Collection of virtualized endpoint the external cloud is managing for the associated agrirouter account. At least one valid request is required
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EnpointRegistrationDetails onboardingRequests = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EndpointRegistrationDetails onboarding_requests = 1;</code>
        */
       public Builder setOnboardingRequests(
-          int index, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails value) {
+          int index, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails value) {
         if (onboardingRequestsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1337,10 +1337,10 @@ public final class CloudVirtualizedAppRegistration {
        * Collection of virtualized endpoint the external cloud is managing for the associated agrirouter account. At least one valid request is required
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EnpointRegistrationDetails onboardingRequests = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EndpointRegistrationDetails onboarding_requests = 1;</code>
        */
       public Builder setOnboardingRequests(
-          int index, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails.Builder builderForValue) {
+          int index, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails.Builder builderForValue) {
         if (onboardingRequestsBuilder_ == null) {
           ensureOnboardingRequestsIsMutable();
           onboardingRequests_.set(index, builderForValue.build());
@@ -1355,9 +1355,9 @@ public final class CloudVirtualizedAppRegistration {
        * Collection of virtualized endpoint the external cloud is managing for the associated agrirouter account. At least one valid request is required
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EnpointRegistrationDetails onboardingRequests = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EndpointRegistrationDetails onboarding_requests = 1;</code>
        */
-      public Builder addOnboardingRequests(agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails value) {
+      public Builder addOnboardingRequests(agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails value) {
         if (onboardingRequestsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1375,10 +1375,10 @@ public final class CloudVirtualizedAppRegistration {
        * Collection of virtualized endpoint the external cloud is managing for the associated agrirouter account. At least one valid request is required
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EnpointRegistrationDetails onboardingRequests = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EndpointRegistrationDetails onboarding_requests = 1;</code>
        */
       public Builder addOnboardingRequests(
-          int index, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails value) {
+          int index, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails value) {
         if (onboardingRequestsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1396,10 +1396,10 @@ public final class CloudVirtualizedAppRegistration {
        * Collection of virtualized endpoint the external cloud is managing for the associated agrirouter account. At least one valid request is required
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EnpointRegistrationDetails onboardingRequests = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EndpointRegistrationDetails onboarding_requests = 1;</code>
        */
       public Builder addOnboardingRequests(
-          agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails.Builder builderForValue) {
+          agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails.Builder builderForValue) {
         if (onboardingRequestsBuilder_ == null) {
           ensureOnboardingRequestsIsMutable();
           onboardingRequests_.add(builderForValue.build());
@@ -1414,10 +1414,10 @@ public final class CloudVirtualizedAppRegistration {
        * Collection of virtualized endpoint the external cloud is managing for the associated agrirouter account. At least one valid request is required
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EnpointRegistrationDetails onboardingRequests = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EndpointRegistrationDetails onboarding_requests = 1;</code>
        */
       public Builder addOnboardingRequests(
-          int index, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails.Builder builderForValue) {
+          int index, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails.Builder builderForValue) {
         if (onboardingRequestsBuilder_ == null) {
           ensureOnboardingRequestsIsMutable();
           onboardingRequests_.add(index, builderForValue.build());
@@ -1432,10 +1432,10 @@ public final class CloudVirtualizedAppRegistration {
        * Collection of virtualized endpoint the external cloud is managing for the associated agrirouter account. At least one valid request is required
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EnpointRegistrationDetails onboardingRequests = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EndpointRegistrationDetails onboarding_requests = 1;</code>
        */
       public Builder addAllOnboardingRequests(
-          java.lang.Iterable<? extends agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails> values) {
+          java.lang.Iterable<? extends agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails> values) {
         if (onboardingRequestsBuilder_ == null) {
           ensureOnboardingRequestsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -1451,7 +1451,7 @@ public final class CloudVirtualizedAppRegistration {
        * Collection of virtualized endpoint the external cloud is managing for the associated agrirouter account. At least one valid request is required
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EnpointRegistrationDetails onboardingRequests = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EndpointRegistrationDetails onboarding_requests = 1;</code>
        */
       public Builder clearOnboardingRequests() {
         if (onboardingRequestsBuilder_ == null) {
@@ -1468,7 +1468,7 @@ public final class CloudVirtualizedAppRegistration {
        * Collection of virtualized endpoint the external cloud is managing for the associated agrirouter account. At least one valid request is required
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EnpointRegistrationDetails onboardingRequests = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EndpointRegistrationDetails onboarding_requests = 1;</code>
        */
       public Builder removeOnboardingRequests(int index) {
         if (onboardingRequestsBuilder_ == null) {
@@ -1485,9 +1485,9 @@ public final class CloudVirtualizedAppRegistration {
        * Collection of virtualized endpoint the external cloud is managing for the associated agrirouter account. At least one valid request is required
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EnpointRegistrationDetails onboardingRequests = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EndpointRegistrationDetails onboarding_requests = 1;</code>
        */
-      public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails.Builder getOnboardingRequestsBuilder(
+      public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails.Builder getOnboardingRequestsBuilder(
           int index) {
         return getOnboardingRequestsFieldBuilder().getBuilder(index);
       }
@@ -1496,9 +1496,9 @@ public final class CloudVirtualizedAppRegistration {
        * Collection of virtualized endpoint the external cloud is managing for the associated agrirouter account. At least one valid request is required
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EnpointRegistrationDetails onboardingRequests = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EndpointRegistrationDetails onboarding_requests = 1;</code>
        */
-      public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetailsOrBuilder getOnboardingRequestsOrBuilder(
+      public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetailsOrBuilder getOnboardingRequestsOrBuilder(
           int index) {
         if (onboardingRequestsBuilder_ == null) {
           return onboardingRequests_.get(index);  } else {
@@ -1510,9 +1510,9 @@ public final class CloudVirtualizedAppRegistration {
        * Collection of virtualized endpoint the external cloud is managing for the associated agrirouter account. At least one valid request is required
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EnpointRegistrationDetails onboardingRequests = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EndpointRegistrationDetails onboarding_requests = 1;</code>
        */
-      public java.util.List<? extends agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetailsOrBuilder> 
+      public java.util.List<? extends agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetailsOrBuilder> 
            getOnboardingRequestsOrBuilderList() {
         if (onboardingRequestsBuilder_ != null) {
           return onboardingRequestsBuilder_.getMessageOrBuilderList();
@@ -1525,41 +1525,41 @@ public final class CloudVirtualizedAppRegistration {
        * Collection of virtualized endpoint the external cloud is managing for the associated agrirouter account. At least one valid request is required
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EnpointRegistrationDetails onboardingRequests = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EndpointRegistrationDetails onboarding_requests = 1;</code>
        */
-      public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails.Builder addOnboardingRequestsBuilder() {
+      public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails.Builder addOnboardingRequestsBuilder() {
         return getOnboardingRequestsFieldBuilder().addBuilder(
-            agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails.getDefaultInstance());
+            agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails.getDefaultInstance());
       }
       /**
        * <pre>
        * Collection of virtualized endpoint the external cloud is managing for the associated agrirouter account. At least one valid request is required
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EnpointRegistrationDetails onboardingRequests = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EndpointRegistrationDetails onboarding_requests = 1;</code>
        */
-      public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails.Builder addOnboardingRequestsBuilder(
+      public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails.Builder addOnboardingRequestsBuilder(
           int index) {
         return getOnboardingRequestsFieldBuilder().addBuilder(
-            index, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails.getDefaultInstance());
+            index, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails.getDefaultInstance());
       }
       /**
        * <pre>
        * Collection of virtualized endpoint the external cloud is managing for the associated agrirouter account. At least one valid request is required
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EnpointRegistrationDetails onboardingRequests = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingRequest.EndpointRegistrationDetails onboarding_requests = 1;</code>
        */
-      public java.util.List<agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails.Builder> 
+      public java.util.List<agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails.Builder> 
            getOnboardingRequestsBuilderList() {
         return getOnboardingRequestsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails.Builder, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetailsOrBuilder> 
+          agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails.Builder, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetailsOrBuilder> 
           getOnboardingRequestsFieldBuilder() {
         if (onboardingRequestsBuilder_ == null) {
           onboardingRequestsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetails.Builder, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EnpointRegistrationDetailsOrBuilder>(
+              agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetails.Builder, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingRequest.EndpointRegistrationDetailsOrBuilder>(
                   onboardingRequests_,
                   ((bitField0_ & 0x00000001) == 0x00000001),
                   getParentForChildren(),
@@ -1626,24 +1626,24 @@ public final class CloudVirtualizedAppRegistration {
      * Collection of details to enable communication of the virtualized endpoints the cloud provider is integrating with the agrirouter for the account   
      * </pre>
      *
-     * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EnpointRegistrationDetails onboardedEndpoints = 1;</code>
+     * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EndpointRegistrationDetails onboarded_endpoints = 1;</code>
      */
-    java.util.List<agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails> 
+    java.util.List<agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails> 
         getOnboardedEndpointsList();
     /**
      * <pre>
      * Collection of details to enable communication of the virtualized endpoints the cloud provider is integrating with the agrirouter for the account   
      * </pre>
      *
-     * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EnpointRegistrationDetails onboardedEndpoints = 1;</code>
+     * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EndpointRegistrationDetails onboarded_endpoints = 1;</code>
      */
-    agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails getOnboardedEndpoints(int index);
+    agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails getOnboardedEndpoints(int index);
     /**
      * <pre>
      * Collection of details to enable communication of the virtualized endpoints the cloud provider is integrating with the agrirouter for the account   
      * </pre>
      *
-     * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EnpointRegistrationDetails onboardedEndpoints = 1;</code>
+     * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EndpointRegistrationDetails onboarded_endpoints = 1;</code>
      */
     int getOnboardedEndpointsCount();
     /**
@@ -1651,18 +1651,18 @@ public final class CloudVirtualizedAppRegistration {
      * Collection of details to enable communication of the virtualized endpoints the cloud provider is integrating with the agrirouter for the account   
      * </pre>
      *
-     * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EnpointRegistrationDetails onboardedEndpoints = 1;</code>
+     * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EndpointRegistrationDetails onboarded_endpoints = 1;</code>
      */
-    java.util.List<? extends agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetailsOrBuilder> 
+    java.util.List<? extends agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetailsOrBuilder> 
         getOnboardedEndpointsOrBuilderList();
     /**
      * <pre>
      * Collection of details to enable communication of the virtualized endpoints the cloud provider is integrating with the agrirouter for the account   
      * </pre>
      *
-     * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EnpointRegistrationDetails onboardedEndpoints = 1;</code>
+     * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EndpointRegistrationDetails onboarded_endpoints = 1;</code>
      */
-    agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetailsOrBuilder getOnboardedEndpointsOrBuilder(
+    agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetailsOrBuilder getOnboardedEndpointsOrBuilder(
         int index);
 
     /**
@@ -1759,11 +1759,11 @@ public final class CloudVirtualizedAppRegistration {
             }
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                onboardedEndpoints_ = new java.util.ArrayList<agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails>();
+                onboardedEndpoints_ = new java.util.ArrayList<agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails>();
                 mutable_bitField0_ |= 0x00000001;
               }
               onboardedEndpoints_.add(
-                  input.readMessage(agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails.parser(), extensionRegistry));
+                  input.readMessage(agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails.parser(), extensionRegistry));
               break;
             }
             case 18: {
@@ -1805,8 +1805,8 @@ public final class CloudVirtualizedAppRegistration {
               agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.class, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.Builder.class);
     }
 
-    public interface EnpointRegistrationDetailsOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:agrirouter.cloud.registration.OnboardingResponse.EnpointRegistrationDetails)
+    public interface EndpointRegistrationDetailsOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:agrirouter.cloud.registration.OnboardingResponse.EndpointRegistrationDetails)
         com.google.protobuf.MessageOrBuilder {
 
       /**
@@ -1832,7 +1832,7 @@ public final class CloudVirtualizedAppRegistration {
        * The ID for the device used for managing the communication channel with the cloud provider for the associated agrirouter account.
        * </pre>
        *
-       * <code>string deviceAlternateId = 2;</code>
+       * <code>string device_alternate_id = 2;</code>
        */
       java.lang.String getDeviceAlternateId();
       /**
@@ -1840,7 +1840,7 @@ public final class CloudVirtualizedAppRegistration {
        * The ID for the device used for managing the communication channel with the cloud provider for the associated agrirouter account.
        * </pre>
        *
-       * <code>string deviceAlternateId = 2;</code>
+       * <code>string device_alternate_id = 2;</code>
        */
       com.google.protobuf.ByteString
           getDeviceAlternateIdBytes();
@@ -1850,7 +1850,7 @@ public final class CloudVirtualizedAppRegistration {
        * The ID to use for messages related to a specific virtualized endpoint. Would always be 1..1 with the External ID
        * </pre>
        *
-       * <code>string sensorAlternateId = 3;</code>
+       * <code>string sensor_alternate_id = 3;</code>
        */
       java.lang.String getSensorAlternateId();
       /**
@@ -1858,7 +1858,7 @@ public final class CloudVirtualizedAppRegistration {
        * The ID to use for messages related to a specific virtualized endpoint. Would always be 1..1 with the External ID
        * </pre>
        *
-       * <code>string sensorAlternateId = 3;</code>
+       * <code>string sensor_alternate_id = 3;</code>
        */
       com.google.protobuf.ByteString
           getSensorAlternateIdBytes();
@@ -1868,7 +1868,7 @@ public final class CloudVirtualizedAppRegistration {
        * The ID for the capability of the sensorAlternateId required for the payload which is communicated with the gateway
        * </pre>
        *
-       * <code>string capabilityAlternateId = 4;</code>
+       * <code>string capability_alternate_id = 4;</code>
        */
       java.lang.String getCapabilityAlternateId();
       /**
@@ -1876,7 +1876,7 @@ public final class CloudVirtualizedAppRegistration {
        * The ID for the capability of the sensorAlternateId required for the payload which is communicated with the gateway
        * </pre>
        *
-       * <code>string capabilityAlternateId = 4;</code>
+       * <code>string capability_alternate_id = 4;</code>
        */
       com.google.protobuf.ByteString
           getCapabilityAlternateIdBytes();
@@ -1886,7 +1886,7 @@ public final class CloudVirtualizedAppRegistration {
        * The ID of the endpoint within the agrirouter
        * </pre>
        *
-       * <code>string endpointId = 5;</code>
+       * <code>string endpoint_id = 5;</code>
        */
       java.lang.String getEndpointId();
       /**
@@ -1894,24 +1894,24 @@ public final class CloudVirtualizedAppRegistration {
        * The ID of the endpoint within the agrirouter
        * </pre>
        *
-       * <code>string endpointId = 5;</code>
+       * <code>string endpoint_id = 5;</code>
        */
       com.google.protobuf.ByteString
           getEndpointIdBytes();
     }
     /**
-     * Protobuf type {@code agrirouter.cloud.registration.OnboardingResponse.EnpointRegistrationDetails}
+     * Protobuf type {@code agrirouter.cloud.registration.OnboardingResponse.EndpointRegistrationDetails}
      */
-    public  static final class EnpointRegistrationDetails extends
+    public  static final class EndpointRegistrationDetails extends
         com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:agrirouter.cloud.registration.OnboardingResponse.EnpointRegistrationDetails)
-        EnpointRegistrationDetailsOrBuilder {
+        // @@protoc_insertion_point(message_implements:agrirouter.cloud.registration.OnboardingResponse.EndpointRegistrationDetails)
+        EndpointRegistrationDetailsOrBuilder {
     private static final long serialVersionUID = 0L;
-      // Use EnpointRegistrationDetails.newBuilder() to construct.
-      private EnpointRegistrationDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // Use EndpointRegistrationDetails.newBuilder() to construct.
+      private EndpointRegistrationDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
       }
-      private EnpointRegistrationDetails() {
+      private EndpointRegistrationDetails() {
         id_ = "";
         deviceAlternateId_ = "";
         sensorAlternateId_ = "";
@@ -1924,7 +1924,7 @@ public final class CloudVirtualizedAppRegistration {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private EnpointRegistrationDetails(
+      private EndpointRegistrationDetails(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1994,14 +1994,14 @@ public final class CloudVirtualizedAppRegistration {
       }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return agrirouter.cloud.registration.CloudVirtualizedAppRegistration.internal_static_agrirouter_cloud_registration_OnboardingResponse_EnpointRegistrationDetails_descriptor;
+        return agrirouter.cloud.registration.CloudVirtualizedAppRegistration.internal_static_agrirouter_cloud_registration_OnboardingResponse_EndpointRegistrationDetails_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return agrirouter.cloud.registration.CloudVirtualizedAppRegistration.internal_static_agrirouter_cloud_registration_OnboardingResponse_EnpointRegistrationDetails_fieldAccessorTable
+        return agrirouter.cloud.registration.CloudVirtualizedAppRegistration.internal_static_agrirouter_cloud_registration_OnboardingResponse_EndpointRegistrationDetails_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails.class, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails.Builder.class);
+                agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails.class, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails.Builder.class);
       }
 
       public static final int ID_FIELD_NUMBER = 1;
@@ -2046,14 +2046,14 @@ public final class CloudVirtualizedAppRegistration {
         }
       }
 
-      public static final int DEVICEALTERNATEID_FIELD_NUMBER = 2;
+      public static final int DEVICE_ALTERNATE_ID_FIELD_NUMBER = 2;
       private volatile java.lang.Object deviceAlternateId_;
       /**
        * <pre>
        * The ID for the device used for managing the communication channel with the cloud provider for the associated agrirouter account.
        * </pre>
        *
-       * <code>string deviceAlternateId = 2;</code>
+       * <code>string device_alternate_id = 2;</code>
        */
       public java.lang.String getDeviceAlternateId() {
         java.lang.Object ref = deviceAlternateId_;
@@ -2072,7 +2072,7 @@ public final class CloudVirtualizedAppRegistration {
        * The ID for the device used for managing the communication channel with the cloud provider for the associated agrirouter account.
        * </pre>
        *
-       * <code>string deviceAlternateId = 2;</code>
+       * <code>string device_alternate_id = 2;</code>
        */
       public com.google.protobuf.ByteString
           getDeviceAlternateIdBytes() {
@@ -2088,14 +2088,14 @@ public final class CloudVirtualizedAppRegistration {
         }
       }
 
-      public static final int SENSORALTERNATEID_FIELD_NUMBER = 3;
+      public static final int SENSOR_ALTERNATE_ID_FIELD_NUMBER = 3;
       private volatile java.lang.Object sensorAlternateId_;
       /**
        * <pre>
        * The ID to use for messages related to a specific virtualized endpoint. Would always be 1..1 with the External ID
        * </pre>
        *
-       * <code>string sensorAlternateId = 3;</code>
+       * <code>string sensor_alternate_id = 3;</code>
        */
       public java.lang.String getSensorAlternateId() {
         java.lang.Object ref = sensorAlternateId_;
@@ -2114,7 +2114,7 @@ public final class CloudVirtualizedAppRegistration {
        * The ID to use for messages related to a specific virtualized endpoint. Would always be 1..1 with the External ID
        * </pre>
        *
-       * <code>string sensorAlternateId = 3;</code>
+       * <code>string sensor_alternate_id = 3;</code>
        */
       public com.google.protobuf.ByteString
           getSensorAlternateIdBytes() {
@@ -2130,14 +2130,14 @@ public final class CloudVirtualizedAppRegistration {
         }
       }
 
-      public static final int CAPABILITYALTERNATEID_FIELD_NUMBER = 4;
+      public static final int CAPABILITY_ALTERNATE_ID_FIELD_NUMBER = 4;
       private volatile java.lang.Object capabilityAlternateId_;
       /**
        * <pre>
        * The ID for the capability of the sensorAlternateId required for the payload which is communicated with the gateway
        * </pre>
        *
-       * <code>string capabilityAlternateId = 4;</code>
+       * <code>string capability_alternate_id = 4;</code>
        */
       public java.lang.String getCapabilityAlternateId() {
         java.lang.Object ref = capabilityAlternateId_;
@@ -2156,7 +2156,7 @@ public final class CloudVirtualizedAppRegistration {
        * The ID for the capability of the sensorAlternateId required for the payload which is communicated with the gateway
        * </pre>
        *
-       * <code>string capabilityAlternateId = 4;</code>
+       * <code>string capability_alternate_id = 4;</code>
        */
       public com.google.protobuf.ByteString
           getCapabilityAlternateIdBytes() {
@@ -2172,14 +2172,14 @@ public final class CloudVirtualizedAppRegistration {
         }
       }
 
-      public static final int ENDPOINTID_FIELD_NUMBER = 5;
+      public static final int ENDPOINT_ID_FIELD_NUMBER = 5;
       private volatile java.lang.Object endpointId_;
       /**
        * <pre>
        * The ID of the endpoint within the agrirouter
        * </pre>
        *
-       * <code>string endpointId = 5;</code>
+       * <code>string endpoint_id = 5;</code>
        */
       public java.lang.String getEndpointId() {
         java.lang.Object ref = endpointId_;
@@ -2198,7 +2198,7 @@ public final class CloudVirtualizedAppRegistration {
        * The ID of the endpoint within the agrirouter
        * </pre>
        *
-       * <code>string endpointId = 5;</code>
+       * <code>string endpoint_id = 5;</code>
        */
       public com.google.protobuf.ByteString
           getEndpointIdBytes() {
@@ -2274,10 +2274,10 @@ public final class CloudVirtualizedAppRegistration {
         if (obj == this) {
          return true;
         }
-        if (!(obj instanceof agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails)) {
+        if (!(obj instanceof agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails)) {
           return super.equals(obj);
         }
-        agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails other = (agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails) obj;
+        agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails other = (agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails) obj;
 
         boolean result = true;
         result = result && getId()
@@ -2303,82 +2303,82 @@ public final class CloudVirtualizedAppRegistration {
         hash = (19 * hash) + getDescriptor().hashCode();
         hash = (37 * hash) + ID_FIELD_NUMBER;
         hash = (53 * hash) + getId().hashCode();
-        hash = (37 * hash) + DEVICEALTERNATEID_FIELD_NUMBER;
+        hash = (37 * hash) + DEVICE_ALTERNATE_ID_FIELD_NUMBER;
         hash = (53 * hash) + getDeviceAlternateId().hashCode();
-        hash = (37 * hash) + SENSORALTERNATEID_FIELD_NUMBER;
+        hash = (37 * hash) + SENSOR_ALTERNATE_ID_FIELD_NUMBER;
         hash = (53 * hash) + getSensorAlternateId().hashCode();
-        hash = (37 * hash) + CAPABILITYALTERNATEID_FIELD_NUMBER;
+        hash = (37 * hash) + CAPABILITY_ALTERNATE_ID_FIELD_NUMBER;
         hash = (53 * hash) + getCapabilityAlternateId().hashCode();
-        hash = (37 * hash) + ENDPOINTID_FIELD_NUMBER;
+        hash = (37 * hash) + ENDPOINT_ID_FIELD_NUMBER;
         hash = (53 * hash) + getEndpointId().hashCode();
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
       }
 
-      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails parseFrom(
+      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails parseFrom(
           java.nio.ByteBuffer data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails parseFrom(
+      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails parseFrom(
           java.nio.ByteBuffer data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails parseFrom(
+      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails parseFrom(
+      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails parseFrom(byte[] data)
+      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails parseFrom(
+      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails parseFrom(java.io.InputStream input)
+      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails parseFrom(java.io.InputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input);
       }
-      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails parseFrom(
+      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
-      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails parseDelimitedFrom(java.io.InputStream input)
+      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseDelimitedWithIOException(PARSER, input);
       }
-      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails parseDelimitedFrom(
+      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
       }
-      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails parseFrom(
+      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input);
       }
-      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails parseFrom(
+      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
@@ -2390,7 +2390,7 @@ public final class CloudVirtualizedAppRegistration {
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
-      public static Builder newBuilder(agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails prototype) {
+      public static Builder newBuilder(agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
       public Builder toBuilder() {
@@ -2405,25 +2405,25 @@ public final class CloudVirtualizedAppRegistration {
         return builder;
       }
       /**
-       * Protobuf type {@code agrirouter.cloud.registration.OnboardingResponse.EnpointRegistrationDetails}
+       * Protobuf type {@code agrirouter.cloud.registration.OnboardingResponse.EndpointRegistrationDetails}
        */
       public static final class Builder extends
           com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:agrirouter.cloud.registration.OnboardingResponse.EnpointRegistrationDetails)
-          agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetailsOrBuilder {
+          // @@protoc_insertion_point(builder_implements:agrirouter.cloud.registration.OnboardingResponse.EndpointRegistrationDetails)
+          agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetailsOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-          return agrirouter.cloud.registration.CloudVirtualizedAppRegistration.internal_static_agrirouter_cloud_registration_OnboardingResponse_EnpointRegistrationDetails_descriptor;
+          return agrirouter.cloud.registration.CloudVirtualizedAppRegistration.internal_static_agrirouter_cloud_registration_OnboardingResponse_EndpointRegistrationDetails_descriptor;
         }
 
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return agrirouter.cloud.registration.CloudVirtualizedAppRegistration.internal_static_agrirouter_cloud_registration_OnboardingResponse_EnpointRegistrationDetails_fieldAccessorTable
+          return agrirouter.cloud.registration.CloudVirtualizedAppRegistration.internal_static_agrirouter_cloud_registration_OnboardingResponse_EndpointRegistrationDetails_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
-                  agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails.class, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails.Builder.class);
+                  agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails.class, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails.Builder.class);
         }
 
-        // Construct using agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails.newBuilder()
+        // Construct using agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails.newBuilder()
         private Builder() {
           maybeForceBuilderInitialization();
         }
@@ -2455,23 +2455,23 @@ public final class CloudVirtualizedAppRegistration {
 
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-          return agrirouter.cloud.registration.CloudVirtualizedAppRegistration.internal_static_agrirouter_cloud_registration_OnboardingResponse_EnpointRegistrationDetails_descriptor;
+          return agrirouter.cloud.registration.CloudVirtualizedAppRegistration.internal_static_agrirouter_cloud_registration_OnboardingResponse_EndpointRegistrationDetails_descriptor;
         }
 
-        public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails getDefaultInstanceForType() {
-          return agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails.getDefaultInstance();
+        public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails getDefaultInstanceForType() {
+          return agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails.getDefaultInstance();
         }
 
-        public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails build() {
-          agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails result = buildPartial();
+        public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails build() {
+          agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails result = buildPartial();
           if (!result.isInitialized()) {
             throw newUninitializedMessageException(result);
           }
           return result;
         }
 
-        public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails buildPartial() {
-          agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails result = new agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails(this);
+        public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails buildPartial() {
+          agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails result = new agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails(this);
           result.id_ = id_;
           result.deviceAlternateId_ = deviceAlternateId_;
           result.sensorAlternateId_ = sensorAlternateId_;
@@ -2508,16 +2508,16 @@ public final class CloudVirtualizedAppRegistration {
           return (Builder) super.addRepeatedField(field, value);
         }
         public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails) {
-            return mergeFrom((agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails)other);
+          if (other instanceof agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails) {
+            return mergeFrom((agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails)other);
           } else {
             super.mergeFrom(other);
             return this;
           }
         }
 
-        public Builder mergeFrom(agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails other) {
-          if (other == agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails.getDefaultInstance()) return this;
+        public Builder mergeFrom(agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails other) {
+          if (other == agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails.getDefaultInstance()) return this;
           if (!other.getId().isEmpty()) {
             id_ = other.id_;
             onChanged();
@@ -2551,11 +2551,11 @@ public final class CloudVirtualizedAppRegistration {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails parsedMessage = null;
+          agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails parsedMessage = null;
           try {
             parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails) e.getUnfinishedMessage();
+            parsedMessage = (agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
             if (parsedMessage != null) {
@@ -2660,7 +2660,7 @@ public final class CloudVirtualizedAppRegistration {
          * The ID for the device used for managing the communication channel with the cloud provider for the associated agrirouter account.
          * </pre>
          *
-         * <code>string deviceAlternateId = 2;</code>
+         * <code>string device_alternate_id = 2;</code>
          */
         public java.lang.String getDeviceAlternateId() {
           java.lang.Object ref = deviceAlternateId_;
@@ -2679,7 +2679,7 @@ public final class CloudVirtualizedAppRegistration {
          * The ID for the device used for managing the communication channel with the cloud provider for the associated agrirouter account.
          * </pre>
          *
-         * <code>string deviceAlternateId = 2;</code>
+         * <code>string device_alternate_id = 2;</code>
          */
         public com.google.protobuf.ByteString
             getDeviceAlternateIdBytes() {
@@ -2699,7 +2699,7 @@ public final class CloudVirtualizedAppRegistration {
          * The ID for the device used for managing the communication channel with the cloud provider for the associated agrirouter account.
          * </pre>
          *
-         * <code>string deviceAlternateId = 2;</code>
+         * <code>string device_alternate_id = 2;</code>
          */
         public Builder setDeviceAlternateId(
             java.lang.String value) {
@@ -2716,7 +2716,7 @@ public final class CloudVirtualizedAppRegistration {
          * The ID for the device used for managing the communication channel with the cloud provider for the associated agrirouter account.
          * </pre>
          *
-         * <code>string deviceAlternateId = 2;</code>
+         * <code>string device_alternate_id = 2;</code>
          */
         public Builder clearDeviceAlternateId() {
           
@@ -2729,7 +2729,7 @@ public final class CloudVirtualizedAppRegistration {
          * The ID for the device used for managing the communication channel with the cloud provider for the associated agrirouter account.
          * </pre>
          *
-         * <code>string deviceAlternateId = 2;</code>
+         * <code>string device_alternate_id = 2;</code>
          */
         public Builder setDeviceAlternateIdBytes(
             com.google.protobuf.ByteString value) {
@@ -2749,7 +2749,7 @@ public final class CloudVirtualizedAppRegistration {
          * The ID to use for messages related to a specific virtualized endpoint. Would always be 1..1 with the External ID
          * </pre>
          *
-         * <code>string sensorAlternateId = 3;</code>
+         * <code>string sensor_alternate_id = 3;</code>
          */
         public java.lang.String getSensorAlternateId() {
           java.lang.Object ref = sensorAlternateId_;
@@ -2768,7 +2768,7 @@ public final class CloudVirtualizedAppRegistration {
          * The ID to use for messages related to a specific virtualized endpoint. Would always be 1..1 with the External ID
          * </pre>
          *
-         * <code>string sensorAlternateId = 3;</code>
+         * <code>string sensor_alternate_id = 3;</code>
          */
         public com.google.protobuf.ByteString
             getSensorAlternateIdBytes() {
@@ -2788,7 +2788,7 @@ public final class CloudVirtualizedAppRegistration {
          * The ID to use for messages related to a specific virtualized endpoint. Would always be 1..1 with the External ID
          * </pre>
          *
-         * <code>string sensorAlternateId = 3;</code>
+         * <code>string sensor_alternate_id = 3;</code>
          */
         public Builder setSensorAlternateId(
             java.lang.String value) {
@@ -2805,7 +2805,7 @@ public final class CloudVirtualizedAppRegistration {
          * The ID to use for messages related to a specific virtualized endpoint. Would always be 1..1 with the External ID
          * </pre>
          *
-         * <code>string sensorAlternateId = 3;</code>
+         * <code>string sensor_alternate_id = 3;</code>
          */
         public Builder clearSensorAlternateId() {
           
@@ -2818,7 +2818,7 @@ public final class CloudVirtualizedAppRegistration {
          * The ID to use for messages related to a specific virtualized endpoint. Would always be 1..1 with the External ID
          * </pre>
          *
-         * <code>string sensorAlternateId = 3;</code>
+         * <code>string sensor_alternate_id = 3;</code>
          */
         public Builder setSensorAlternateIdBytes(
             com.google.protobuf.ByteString value) {
@@ -2838,7 +2838,7 @@ public final class CloudVirtualizedAppRegistration {
          * The ID for the capability of the sensorAlternateId required for the payload which is communicated with the gateway
          * </pre>
          *
-         * <code>string capabilityAlternateId = 4;</code>
+         * <code>string capability_alternate_id = 4;</code>
          */
         public java.lang.String getCapabilityAlternateId() {
           java.lang.Object ref = capabilityAlternateId_;
@@ -2857,7 +2857,7 @@ public final class CloudVirtualizedAppRegistration {
          * The ID for the capability of the sensorAlternateId required for the payload which is communicated with the gateway
          * </pre>
          *
-         * <code>string capabilityAlternateId = 4;</code>
+         * <code>string capability_alternate_id = 4;</code>
          */
         public com.google.protobuf.ByteString
             getCapabilityAlternateIdBytes() {
@@ -2877,7 +2877,7 @@ public final class CloudVirtualizedAppRegistration {
          * The ID for the capability of the sensorAlternateId required for the payload which is communicated with the gateway
          * </pre>
          *
-         * <code>string capabilityAlternateId = 4;</code>
+         * <code>string capability_alternate_id = 4;</code>
          */
         public Builder setCapabilityAlternateId(
             java.lang.String value) {
@@ -2894,7 +2894,7 @@ public final class CloudVirtualizedAppRegistration {
          * The ID for the capability of the sensorAlternateId required for the payload which is communicated with the gateway
          * </pre>
          *
-         * <code>string capabilityAlternateId = 4;</code>
+         * <code>string capability_alternate_id = 4;</code>
          */
         public Builder clearCapabilityAlternateId() {
           
@@ -2907,7 +2907,7 @@ public final class CloudVirtualizedAppRegistration {
          * The ID for the capability of the sensorAlternateId required for the payload which is communicated with the gateway
          * </pre>
          *
-         * <code>string capabilityAlternateId = 4;</code>
+         * <code>string capability_alternate_id = 4;</code>
          */
         public Builder setCapabilityAlternateIdBytes(
             com.google.protobuf.ByteString value) {
@@ -2927,7 +2927,7 @@ public final class CloudVirtualizedAppRegistration {
          * The ID of the endpoint within the agrirouter
          * </pre>
          *
-         * <code>string endpointId = 5;</code>
+         * <code>string endpoint_id = 5;</code>
          */
         public java.lang.String getEndpointId() {
           java.lang.Object ref = endpointId_;
@@ -2946,7 +2946,7 @@ public final class CloudVirtualizedAppRegistration {
          * The ID of the endpoint within the agrirouter
          * </pre>
          *
-         * <code>string endpointId = 5;</code>
+         * <code>string endpoint_id = 5;</code>
          */
         public com.google.protobuf.ByteString
             getEndpointIdBytes() {
@@ -2966,7 +2966,7 @@ public final class CloudVirtualizedAppRegistration {
          * The ID of the endpoint within the agrirouter
          * </pre>
          *
-         * <code>string endpointId = 5;</code>
+         * <code>string endpoint_id = 5;</code>
          */
         public Builder setEndpointId(
             java.lang.String value) {
@@ -2983,7 +2983,7 @@ public final class CloudVirtualizedAppRegistration {
          * The ID of the endpoint within the agrirouter
          * </pre>
          *
-         * <code>string endpointId = 5;</code>
+         * <code>string endpoint_id = 5;</code>
          */
         public Builder clearEndpointId() {
           
@@ -2996,7 +2996,7 @@ public final class CloudVirtualizedAppRegistration {
          * The ID of the endpoint within the agrirouter
          * </pre>
          *
-         * <code>string endpointId = 5;</code>
+         * <code>string endpoint_id = 5;</code>
          */
         public Builder setEndpointIdBytes(
             com.google.protobuf.ByteString value) {
@@ -3020,39 +3020,39 @@ public final class CloudVirtualizedAppRegistration {
         }
 
 
-        // @@protoc_insertion_point(builder_scope:agrirouter.cloud.registration.OnboardingResponse.EnpointRegistrationDetails)
+        // @@protoc_insertion_point(builder_scope:agrirouter.cloud.registration.OnboardingResponse.EndpointRegistrationDetails)
       }
 
-      // @@protoc_insertion_point(class_scope:agrirouter.cloud.registration.OnboardingResponse.EnpointRegistrationDetails)
-      private static final agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails DEFAULT_INSTANCE;
+      // @@protoc_insertion_point(class_scope:agrirouter.cloud.registration.OnboardingResponse.EndpointRegistrationDetails)
+      private static final agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails();
+        DEFAULT_INSTANCE = new agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails();
       }
 
-      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails getDefaultInstance() {
+      public static agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static final com.google.protobuf.Parser<EnpointRegistrationDetails>
-          PARSER = new com.google.protobuf.AbstractParser<EnpointRegistrationDetails>() {
-        public EnpointRegistrationDetails parsePartialFrom(
+      private static final com.google.protobuf.Parser<EndpointRegistrationDetails>
+          PARSER = new com.google.protobuf.AbstractParser<EndpointRegistrationDetails>() {
+        public EndpointRegistrationDetails parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new EnpointRegistrationDetails(input, extensionRegistry);
+          return new EndpointRegistrationDetails(input, extensionRegistry);
         }
       };
 
-      public static com.google.protobuf.Parser<EnpointRegistrationDetails> parser() {
+      public static com.google.protobuf.Parser<EndpointRegistrationDetails> parser() {
         return PARSER;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Parser<EnpointRegistrationDetails> getParserForType() {
+      public com.google.protobuf.Parser<EndpointRegistrationDetails> getParserForType() {
         return PARSER;
       }
 
-      public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails getDefaultInstanceForType() {
+      public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
 
@@ -3873,16 +3873,16 @@ public final class CloudVirtualizedAppRegistration {
 
     }
 
-    public static final int ONBOARDEDENDPOINTS_FIELD_NUMBER = 1;
-    private java.util.List<agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails> onboardedEndpoints_;
+    public static final int ONBOARDED_ENDPOINTS_FIELD_NUMBER = 1;
+    private java.util.List<agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails> onboardedEndpoints_;
     /**
      * <pre>
      * Collection of details to enable communication of the virtualized endpoints the cloud provider is integrating with the agrirouter for the account   
      * </pre>
      *
-     * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EnpointRegistrationDetails onboardedEndpoints = 1;</code>
+     * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EndpointRegistrationDetails onboarded_endpoints = 1;</code>
      */
-    public java.util.List<agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails> getOnboardedEndpointsList() {
+    public java.util.List<agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails> getOnboardedEndpointsList() {
       return onboardedEndpoints_;
     }
     /**
@@ -3890,9 +3890,9 @@ public final class CloudVirtualizedAppRegistration {
      * Collection of details to enable communication of the virtualized endpoints the cloud provider is integrating with the agrirouter for the account   
      * </pre>
      *
-     * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EnpointRegistrationDetails onboardedEndpoints = 1;</code>
+     * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EndpointRegistrationDetails onboarded_endpoints = 1;</code>
      */
-    public java.util.List<? extends agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetailsOrBuilder> 
+    public java.util.List<? extends agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetailsOrBuilder> 
         getOnboardedEndpointsOrBuilderList() {
       return onboardedEndpoints_;
     }
@@ -3901,7 +3901,7 @@ public final class CloudVirtualizedAppRegistration {
      * Collection of details to enable communication of the virtualized endpoints the cloud provider is integrating with the agrirouter for the account   
      * </pre>
      *
-     * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EnpointRegistrationDetails onboardedEndpoints = 1;</code>
+     * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EndpointRegistrationDetails onboarded_endpoints = 1;</code>
      */
     public int getOnboardedEndpointsCount() {
       return onboardedEndpoints_.size();
@@ -3911,9 +3911,9 @@ public final class CloudVirtualizedAppRegistration {
      * Collection of details to enable communication of the virtualized endpoints the cloud provider is integrating with the agrirouter for the account   
      * </pre>
      *
-     * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EnpointRegistrationDetails onboardedEndpoints = 1;</code>
+     * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EndpointRegistrationDetails onboarded_endpoints = 1;</code>
      */
-    public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails getOnboardedEndpoints(int index) {
+    public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails getOnboardedEndpoints(int index) {
       return onboardedEndpoints_.get(index);
     }
     /**
@@ -3921,9 +3921,9 @@ public final class CloudVirtualizedAppRegistration {
      * Collection of details to enable communication of the virtualized endpoints the cloud provider is integrating with the agrirouter for the account   
      * </pre>
      *
-     * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EnpointRegistrationDetails onboardedEndpoints = 1;</code>
+     * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EndpointRegistrationDetails onboarded_endpoints = 1;</code>
      */
-    public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetailsOrBuilder getOnboardedEndpointsOrBuilder(
+    public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetailsOrBuilder getOnboardedEndpointsOrBuilder(
         int index) {
       return onboardedEndpoints_.get(index);
     }
@@ -4049,7 +4049,7 @@ public final class CloudVirtualizedAppRegistration {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       if (getOnboardedEndpointsCount() > 0) {
-        hash = (37 * hash) + ONBOARDEDENDPOINTS_FIELD_NUMBER;
+        hash = (37 * hash) + ONBOARDED_ENDPOINTS_FIELD_NUMBER;
         hash = (53 * hash) + getOnboardedEndpointsList().hashCode();
       }
       if (getFailuresCount() > 0) {
@@ -4361,26 +4361,26 @@ public final class CloudVirtualizedAppRegistration {
       }
       private int bitField0_;
 
-      private java.util.List<agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails> onboardedEndpoints_ =
+      private java.util.List<agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails> onboardedEndpoints_ =
         java.util.Collections.emptyList();
       private void ensureOnboardedEndpointsIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          onboardedEndpoints_ = new java.util.ArrayList<agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails>(onboardedEndpoints_);
+          onboardedEndpoints_ = new java.util.ArrayList<agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails>(onboardedEndpoints_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails.Builder, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetailsOrBuilder> onboardedEndpointsBuilder_;
+          agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails.Builder, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetailsOrBuilder> onboardedEndpointsBuilder_;
 
       /**
        * <pre>
        * Collection of details to enable communication of the virtualized endpoints the cloud provider is integrating with the agrirouter for the account   
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EnpointRegistrationDetails onboardedEndpoints = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EndpointRegistrationDetails onboarded_endpoints = 1;</code>
        */
-      public java.util.List<agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails> getOnboardedEndpointsList() {
+      public java.util.List<agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails> getOnboardedEndpointsList() {
         if (onboardedEndpointsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(onboardedEndpoints_);
         } else {
@@ -4392,7 +4392,7 @@ public final class CloudVirtualizedAppRegistration {
        * Collection of details to enable communication of the virtualized endpoints the cloud provider is integrating with the agrirouter for the account   
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EnpointRegistrationDetails onboardedEndpoints = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EndpointRegistrationDetails onboarded_endpoints = 1;</code>
        */
       public int getOnboardedEndpointsCount() {
         if (onboardedEndpointsBuilder_ == null) {
@@ -4406,9 +4406,9 @@ public final class CloudVirtualizedAppRegistration {
        * Collection of details to enable communication of the virtualized endpoints the cloud provider is integrating with the agrirouter for the account   
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EnpointRegistrationDetails onboardedEndpoints = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EndpointRegistrationDetails onboarded_endpoints = 1;</code>
        */
-      public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails getOnboardedEndpoints(int index) {
+      public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails getOnboardedEndpoints(int index) {
         if (onboardedEndpointsBuilder_ == null) {
           return onboardedEndpoints_.get(index);
         } else {
@@ -4420,10 +4420,10 @@ public final class CloudVirtualizedAppRegistration {
        * Collection of details to enable communication of the virtualized endpoints the cloud provider is integrating with the agrirouter for the account   
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EnpointRegistrationDetails onboardedEndpoints = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EndpointRegistrationDetails onboarded_endpoints = 1;</code>
        */
       public Builder setOnboardedEndpoints(
-          int index, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails value) {
+          int index, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails value) {
         if (onboardedEndpointsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4441,10 +4441,10 @@ public final class CloudVirtualizedAppRegistration {
        * Collection of details to enable communication of the virtualized endpoints the cloud provider is integrating with the agrirouter for the account   
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EnpointRegistrationDetails onboardedEndpoints = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EndpointRegistrationDetails onboarded_endpoints = 1;</code>
        */
       public Builder setOnboardedEndpoints(
-          int index, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails.Builder builderForValue) {
+          int index, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails.Builder builderForValue) {
         if (onboardedEndpointsBuilder_ == null) {
           ensureOnboardedEndpointsIsMutable();
           onboardedEndpoints_.set(index, builderForValue.build());
@@ -4459,9 +4459,9 @@ public final class CloudVirtualizedAppRegistration {
        * Collection of details to enable communication of the virtualized endpoints the cloud provider is integrating with the agrirouter for the account   
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EnpointRegistrationDetails onboardedEndpoints = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EndpointRegistrationDetails onboarded_endpoints = 1;</code>
        */
-      public Builder addOnboardedEndpoints(agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails value) {
+      public Builder addOnboardedEndpoints(agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails value) {
         if (onboardedEndpointsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4479,10 +4479,10 @@ public final class CloudVirtualizedAppRegistration {
        * Collection of details to enable communication of the virtualized endpoints the cloud provider is integrating with the agrirouter for the account   
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EnpointRegistrationDetails onboardedEndpoints = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EndpointRegistrationDetails onboarded_endpoints = 1;</code>
        */
       public Builder addOnboardedEndpoints(
-          int index, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails value) {
+          int index, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails value) {
         if (onboardedEndpointsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4500,10 +4500,10 @@ public final class CloudVirtualizedAppRegistration {
        * Collection of details to enable communication of the virtualized endpoints the cloud provider is integrating with the agrirouter for the account   
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EnpointRegistrationDetails onboardedEndpoints = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EndpointRegistrationDetails onboarded_endpoints = 1;</code>
        */
       public Builder addOnboardedEndpoints(
-          agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails.Builder builderForValue) {
+          agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails.Builder builderForValue) {
         if (onboardedEndpointsBuilder_ == null) {
           ensureOnboardedEndpointsIsMutable();
           onboardedEndpoints_.add(builderForValue.build());
@@ -4518,10 +4518,10 @@ public final class CloudVirtualizedAppRegistration {
        * Collection of details to enable communication of the virtualized endpoints the cloud provider is integrating with the agrirouter for the account   
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EnpointRegistrationDetails onboardedEndpoints = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EndpointRegistrationDetails onboarded_endpoints = 1;</code>
        */
       public Builder addOnboardedEndpoints(
-          int index, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails.Builder builderForValue) {
+          int index, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails.Builder builderForValue) {
         if (onboardedEndpointsBuilder_ == null) {
           ensureOnboardedEndpointsIsMutable();
           onboardedEndpoints_.add(index, builderForValue.build());
@@ -4536,10 +4536,10 @@ public final class CloudVirtualizedAppRegistration {
        * Collection of details to enable communication of the virtualized endpoints the cloud provider is integrating with the agrirouter for the account   
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EnpointRegistrationDetails onboardedEndpoints = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EndpointRegistrationDetails onboarded_endpoints = 1;</code>
        */
       public Builder addAllOnboardedEndpoints(
-          java.lang.Iterable<? extends agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails> values) {
+          java.lang.Iterable<? extends agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails> values) {
         if (onboardedEndpointsBuilder_ == null) {
           ensureOnboardedEndpointsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -4555,7 +4555,7 @@ public final class CloudVirtualizedAppRegistration {
        * Collection of details to enable communication of the virtualized endpoints the cloud provider is integrating with the agrirouter for the account   
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EnpointRegistrationDetails onboardedEndpoints = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EndpointRegistrationDetails onboarded_endpoints = 1;</code>
        */
       public Builder clearOnboardedEndpoints() {
         if (onboardedEndpointsBuilder_ == null) {
@@ -4572,7 +4572,7 @@ public final class CloudVirtualizedAppRegistration {
        * Collection of details to enable communication of the virtualized endpoints the cloud provider is integrating with the agrirouter for the account   
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EnpointRegistrationDetails onboardedEndpoints = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EndpointRegistrationDetails onboarded_endpoints = 1;</code>
        */
       public Builder removeOnboardedEndpoints(int index) {
         if (onboardedEndpointsBuilder_ == null) {
@@ -4589,9 +4589,9 @@ public final class CloudVirtualizedAppRegistration {
        * Collection of details to enable communication of the virtualized endpoints the cloud provider is integrating with the agrirouter for the account   
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EnpointRegistrationDetails onboardedEndpoints = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EndpointRegistrationDetails onboarded_endpoints = 1;</code>
        */
-      public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails.Builder getOnboardedEndpointsBuilder(
+      public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails.Builder getOnboardedEndpointsBuilder(
           int index) {
         return getOnboardedEndpointsFieldBuilder().getBuilder(index);
       }
@@ -4600,9 +4600,9 @@ public final class CloudVirtualizedAppRegistration {
        * Collection of details to enable communication of the virtualized endpoints the cloud provider is integrating with the agrirouter for the account   
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EnpointRegistrationDetails onboardedEndpoints = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EndpointRegistrationDetails onboarded_endpoints = 1;</code>
        */
-      public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetailsOrBuilder getOnboardedEndpointsOrBuilder(
+      public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetailsOrBuilder getOnboardedEndpointsOrBuilder(
           int index) {
         if (onboardedEndpointsBuilder_ == null) {
           return onboardedEndpoints_.get(index);  } else {
@@ -4614,9 +4614,9 @@ public final class CloudVirtualizedAppRegistration {
        * Collection of details to enable communication of the virtualized endpoints the cloud provider is integrating with the agrirouter for the account   
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EnpointRegistrationDetails onboardedEndpoints = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EndpointRegistrationDetails onboarded_endpoints = 1;</code>
        */
-      public java.util.List<? extends agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetailsOrBuilder> 
+      public java.util.List<? extends agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetailsOrBuilder> 
            getOnboardedEndpointsOrBuilderList() {
         if (onboardedEndpointsBuilder_ != null) {
           return onboardedEndpointsBuilder_.getMessageOrBuilderList();
@@ -4629,41 +4629,41 @@ public final class CloudVirtualizedAppRegistration {
        * Collection of details to enable communication of the virtualized endpoints the cloud provider is integrating with the agrirouter for the account   
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EnpointRegistrationDetails onboardedEndpoints = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EndpointRegistrationDetails onboarded_endpoints = 1;</code>
        */
-      public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails.Builder addOnboardedEndpointsBuilder() {
+      public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails.Builder addOnboardedEndpointsBuilder() {
         return getOnboardedEndpointsFieldBuilder().addBuilder(
-            agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails.getDefaultInstance());
+            agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails.getDefaultInstance());
       }
       /**
        * <pre>
        * Collection of details to enable communication of the virtualized endpoints the cloud provider is integrating with the agrirouter for the account   
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EnpointRegistrationDetails onboardedEndpoints = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EndpointRegistrationDetails onboarded_endpoints = 1;</code>
        */
-      public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails.Builder addOnboardedEndpointsBuilder(
+      public agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails.Builder addOnboardedEndpointsBuilder(
           int index) {
         return getOnboardedEndpointsFieldBuilder().addBuilder(
-            index, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails.getDefaultInstance());
+            index, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails.getDefaultInstance());
       }
       /**
        * <pre>
        * Collection of details to enable communication of the virtualized endpoints the cloud provider is integrating with the agrirouter for the account   
        * </pre>
        *
-       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EnpointRegistrationDetails onboardedEndpoints = 1;</code>
+       * <code>repeated .agrirouter.cloud.registration.OnboardingResponse.EndpointRegistrationDetails onboarded_endpoints = 1;</code>
        */
-      public java.util.List<agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails.Builder> 
+      public java.util.List<agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails.Builder> 
            getOnboardedEndpointsBuilderList() {
         return getOnboardedEndpointsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails.Builder, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetailsOrBuilder> 
+          agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails.Builder, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetailsOrBuilder> 
           getOnboardedEndpointsFieldBuilder() {
         if (onboardedEndpointsBuilder_ == null) {
           onboardedEndpointsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetails.Builder, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EnpointRegistrationDetailsOrBuilder>(
+              agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetails.Builder, agrirouter.cloud.registration.CloudVirtualizedAppRegistration.OnboardingResponse.EndpointRegistrationDetailsOrBuilder>(
                   onboardedEndpoints_,
                   ((bitField0_ & 0x00000001) == 0x00000001),
                   getParentForChildren(),
@@ -5686,20 +5686,20 @@ public final class CloudVirtualizedAppRegistration {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_agrirouter_cloud_registration_OnboardingRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_agrirouter_cloud_registration_OnboardingRequest_EnpointRegistrationDetails_descriptor;
+    internal_static_agrirouter_cloud_registration_OnboardingRequest_EndpointRegistrationDetails_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_agrirouter_cloud_registration_OnboardingRequest_EnpointRegistrationDetails_fieldAccessorTable;
+      internal_static_agrirouter_cloud_registration_OnboardingRequest_EndpointRegistrationDetails_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_agrirouter_cloud_registration_OnboardingResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_agrirouter_cloud_registration_OnboardingResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_agrirouter_cloud_registration_OnboardingResponse_EnpointRegistrationDetails_descriptor;
+    internal_static_agrirouter_cloud_registration_OnboardingResponse_EndpointRegistrationDetails_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_agrirouter_cloud_registration_OnboardingResponse_EnpointRegistrationDetails_fieldAccessorTable;
+      internal_static_agrirouter_cloud_registration_OnboardingResponse_EndpointRegistrationDetails_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_agrirouter_cloud_registration_OnboardingResponse_Failures_descriptor;
   private static final 
@@ -5722,23 +5722,23 @@ public final class CloudVirtualizedAppRegistration {
       "\nCcloud-provider-integration/cloud-virtu" +
       "alized-app-registration.proto\022\035agriroute" +
       "r.cloud.registration\032\025commons/message.pr" +
-      "oto\"\264\001\n\021OnboardingRequest\022g\n\022onboardingR" +
-      "equests\030\001 \003(\0132K.agrirouter.cloud.registr" +
-      "ation.OnboardingRequest.EnpointRegistrat" +
-      "ionDetails\0326\n\032EnpointRegistrationDetails" +
-      "\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\"\245\003\n\022Onboardin" +
-      "gResponse\022h\n\022onboardedEndpoints\030\001 \003(\0132L." +
-      "agrirouter.cloud.registration.Onboarding" +
-      "Response.EnpointRegistrationDetails\022L\n\010f" +
-      "ailures\030\002 \003(\0132:.agrirouter.cloud.registr" +
-      "ation.OnboardingResponse.Failures\032\221\001\n\032En" +
-      "pointRegistrationDetails\022\n\n\002id\030\001 \001(\t\022\031\n\021" +
-      "deviceAlternateId\030\002 \001(\t\022\031\n\021sensorAlterna" +
-      "teId\030\003 \001(\t\022\035\n\025capabilityAlternateId\030\004 \001(" +
-      "\t\022\022\n\nendpointId\030\005 \001(\t\032C\n\010Failures\022\n\n\002id\030" +
-      "\001 \001(\t\022+\n\006reason\030\002 \001(\0132\033.agrirouter.commo" +
-      "ns.Message\"\'\n\022OffboardingRequest\022\021\n\tendp" +
-      "oints\030\001 \003(\tb\006proto3"
+      "oto\"\267\001\n\021OnboardingRequest\022i\n\023onboarding_" +
+      "requests\030\001 \003(\0132L.agrirouter.cloud.regist" +
+      "ration.OnboardingRequest.EndpointRegistr" +
+      "ationDetails\0327\n\033EndpointRegistrationDeta" +
+      "ils\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\"\257\003\n\022Onboar" +
+      "dingResponse\022j\n\023onboarded_endpoints\030\001 \003(" +
+      "\0132M.agrirouter.cloud.registration.Onboar" +
+      "dingResponse.EndpointRegistrationDetails" +
+      "\022L\n\010failures\030\002 \003(\0132:.agrirouter.cloud.re" +
+      "gistration.OnboardingResponse.Failures\032\231" +
+      "\001\n\033EndpointRegistrationDetails\022\n\n\002id\030\001 \001" +
+      "(\t\022\033\n\023device_alternate_id\030\002 \001(\t\022\033\n\023senso" +
+      "r_alternate_id\030\003 \001(\t\022\037\n\027capability_alter" +
+      "nate_id\030\004 \001(\t\022\023\n\013endpoint_id\030\005 \001(\t\032C\n\010Fa" +
+      "ilures\022\n\n\002id\030\001 \001(\t\022+\n\006reason\030\002 \001(\0132\033.agr" +
+      "irouter.commons.Message\"\'\n\022OffboardingRe" +
+      "quest\022\021\n\tendpoints\030\001 \003(\tb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5759,11 +5759,11 @@ public final class CloudVirtualizedAppRegistration {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_agrirouter_cloud_registration_OnboardingRequest_descriptor,
         new java.lang.String[] { "OnboardingRequests", });
-    internal_static_agrirouter_cloud_registration_OnboardingRequest_EnpointRegistrationDetails_descriptor =
+    internal_static_agrirouter_cloud_registration_OnboardingRequest_EndpointRegistrationDetails_descriptor =
       internal_static_agrirouter_cloud_registration_OnboardingRequest_descriptor.getNestedTypes().get(0);
-    internal_static_agrirouter_cloud_registration_OnboardingRequest_EnpointRegistrationDetails_fieldAccessorTable = new
+    internal_static_agrirouter_cloud_registration_OnboardingRequest_EndpointRegistrationDetails_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_agrirouter_cloud_registration_OnboardingRequest_EnpointRegistrationDetails_descriptor,
+        internal_static_agrirouter_cloud_registration_OnboardingRequest_EndpointRegistrationDetails_descriptor,
         new java.lang.String[] { "Id", "Name", });
     internal_static_agrirouter_cloud_registration_OnboardingResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
@@ -5771,11 +5771,11 @@ public final class CloudVirtualizedAppRegistration {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_agrirouter_cloud_registration_OnboardingResponse_descriptor,
         new java.lang.String[] { "OnboardedEndpoints", "Failures", });
-    internal_static_agrirouter_cloud_registration_OnboardingResponse_EnpointRegistrationDetails_descriptor =
+    internal_static_agrirouter_cloud_registration_OnboardingResponse_EndpointRegistrationDetails_descriptor =
       internal_static_agrirouter_cloud_registration_OnboardingResponse_descriptor.getNestedTypes().get(0);
-    internal_static_agrirouter_cloud_registration_OnboardingResponse_EnpointRegistrationDetails_fieldAccessorTable = new
+    internal_static_agrirouter_cloud_registration_OnboardingResponse_EndpointRegistrationDetails_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_agrirouter_cloud_registration_OnboardingResponse_EnpointRegistrationDetails_descriptor,
+        internal_static_agrirouter_cloud_registration_OnboardingResponse_EndpointRegistrationDetails_descriptor,
         new java.lang.String[] { "Id", "DeviceAlternateId", "SensorAlternateId", "CapabilityAlternateId", "EndpointId", });
     internal_static_agrirouter_cloud_registration_OnboardingResponse_Failures_descriptor =
       internal_static_agrirouter_cloud_registration_OnboardingResponse_descriptor.getNestedTypes().get(1);

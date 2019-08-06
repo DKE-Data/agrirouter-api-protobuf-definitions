@@ -1,0 +1,28 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/any.proto";
+import "commons/message.proto";
+import "commons/chunk.proto";
+package agrirouter.feed.push.notification;
+
+message PushNotification { 
+  message Header {
+    string receiver_id = 1;                                               // Receiver for the group of messages
+    string technical_message_type = 2;                                    // Technical Message Type ID
+    string team_set_context_id = 3;                                       // If associated with a team set context (Device Description) this is the linkage ID
+    agrirouter.commons.ChunkComponent chunk_context = 4;                  // Refer to agrirouter.commons.ChunkComponent
+    int64 payload_size = 5;                                               // Expected size of the payload associated with this message
+    google.protobuf.Timestamp sent_timestamp = 6;                         // The timestamp in UTC that the sender has sent this message
+    int64 sequence_number = 7;                                            // Message sequence number
+    string sender_id = 8;                                                 // Sender for the group of messages
+    google.protobuf.Timestamp created_at = 9;                             // The time at which the message was inserted into the endpoints feed within the agrirouter
+    string message_id = 10;                                               // Internal AgriRouter message ID representing this message and its payload
+  }
+
+  message FeedMessage {
+    Header header = 1;                                                    // Message Header Information for identification purposes
+    google.protobuf.Any content = 2;                                      // The actual payload content to be decoded
+  }
+
+  repeated FeedMessage messages = 1;                                      // Collection of messages allocated to this notification
+}
