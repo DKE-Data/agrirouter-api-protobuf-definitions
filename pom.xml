@@ -8,6 +8,9 @@
     <version>1.0.0-RC1</version>
 
     <name>AGRIROUTER - API Protobuf Definitions</name>
+    <description>This project contains the internal Google Protocol Buffer (protobuf) definitions for the communication with the agrirouter. All the definitions are part of the communcation structure of the agrirouter.
+        For more informations see the technical integration guide which you can download from the developer section on
+        the product website.</description>
     <url>https://github.com/DKE-Data/agrirouter-api-protobuf-definitions</url>
     <licenses>
         <license>
