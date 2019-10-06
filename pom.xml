@@ -50,11 +50,9 @@
         <protobuf-java.version>3.5.1</protobuf-java.version>
         <protoc-jar-maven-plugin.version>3.5.1.1</protoc-jar-maven-plugin.version>
         <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
-        <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
-        <maven-javadoc-plugin.version>2.10.3</maven-javadoc-plugin.version>
-        <maven-jar-plugin.version>3.1.0</maven-jar-plugin.version>
-
-        <maven.javadoc.skip>true</maven.javadoc.skip>
+        <maven-source-plugin.version>3.1.0</maven-source-plugin.version>
+        <maven-javadoc-plugin.version>3.1.1</maven-javadoc-plugin.version>
+        <maven-jar-plugin.version>3.1.2</maven-jar-plugin.version>
     </properties>
 
     <dependencies>
@@ -114,7 +112,7 @@
                                         <outputTarget>
                                             <type>java</type>
                                             <addSources>none</addSources>
-                                            <outputDirectory>src/main/java/com/dke/data</outputDirectory>
+                                            <outputDirectory>src/main/java</outputDirectory>
                                         </outputTarget>
                                     </outputTargets>
                                 </configuration>
@@ -164,6 +162,11 @@
                                 </goals>
                             </execution>
                         </executions>
+                        <configuration>
+                            <additionalOptions>
+                                <additionalOption>-Xdoclint:none</additionalOption>
+                            </additionalOptions>
+                        </configuration>
                     </plugin>
                 </plugins>
             </build>
