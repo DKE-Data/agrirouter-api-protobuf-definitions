@@ -122,7 +122,7 @@
             </build>
         </profile>
         <profile>
-            <id>snapshot</id>
+            <id>release</id>
             <build>
                 <plugins>
                     <plugin>

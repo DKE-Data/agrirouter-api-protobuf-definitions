@@ -1,7 +1,7 @@
 install:
-- mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true -P !snapshot -B -V
+- mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true -P !release -B -V
 script:
-- mvn clean package -P !snapshot -B
+- mvn clean package -P !release -B
 cache:
   directories:
   - "~/.m2/repository"
