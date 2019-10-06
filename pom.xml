@@ -5,7 +5,7 @@
 
     <groupId>com.agrirouter.proto</groupId>
     <artifactId>agrirouter-api-protobuf-definitions</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0-RC1</version>
 
     <name>AGRIROUTER - API Protobuf Definitions</name>
     <url>https://github.com/DKE-Data/agrirouter-api-protobuf-definitions</url>
