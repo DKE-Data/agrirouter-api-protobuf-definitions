@@ -8,9 +8,11 @@
     <version>1.0.0-RC1</version>
 
     <name>AGRIROUTER - API Protobuf Definitions</name>
-    <description>This project contains the internal Google Protocol Buffer (protobuf) definitions for the communication with the agrirouter. All the definitions are part of the communcation structure of the agrirouter.
+    <description>This project contains the internal Google Protocol Buffer (protobuf) definitions for the communication
+        with the agrirouter. All the definitions are part of the communcation structure of the agrirouter.
         For more informations see the technical integration guide which you can download from the developer section on
-        the product website.</description>
+        the product website.
+    </description>
     <url>https://github.com/DKE-Data/agrirouter-api-protobuf-definitions</url>
     <licenses>
         <license>
@@ -38,6 +40,11 @@
             <id>ossrh</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/
+            </url>
+        </repository>
     </distributionManagement>
 
     <properties>
@@ -53,6 +60,10 @@
         <maven-source-plugin.version>3.1.0</maven-source-plugin.version>
         <maven-javadoc-plugin.version>3.1.1</maven-javadoc-plugin.version>
         <maven-jar-plugin.version>3.1.2</maven-jar-plugin.version>
+        <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
+        <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
+        <maven-scm-provider-gitexe.version>1.9.5</maven-scm-provider-gitexe.version>
+        <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
     </properties>
 
     <dependencies>
@@ -167,6 +178,33 @@
                                 <additionalOption>-Xdoclint:none</additionalOption>
                             </additionalOptions>
                         </configuration>
+                    </plugin>
+                    <plugin>
+                        <artifactId>maven-deploy-plugin</artifactId>
+                        <version>${maven-deploy-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>default-deploy</id>
+                                <phase>deploy</phase>
+                                <goals>
+                                    <goal>deploy</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>${maven-gpg-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
                     </plugin>
                 </plugins>
             </build>
