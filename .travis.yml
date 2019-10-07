@@ -1,11 +1,9 @@
-install:
-- mvn clean install -P !release -B -V
 script:
-- mvn clean package -P !release -B
+- mvn clean package gpg:sign -P !release -B
 cache:
   directories:
   - "~/.m2/repository"
-before_install:
+before_script:
 - chmod +x ./cd/deploy.sh
 after_success:
 - "./cd/deploy.sh"
