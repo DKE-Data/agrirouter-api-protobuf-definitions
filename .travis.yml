@@ -1,5 +1,5 @@
 language: java
-install: false
+install: true
 cache:
   directories:
     - "~/.m2/repository"
