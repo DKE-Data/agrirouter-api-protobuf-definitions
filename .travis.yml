@@ -1,11 +1,8 @@
 language: java
+install: false
 cache:
   directories:
     - "~/.m2/repository"
-before_script:
-  - echo $GPG_SECRET_KEYS | base64 --decode | $GPG_EXECUTABLE --import
-  - echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust
-  - chmod +x ./cd/deploy.sh
 
 matrix:
   fast_finish: true
@@ -13,19 +10,24 @@ matrix:
     - jdk: openjdk8
       env:
         - DESC="Build all branches on JDK 8"
-        - CMD="mvn clean package gpg:sign -P !release -B -X --settings cd/mavensettings.xml"
+        - CMD="mvn clean package gpg:sign -P !release -B --settings cd/mavensettings.xml"
     - jdk: openjdk9
       env:
         - DESC="Build all branches on JDK 9"
-        - CMD="mvn clean package gpg:sign -P !release -B -X --settings cd/mavensettings.xml"
+        - CMD="mvn clean package gpg:sign -P !release -B --settings cd/mavensettings.xml"
     - jdk: openjdk10
       env:
         - DESC="Build all branches on JDK 10"
-        - CMD="mvn clean package gpg:sign -P !release -B -X --settings cd/mavensettings.xml"
+        - CMD="mvn clean package gpg:sign -P !release -B --settings cd/mavensettings.xml"
     - jdk: openjdk11
       env:
         - DESC="Build all branches on JDK 11"
-        - CMD="mvn clean package gpg:sign -P !release -B -X --settings cd/mavensettings.xml"
+        - CMD="mvn clean package gpg:sign -P !release -B --settings cd/mavensettings.xml"
+
+before_script:
+  - echo $GPG_SECRET_KEYS | base64 --decode | $GPG_EXECUTABLE --import
+  - echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust
+  - chmod +x ./cd/deploy.sh
 
 script: echo ${CMD}; ${CMD}
 
