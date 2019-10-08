@@ -34,7 +34,7 @@ before_script:
   - echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust
 
 script:
-  - if [ "$TRAVIS_BRANCH" == "$MASTER" || "$TRAVIS_BRANCH" == "$RELEASE" ] && [ "$TRAVIS_PULL_REQUEST" == 'false' ];
+  - if [[ "$TRAVIS_BRANCH" == "$MASTER" || "$TRAVIS_BRANCH" == "$RELEASE" ]] && [[ "$TRAVIS_PULL_REQUEST" == 'false' ]];
     then
       echo "Starting the release because current branch '$TRAVIS_BRANCH' matches master '$MASTER' or release '$RELEASE' branch."
       mvn deploy -P release --settings cd/mavensettings.xml;
