@@ -5,9 +5,14 @@
 
     <groupId>com.agrirouter.proto</groupId>
     <artifactId>agrirouter-api-protobuf-definitions</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0-RC1</version>
 
     <name>AGRIROUTER - API Protobuf Definitions</name>
+    <description>This project contains the internal Google Protocol Buffer (protobuf) definitions for the communication
+        with the agrirouter. All the definitions are part of the communcation structure of the agrirouter.
+        For more informations see the technical integration guide which you can download from the developer section on
+        the product website.
+    </description>
     <url>https://github.com/DKE-Data/agrirouter-api-protobuf-definitions</url>
     <licenses>
         <license>
@@ -35,6 +40,11 @@
             <id>ossrh</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/
+            </url>
+        </repository>
     </distributionManagement>
 
     <properties>
@@ -47,11 +57,13 @@
         <protobuf-java.version>3.5.1</protobuf-java.version>
         <protoc-jar-maven-plugin.version>3.5.1.1</protoc-jar-maven-plugin.version>
         <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
-        <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
-        <maven-javadoc-plugin.version>2.10.3</maven-javadoc-plugin.version>
-        <maven-jar-plugin.version>3.1.0</maven-jar-plugin.version>
-
-        <maven.javadoc.skip>true</maven.javadoc.skip>
+        <maven-source-plugin.version>3.1.0</maven-source-plugin.version>
+        <maven-javadoc-plugin.version>3.1.1</maven-javadoc-plugin.version>
+        <maven-jar-plugin.version>3.1.2</maven-jar-plugin.version>
+        <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
+        <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
+        <maven-scm-provider-gitexe.version>1.9.5</maven-scm-provider-gitexe.version>
+        <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
     </properties>
 
     <dependencies>
@@ -76,6 +88,28 @@
                         </goals>
                         <configuration>
                             <classifier>${jdk.dependent.jar.classifier}</classifier>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${basedir}/target/gpg</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/gpg</directory>
+                                    <filtering>false</filtering>
+                                </resource>
+                            </resources>
                         </configuration>
                     </execution>
                 </executions>
@@ -111,7 +145,7 @@
                                         <outputTarget>
                                             <type>java</type>
                                             <addSources>none</addSources>
-                                            <outputDirectory>src/main/java/com/dke/data</outputDirectory>
+                                            <outputDirectory>src/main/java</outputDirectory>
                                         </outputTarget>
                                     </outputTargets>
                                 </configuration>
@@ -122,7 +156,7 @@
             </build>
         </profile>
         <profile>
-            <id>snapshot</id>
+            <id>release</id>
             <build>
                 <plugins>
                     <plugin>
@@ -158,6 +192,38 @@
                                 <id>attach-javadocs</id>
                                 <goals>
                                     <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <additionalOptions>
+                                <additionalOption>-Xdoclint:none</additionalOption>
+                            </additionalOptions>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <artifactId>maven-deploy-plugin</artifactId>
+                        <version>${maven-deploy-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>default-deploy</id>
+                                <phase>deploy</phase>
+                                <goals>
+                                    <goal>deploy</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>${maven-gpg-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
                                 </goals>
                             </execution>
                         </executions>
