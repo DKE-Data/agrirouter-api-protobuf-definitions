@@ -1,38 +1,33 @@
-jobs:
-  include:
-    - stage: "'mvn clean package' for all JDKs"
-      if:
-        branch NOT IN (release/jdk8, master/jdk8)
-      script:
-        - mvn clean package gpg:sign -P !release -B -X --settings cd/mavensettings.xml
-      cache:
-        directories:
-          - "~/.m2/repository"
-      before_script:
-        - echo $GPG_SECRET_KEYS | base64 --decode | $GPG_EXECUTABLE --import
-        - echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust
-      language: java
-      jdk:
-        - openjdk8
-        - openjdk9
-        - openjdk10
-        - openjdk11
+language: java
+cache:
+  directories:
+    - "~/.m2/repository"
+before_script:
+  - echo $GPG_SECRET_KEYS | base64 --decode | $GPG_EXECUTABLE --import
+  - echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust
+  - chmod +x ./cd/deploy.sh
 
-    # Staging & Deployment for specific JDKs.
-    - stage: "'deploy.sh' for JDK 8 only"
-      if:
-        branch IN (release/jdk8, master/jdk8)
-      script:
-        - mvn clean package gpg:sign -P !release -B -X --settings cd/mavensettings.xml
-      cache:
-        directories:
-          - "~/.m2/repository"
-      before_script:
-        - chmod +x ./cd/deploy.sh
-        - echo $GPG_SECRET_KEYS | base64 --decode | $GPG_EXECUTABLE --import
-        - echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust
-      after_success:
-        - "./cd/deploy.sh"
-      language: java
-      jdk:
-        - openjdk8
+matrix:
+  fast_finish: true
+  include:
+    - jdk: openjdk8
+      env:
+        - DESC="Build all branches on JDK 8"
+        - CMD="mvn clean package gpg:sign -P !release -B -X --settings cd/mavensettings.xml"
+    - jdk: openjdk9
+      env:
+        - DESC="Build all branches on JDK 9"
+        - CMD="mvn clean package gpg:sign -P !release -B -X --settings cd/mavensettings.xml"
+    - jdk: openjdk10
+      env:
+        - DESC="Build all branches on JDK 10"
+        - CMD="mvn clean package gpg:sign -P !release -B -X --settings cd/mavensettings.xml"
+    - jdk: openjdk11
+      env:
+        - DESC="Build all branches on JDK 11"
+        - CMD="mvn clean package gpg:sign -P !release -B -X --settings cd/mavensettings.xml"
+
+script: echo ${CMD}; ${CMD}
+
+#after_success:
+#  - "./cd/deploy.sh"
