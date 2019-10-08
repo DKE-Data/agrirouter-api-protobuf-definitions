@@ -1,5 +1,6 @@
 language: java
 install: true
+
 cache:
   directories:
     - "~/.m2/repository"
@@ -10,26 +11,27 @@ matrix:
     - jdk: openjdk8
       env:
         - DESC="Build all branches on JDK 8"
-        - CMD="mvn clean package gpg:sign -P !release -B --settings cd/mavensettings.xml"
+        - RELEASE="release/jdk8"
+        - MASTER="master/jdk8"
     - jdk: openjdk9
       env:
         - DESC="Build all branches on JDK 9"
-        - CMD="mvn clean package gpg:sign -P !release -B --settings cd/mavensettings.xml"
+        - RELEASE="release/jdk9"
+        - MASTER="master/jdk9"
     - jdk: openjdk10
       env:
         - DESC="Build all branches on JDK 10"
-        - CMD="mvn clean package gpg:sign -P !release -B --settings cd/mavensettings.xml"
+        - RELEASE="release/jdk10"
+        - MASTER="master/jdk10"
     - jdk: openjdk11
       env:
         - DESC="Build all branches on JDK 11"
-        - CMD="mvn clean package gpg:sign -P !release -B --settings cd/mavensettings.xml"
+        - RELEASE="release/jdk11"
+        - MASTER="master/jdk11"
 
 before_script:
   - echo $GPG_SECRET_KEYS | base64 --decode | $GPG_EXECUTABLE --import
   - echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust
-  - chmod +x ./cd/deploy.sh
 
-script: echo ${CMD}; ${CMD}
-
-#after_success:
-#  - "./cd/deploy.sh"
+script:
+  - if [ "$TRAVIS_BRANCH" == "$MASTER" || "$TRAVIS_BRANCH" == "$RELEASE" ] && [ "$TRAVIS_PULL_REQUEST" == 'false' ]; then mvn deploy -P release --settings cd/mavensettings.xml; else mvn clean package gpg:sign -P !release --settings cd/mavensettings.xml fi;
