@@ -65,62 +65,48 @@ After adding the snapshot repository feel free to add the Maven dependency:
     <groupId>com.agrirouter.proto</groupId>
     <artifactId>agrirouter-api-protobuf-definitions</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <classifier>jdk10</classifier>
 </dependency>
 ```
 
-Currently we are supporting JDK 8, JDK 9 and JDK 10 by using classifiers.
+Currently we are supporting the JDK 11 for the SNAPSHOT version. Releases will be available for JDK 8, JDK 9, JDK 10 and JDK 11.
 
 ==== JDK 8
-
-After adding the snapshot repository feel free to add the following Maven dependency:
-
 
 ```xml
 <dependency>
     <groupId>com.agrirouter.proto</groupId>
     <artifactId>agrirouter-api-protobuf-definitions</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <classifier>jdk8</classifier>
+    <version>0.0.1-JDK8</version>
 </dependency>
 ```
 
 ==== JDK 9
 
-After adding the snapshot repository feel free to add the following Maven dependency:
-
 ```xml
 <dependency>
     <groupId>com.agrirouter.proto</groupId>
     <artifactId>agrirouter-api-protobuf-definitions</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <classifier>jdk9</classifier>
+    <version>0.0.1-JDK9</version>
 </dependency>
 ```
 
 ==== JDK 10
 
-After adding the snapshot repository feel free to add the following Maven dependency:
-
 ```xml
 <dependency>
     <groupId>com.agrirouter.proto</groupId>
     <artifactId>agrirouter-api-protobuf-definitions</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <classifier>jdk10</classifier>
+    <version>0.0.1-JDK10</version>
 </dependency>
 ```
 
 ==== JDK 11
 
-After adding the snapshot repository feel free to add the following Maven dependency:
-
 ```xml
 <dependency>
     <groupId>com.agrirouter.proto</groupId>
-    <artifactId>definitions</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <classifier>jdk11</classifier>
+    <artifactId>agrirouter-api-protobuf-definitions</artifactId>
+    <version>0.0.1-JDK11</version>
 </dependency>
 ```
 
