@@ -39,6 +39,11 @@ script:
       echo "Starting the release because current branch '$TRAVIS_BRANCH' matches master '$MASTER' or release '$RELEASE' branch.";
       mvn deploy -P release --settings cd/mavensettings.xml;
     else
-      echo "Running simple integration build for current branch '$TRAVIS_BRANCH'.";
-      mvn clean package gpg:sign -P !release --settings cd/mavensettings.xml;
+      if [[ "$TRAVIS_BRANCH" == "master/"* || "$TRAVIS_BRANCH" == "release/"* ]];
+      then
+        echo "Skipping simple integration build for current branch '$TRAVIS_BRANCH' because we're in release mode.";
+      else
+        echo "Running simple integration build for current branch '$TRAVIS_BRANCH'.";
+        mvn clean package gpg:sign -P !release --settings cd/mavensettings.xml;
+      fi;
     fi;
