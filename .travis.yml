@@ -36,9 +36,9 @@ before_script:
 script:
   - if [ "$TRAVIS_BRANCH" == "$MASTER" || "$TRAVIS_BRANCH" == "$RELEASE" ] && [ "$TRAVIS_PULL_REQUEST" == 'false' ];
     then
-      echo "Starting the release because current branch [$TRAVIS_BRANCH] matches master [$MASTER] or release [$RELEASE] branch."
+      echo "Starting the release because current branch '$TRAVIS_BRANCH' matches master '$MASTER' or release '$RELEASE' branch."
       mvn deploy -P release --settings cd/mavensettings.xml;
     else
-      echo "Running simple integration build for current branch [$TRAVIS_BRANCH]."
+      echo "Running simple integration build for current branch '$TRAVIS_BRANCH'."
       mvn clean package gpg:sign -P !release --settings cd/mavensettings.xml;
     fi;
