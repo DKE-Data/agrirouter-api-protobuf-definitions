@@ -5,6 +5,8 @@ cache:
     - "~/.m2/repository"
 before_script:
   - chmod +x ./cd/deploy.sh
+  - echo $GPG_SECRET_KEYS | base64 --decode | $GPG_EXECUTABLE --import
+  - echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust
 after_success:
   - "./cd/deploy.sh"
 language: java
