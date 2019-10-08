@@ -34,4 +34,4 @@ before_script:
   - echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust
 
 script:
-  - if [ "$TRAVIS_BRANCH" == "$MASTER" || "$TRAVIS_BRANCH" == "$RELEASE" ] && [ "$TRAVIS_PULL_REQUEST" == 'false' ]; then mvn deploy -P release --settings cd/mavensettings.xml; else mvn clean package gpg:sign -P !release --settings cd/mavensettings.xml fi;
+  - if [ "$TRAVIS_BRANCH" == "$MASTER" || "$TRAVIS_BRANCH" == "$RELEASE" ] && [ "$TRAVIS_PULL_REQUEST" == 'false' ]; then mvn deploy -P release --settings cd/mavensettings.xml; else mvn clean package gpg:sign -P !release --settings cd/mavensettings.xml; fi;
