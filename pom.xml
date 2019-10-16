@@ -5,7 +5,7 @@
 
     <groupId>com.agrirouter.proto</groupId>
     <artifactId>agrirouter-api-protobuf-definitions</artifactId>
-    <version>1.0.0-jdk10-RC2</version>
+    <version>1.0.0-jdk10</version>
 
     <name>AGRIROUTER - API Protobuf Definitions</name>
     <description>This project contains the internal Google Protocol Buffer (protobuf) definitions for the communication
