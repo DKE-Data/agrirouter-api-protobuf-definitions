@@ -1,0 +1,24 @@
+syntax = "proto3";
+package agrirouter.feed.request;
+import "google/protobuf/timestamp.proto";
+
+message ValidityPeriod {
+  google.protobuf.Timestamp sent_from = 1;      // From date for the query should be UTC
+  google.protobuf.Timestamp sent_to = 2;        // To date for the query should be UTC
+}
+
+message MessageQuery {
+  repeated string message_ids = 1;              // List of agrirouter message IDs to specifically query for
+  repeated string senders = 2;                  // List of sender endpoint ID's to specifically query for
+  ValidityPeriod validity_period = 3;           // The validity period for which to query within
+}  
+
+message MessageConfirm {
+  repeated string message_ids = 1;              // List of agrirouter message ID's to confirm
+}
+
+message MessageDelete {
+  repeated string message_ids = 1;              // List of agrirouter message ID's to delete
+  repeated string senders = 2;                  // List of sender endpoint ID's to consider for message deletion
+  ValidityPeriod validity_period = 3;           // The validity period for which to delete all messages within
+}

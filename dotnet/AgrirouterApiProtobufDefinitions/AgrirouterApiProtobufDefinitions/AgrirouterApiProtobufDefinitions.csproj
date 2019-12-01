@@ -1,0 +1,56 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.2</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Include="..\Agrirouter\Cloud\Registration\CloudVirtualizedAppRegistration.cs">
+        <Link>Agrirouter\Cloud\Registration\CloudVirtualizedAppRegistration.cs</Link>
+      </Compile>
+      <Compile Include="..\Agrirouter\Commons\Chunk.cs">
+        <Link>Agrirouter\Commons\Chunk.cs</Link>
+      </Compile>
+      <Compile Include="..\Agrirouter\Commons\Message.cs">
+        <Link>Agrirouter\Commons\Message.cs</Link>
+      </Compile>
+      <Compile Include="..\Agrirouter\Feed\Push\Notification\PushNotification.cs">
+        <Link>Agrirouter\Feed\Push\Notification\PushNotification.cs</Link>
+      </Compile>
+      <Compile Include="..\Agrirouter\Feed\Request\FeedRequests.cs">
+        <Link>Agrirouter\Feed\Request\FeedRequests.cs</Link>
+      </Compile>
+      <Compile Include="..\Agrirouter\Feed\Response\FeedResponse.cs">
+        <Link>Agrirouter\Feed\Response\FeedResponse.cs</Link>
+      </Compile>
+      <Compile Include="..\Agrirouter\Message\Settings\DhSettings.cs">
+        <Link>Agrirouter\Message\Settings\DhSettings.cs</Link>
+      </Compile>
+      <Compile Include="..\Agrirouter\Request\Payload\Account\Endpoints.cs">
+        <Link>Agrirouter\Request\Payload\Account\Endpoints.cs</Link>
+      </Compile>
+      <Compile Include="..\Agrirouter\Request\Payload\Endpoint\Capabilities.cs">
+        <Link>Agrirouter\Request\Payload\Endpoint\Capabilities.cs</Link>
+      </Compile>
+      <Compile Include="..\Agrirouter\Request\Payload\Endpoint\Subscription.cs">
+        <Link>Agrirouter\Request\Payload\Endpoint\Subscription.cs</Link>
+      </Compile>
+      <Compile Include="..\Agrirouter\Request\Request.cs">
+        <Link>Agrirouter\Request\Request.cs</Link>
+      </Compile>
+      <Compile Include="..\Agrirouter\Response\Payload\Account\Endpoints.cs">
+        <Link>Agrirouter\Response\Payload\Account\Endpoints.cs</Link>
+      </Compile>
+      <Compile Include="..\Agrirouter\Response\Payload\Endpoint\Capability.cs">
+        <Link>Agrirouter\Response\Payload\Endpoint\Capability.cs</Link>
+      </Compile>
+      <Compile Include="..\Agrirouter\Response\Response.cs">
+        <Link>Agrirouter\Response\Response.cs</Link>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Google.Protobuf" Version="3.10.1" />
+    </ItemGroup>
+
+</Project>

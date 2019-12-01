@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package agrirouter.response.payload.endpoint;
+
+message CapabilityResponse {
+    message Recipient {                             
+      string id = 1;
+      repeated string technical_message_type = 2;
+    }
+    
+    string application_message_id = 1;              // Used for unique identification of the message for the application
+    repeated Recipient recipients = 2;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package agrirouter.message.settings;
+
+// Used to control application communications (Based on configuration options we have within the DH)
+message DataHubControlSettings {
+  int32 max_message_size = 1;
+  int32 max_messages_per_query = 2;
+}

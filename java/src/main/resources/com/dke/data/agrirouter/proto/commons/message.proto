@@ -1,0 +1,12 @@
+syntax = "proto3";
+package agrirouter.commons;
+
+message Message {
+    string message = 1;                                 // Message text in English Only
+    string message_code = 2;                            // Globally defined message code
+    map<string, string> args = 3;                       // List of argument names and values which would be inserted into the message text
+}
+
+message Messages {
+    repeated Message messages = 1;                      // Collection of the Message object listed above used in scenario's when there are multiple messages in a response
+}
