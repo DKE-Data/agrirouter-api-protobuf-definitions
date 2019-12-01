@@ -50,3 +50,8 @@ matrix:
               mvn clean package gpg:sign -P !release --settings cd/mavensettings.xml;
             fi;
           fi;
+  - language: csharp
+    solution: AgrirouterApiProtobufDefinitions.sln
+
+    before_script:
+      - cd dotnet/AgrirouterApiProtobufDefinitions/
