@@ -1,8 +1,0 @@
-/home/sdo/git/agrirouter-api-protobuf-definitions/dotnet/AgrirouterApiProtobufDefinitions/AgrirouterApiProtobufDefinitions/bin/Debug/netcoreapp2.2/AgrirouterApiProtobufDefinitions.deps.json
-/home/sdo/git/agrirouter-api-protobuf-definitions/dotnet/AgrirouterApiProtobufDefinitions/AgrirouterApiProtobufDefinitions/bin/Debug/netcoreapp2.2/AgrirouterApiProtobufDefinitions.dll
-/home/sdo/git/agrirouter-api-protobuf-definitions/dotnet/AgrirouterApiProtobufDefinitions/AgrirouterApiProtobufDefinitions/bin/Debug/netcoreapp2.2/AgrirouterApiProtobufDefinitions.pdb
-/home/sdo/git/agrirouter-api-protobuf-definitions/dotnet/AgrirouterApiProtobufDefinitions/AgrirouterApiProtobufDefinitions/obj/Debug/netcoreapp2.2/AgrirouterApiProtobufDefinitions.csprojAssemblyReference.cache
-/home/sdo/git/agrirouter-api-protobuf-definitions/dotnet/AgrirouterApiProtobufDefinitions/AgrirouterApiProtobufDefinitions/obj/Debug/netcoreapp2.2/AgrirouterApiProtobufDefinitions.AssemblyInfoInputs.cache
-/home/sdo/git/agrirouter-api-protobuf-definitions/dotnet/AgrirouterApiProtobufDefinitions/AgrirouterApiProtobufDefinitions/obj/Debug/netcoreapp2.2/AgrirouterApiProtobufDefinitions.AssemblyInfo.cs
-/home/sdo/git/agrirouter-api-protobuf-definitions/dotnet/AgrirouterApiProtobufDefinitions/AgrirouterApiProtobufDefinitions/obj/Debug/netcoreapp2.2/AgrirouterApiProtobufDefinitions.dll
-/home/sdo/git/agrirouter-api-protobuf-definitions/dotnet/AgrirouterApiProtobufDefinitions/AgrirouterApiProtobufDefinitions/obj/Debug/netcoreapp2.2/AgrirouterApiProtobufDefinitions.pdb
