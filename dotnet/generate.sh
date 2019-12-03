@@ -59,9 +59,9 @@ protoc -Igoogle/protobuf/ -Iagrirouter/protobuf/ --csharp_out=generated/Agrirout
 printf 'Generating files | Feed Push Notification\n\n' 
 protoc -Igoogle/protobuf/ -Iagrirouter/protobuf/ --csharp_out=generated/Agrirouter/Feed/Push/Notification agrirouter/protobuf/messaging/response/payload/feed/push-notification.proto
 
-printf 'Exchange files from the solution.'
-rm -rf AgrirouterApiProtobufDefinitions/Agrirouter
-mv generated/Agrirouter AgrirouterApiProtobufDefinitions
+printf 'Exchange files from the solution.\n\n'
+rm -rf AgrirouterApiProtobufDefinitions/AgrirouterApiProtobufDefinitions/Agrirouter
+mv generated/Agrirouter AgrirouterApiProtobufDefinitions/AgrirouterApiProtobufDefinitions
 
-printf 'Clean up.'
+printf 'Clean up.\n\n'
 rm -rf generated
