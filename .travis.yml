@@ -2,11 +2,11 @@ matrix:
   include:
     - language: java
       install: true
-      
+
       cache:
         directories:
           - "~/.m2/repository"
-      
+
       matrix:
         fast_finish: true
         include:
@@ -31,8 +31,10 @@ matrix:
               - RELEASE="release/jdk11"
               - MASTER="master/jdk11"
 
-      before_script:
+      before_install:
         - cd java
+
+      before_script:
         - echo $GPG_SECRET_KEYS | base64 --decode | $GPG_EXECUTABLE --import
         - echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust
 
@@ -50,9 +52,10 @@ matrix:
               mvn clean package gpg:sign -P !release --settings cd/mavensettings.xml;
             fi;
           fi;
-    
+
     - language: csharp
+      install: true
       solution: AgrirouterApiProtobufDefinitions.sln
-  
-      before_script:
+
+      before_install:
         - cd dotnet/AgrirouterApiProtobufDefinitions/
