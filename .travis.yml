@@ -59,3 +59,4 @@ matrix:
 
       before_install:
         - cd dotnet/AgrirouterApiProtobufDefinitions/
+        - dotnet restore
