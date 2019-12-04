@@ -57,6 +57,12 @@ matrix:
       install: true
       solution: AgrirouterApiProtobufDefinitions.sln
 
-      before_install:
+      mono: none
+      dotnet: 3.0
+
+      before_script:
         - cd dotnet/AgrirouterApiProtobufDefinitions/
+
+      script:
         - dotnet restore
+        - dotnet build
