@@ -1,49 +1,68 @@
-language: java
-install: true
-
-cache:
-  directories:
-    - "~/.m2/repository"
-
 matrix:
-  fast_finish: true
   include:
-    - jdk: openjdk8
-      env:
-        - DESC="Build all branches on JDK 8"
-        - RELEASE="release/jdk8"
-        - MASTER="master/jdk8"
-    - jdk: openjdk9
-      env:
-        - DESC="Build all branches on JDK 9"
-        - RELEASE="release/jdk9"
-        - MASTER="master/jdk9"
-    - jdk: openjdk10
-      env:
-        - DESC="Build all branches on JDK 10"
-        - RELEASE="release/jdk10"
-        - MASTER="master/jdk10"
-    - jdk: openjdk11
-      env:
-        - DESC="Build all branches on JDK 11"
-        - RELEASE="release/jdk11"
-        - MASTER="master/jdk11"
+    - language: java
+      install: true
 
-before_script:
-  - echo $GPG_SECRET_KEYS | base64 --decode | $GPG_EXECUTABLE --import
-  - echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust
+      cache:
+        directories:
+          - "~/.m2/repository"
 
-script:
-  - if [[ "$TRAVIS_BRANCH" == "$MASTER" || "$TRAVIS_BRANCH" == "$RELEASE" ]] && [[ "$TRAVIS_PULL_REQUEST" == 'false' ]];
-    then
-      echo "Starting the release because current branch '$TRAVIS_BRANCH' matches master '$MASTER' or release '$RELEASE' branch.";
-      mvn deploy -P release --settings cd/mavensettings.xml;
-    else
-      if [[ "$TRAVIS_BRANCH" == "master/"* || "$TRAVIS_BRANCH" == "release/"* ]];
-      then
-        echo "Skipping simple integration build for current branch '$TRAVIS_BRANCH' because we're in release mode.";
-      else
-        echo "Running simple integration build for current branch '$TRAVIS_BRANCH'.";
-        mvn clean package gpg:sign -P !release --settings cd/mavensettings.xml;
-      fi;
-    fi;
+      matrix:
+        fast_finish: true
+        include:
+          - jdk: openjdk8
+            env:
+              - DESC="Build all branches on JDK 8"
+              - RELEASE="release/jdk8"
+              - MASTER="master/jdk8"
+          - jdk: openjdk9
+            env:
+              - DESC="Build all branches on JDK 9"
+              - RELEASE="release/jdk9"
+              - MASTER="master/jdk9"
+          - jdk: openjdk10
+            env:
+              - DESC="Build all branches on JDK 10"
+              - RELEASE="release/jdk10"
+              - MASTER="master/jdk10"
+          - jdk: openjdk11
+            env:
+              - DESC="Build all branches on JDK 11"
+              - RELEASE="release/jdk11"
+              - MASTER="master/jdk11"
+
+      before_install:
+        - cd java
+
+      before_script:
+        - echo $GPG_SECRET_KEYS | base64 --decode | $GPG_EXECUTABLE --import
+        - echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust
+
+      script:
+        - if [[ "$TRAVIS_BRANCH" == "$MASTER" || "$TRAVIS_BRANCH" == "$RELEASE" ]] && [[ "$TRAVIS_PULL_REQUEST" == 'false' ]];
+          then
+            echo "Starting the release because current branch '$TRAVIS_BRANCH' matches master '$MASTER' or release '$RELEASE' branch.";
+            mvn deploy -P release --settings cd/mavensettings.xml;
+          else
+            if [[ "$TRAVIS_BRANCH" == "master/"* || "$TRAVIS_BRANCH" == "release/"* ]];
+            then
+              echo "Skipping simple integration build for current branch '$TRAVIS_BRANCH' because we're in release mode.";
+            else
+              echo "Running simple integration build for current branch '$TRAVIS_BRANCH'.";
+              mvn clean package gpg:sign -P !release --settings cd/mavensettings.xml;
+            fi;
+          fi;
+
+    - language: csharp
+      install: true
+      solution: AgrirouterApiProtobufDefinitions.sln
+
+      mono: none
+      dotnet: 3.0
+
+      before_script:
+        - cd dotnet/AgrirouterApiProtobufDefinitions/
+
+      script:
+        - dotnet restore
+        - dotnet build

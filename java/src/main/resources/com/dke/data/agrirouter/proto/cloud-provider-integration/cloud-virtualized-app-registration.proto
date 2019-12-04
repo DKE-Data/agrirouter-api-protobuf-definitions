@@ -1,0 +1,45 @@
+syntax = "proto3";
+import "commons/message.proto";
+
+package agrirouter.cloud.registration;
+
+/*
+    These messages a specialized messages intended for cloud providers
+    which will integrate with the agrirouter. These cloud providers
+    are integrating many virtualized endpoints with the agrirouter and
+    need a means to onboard and offboard endpoints into the associated
+    agrirouter account(s). Messages with these requests will ONLY be accepted
+    by applications specifically supporting these. In all other scenarios
+    these will not be processed and treated as invalid requests
+*/
+
+message OnboardingRequest {
+    message EndpointRegistrationDetails {
+        string id = 1;                                            // External ID from the cloud provider - REQUIRED
+        string name = 2;                                          // Name of this virtualized application from the cloud provider. Is mapped to the Endpoints name of the agrirouter - REQUIRED
+    }
+
+    repeated EndpointRegistrationDetails onboarding_requests = 1; // Collection of virtualized endpoint the external cloud is managing for the associated agrirouter account. At least one valid request is required
+}
+
+message OnboardingResponse {
+    message EndpointRegistrationDetails {
+        string id = 1;                                            // External ID from the cloud provider
+        string device_alternate_id = 2;                           // The ID for the device used for managing the communication channel with the cloud provider for the associated agrirouter account.
+        string sensor_alternate_id = 3;                           // The ID to use for messages related to a specific virtualized endpoint. Would always be 1..1 with the External ID
+        string capability_alternate_id = 4;                       // The ID for the capability of the sensorAlternateId required for the payload which is communicated with the gateway
+        string endpoint_id = 5;                                   // The ID of the endpoint within the agrirouter
+    }
+
+    message Failures {
+        string id = 1;                                            // External ID from the cloud provider                          
+        agrirouter.commons.Message reason = 2;                    // Information as to why it failed
+    }
+
+    repeated EndpointRegistrationDetails onboarded_endpoints = 1; // Collection of details to enable communication of the virtualized endpoints the cloud provider is integrating with the agrirouter for the account   
+    repeated Failures failures = 2;                               // For any which were not able to be onboarded the information would be here along with the external ID provided from the cloud provider        
+}
+
+message OffboardingRequest {
+    repeated string endpoints = 1;                                // The IDs of the endpoints within the agrirouter that should be offboarded at least one valid endpointId is required
+}

@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package agrirouter.response.payload.account;
+
+message ListEndpointsResponse {
+  enum Direction {                            // Defines the direction the rules should be configured for the endpoint lists
+    SEND = 0;                                 // I as the requesting endpoint can send the requested technical message type too
+    RECEIVE = 1;                              // I as the requesting endpoint can received the requested technical message type from
+    SEND_RECEIVE = 2;                         // I as the requesting endpoint can send too or receive from endpoints for the requested technical message type
+  }
+
+
+  message MessageType {
+    string technical_message_type = 1;        // The agrirouter technical message type
+    Direction direction = 2;                  // The direction in which the message type can flow
+  }
+
+  message Endpoint {
+    string endpoint_id = 1;                   // ID Of the endpoint for which the message types can be sent
+    string endpoint_name = 2;                 // Text name of the endpoint
+    string endpoint_type = 3;                 // The type of end point IE: Application, Paired Account, Virtual CU, etc
+    string status = 4;                        // Specifies if the endpoint is active or inactive
+    repeated MessageType message_types = 5;   // Details of the message types as detailed above
+    string external_id = 6;                   // External id of the endpoint
+  }
+
+  repeated Endpoint endpoints = 1;            // Collection of endpoints pertaining to the requested endpoint listing
+}

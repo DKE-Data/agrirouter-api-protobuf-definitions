@@ -1,0 +1,13 @@
+syntax = "proto3";
+package agrirouter.request.payload.account;
+
+message ListEndpointsQuery {
+    enum Direction {                            // Defines the direction the rules should be configured for the endpoint lists
+        SEND = 0;                               // I as the requesting endpoint can send the requested technical message type too
+        RECEIVE = 1;                            // I as the requesting endpoint can recevie the requested technical message type from
+        SEND_RECEIVE = 2;                       // I as the requesting endpoint can send too or receive from endpoints for the requested technical message type
+    }
+
+    string technical_message_type = 1;          // The technical message type which is relevant for the endpoint listing. If not provided we consider all possible rules
+    Direction direction = 2;                    // The direction as mentioned above - Default is SEND if not provided
+}

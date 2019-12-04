@@ -1,0 +1,25 @@
+syntax = "proto3";
+package agrirouter.request.payload.endpoint;
+
+message CapabilitySpecification {
+    enum Direction {                            // Specifies which way the messages are to flow for the capabilities when sending the message this shoudl be aligned with the application certification
+        SEND = 0;
+        RECEIVE = 1;
+        SEND_RECEIVE = 2;
+    }
+
+    enum PushNotification {
+        DISABLED = 0;
+        ENABLED = 1;
+        ENABLED_HIGH_FREQUENCY = 2;
+    }
+
+    message Capability {
+        string technical_message_type = 1;      // Technical Message type from agrirouter
+        Direction direction = 2;                // Specifies which way the messages are to flow for the capability
+    }
+    repeated Capability capabilities = 1;       // List of supported capabilities. Would be a subset or all of those supported by the application
+    string app_certification_id = 2;            // Application ID from the agrirouter      
+    string app_certification_version_id = 3;    // Application Certification Version ID from the agrirouter
+    PushNotification enable_push_notifications = 4;     // Enables/disables push notifications for the endpoint
+}
