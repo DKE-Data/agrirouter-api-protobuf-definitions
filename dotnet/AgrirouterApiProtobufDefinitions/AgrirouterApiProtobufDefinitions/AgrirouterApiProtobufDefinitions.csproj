@@ -2,6 +2,8 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
+        <AssemblyName>agrirouter-api-protobuf-definitions</AssemblyName>
+        <RootNamespace>agrirouter-api-protobuf-definitions</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
