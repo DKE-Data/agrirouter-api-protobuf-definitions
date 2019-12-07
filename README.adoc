@@ -102,6 +102,10 @@ Releases will be available for JDK 8, JDK 9, JDK 10 and JDK 11 - see documentati
 </dependency>
 ```
 
+=== C#
+
+We are providing NuGet packages to be included in you project. You will find there within the [Github Packages](https://github.com/orgs/DKE-Data/packages) section of the organisation. To include these packages you find some documentation from Github regarding the topic ["How to integrate Github Packages in NuGet"](https://help.github.com/en/github/managing-packages-with-github-packages/configuring-nuget-for-use-with-github-packages)
+
 === C++
 
 ==== How to install Protobuf C++ Compiler
