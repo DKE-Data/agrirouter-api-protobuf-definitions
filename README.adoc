@@ -102,15 +102,19 @@ Releases will be available for JDK 8, JDK 9, JDK 10 and JDK 11 - see documentati
 </dependency>
 ```
 
+=== C#
+
+We are providing NuGet packages to be included in you project. You will find them within the https://github.com/orgs/DKE-Data/packages[Github Packages] section of the organisation. To include these packages you find some documentation from Github regarding the topic https://help.github.com/en/github/managing-packages-with-github-packages/configuring-nuget-for-use-with-github-packages["How to integrate Github Packages in NuGet"].
+
 === C++
 
 ==== How to install Protobuf C++ Compiler
 
-The following instructions are based on the [Google Protobuf installation guide](https://github.com/google/protobuf/blob/master/src/README.md) and are optimized for Unix based systems. For Windows it is recommended to install [Cygwin](https://www.cygwin.com/) and do the same steps as if you were on a Unix based system.
+The following instructions are based on the https://github.com/google/protobuf/blob/master/src/README.md[Google Protobuf installation guide] and are optimized for Unix based systems. For Windows it is recommended to install https://www.cygwin.com/[Cygwin] and do the same steps as if you were on a Unix based system.
 
 ==== Download packages
 
-You can download protoc and protobuf packages from [Google Protobuf Releases](https://github.com/google/protobuf/releases).
+You can download protoc and protobuf packages from https://github.com/google/protobuf/releases[Google Protobuf Releases].
 Make sure you download **the same versions** of protoc and protobuf otherwise the installation won't work.
 
 E.g. *protoc-3.5.0-linux-x86_64.zip* and *protobuf-cpp-3.5.0.zip*
