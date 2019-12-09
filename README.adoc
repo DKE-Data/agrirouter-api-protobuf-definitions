@@ -104,7 +104,7 @@ Releases will be available for JDK 8, JDK 9, JDK 10 and JDK 11 - see documentati
 
 === C#
 
-We are providing NuGet packages to be included in you project. You will find there within the https://github.com/orgs/DKE-Data/packages[Github Packages] section of the organisation. To include these packages you find some documentation from Github regarding the topic https://help.github.com/en/github/managing-packages-with-github-packages/configuring-nuget-for-use-with-github-packages["How to integrate Github Packages in NuGet"].
+We are providing NuGet packages to be included in you project. You will find them within the https://github.com/orgs/DKE-Data/packages[Github Packages] section of the organisation. To include these packages you find some documentation from Github regarding the topic https://help.github.com/en/github/managing-packages-with-github-packages/configuring-nuget-for-use-with-github-packages["How to integrate Github Packages in NuGet"].
 
 === C++
 
