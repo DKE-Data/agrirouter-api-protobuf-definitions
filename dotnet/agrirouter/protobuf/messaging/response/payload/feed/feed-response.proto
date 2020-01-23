@@ -16,7 +16,7 @@ message QueryMetrics {
 }
 
 message HeaderQueryResponse {
-  message Header {
+    message Header {
     string message_id = 1;                                                // Internal AgriRouter message ID representing this message and its payload
     string technical_message_type = 2;                                    // Technical Message Type ID
     string team_set_context_id = 3;                                       // If associated with a team set context (Device Description) this is the linkage ID
@@ -26,6 +26,7 @@ message HeaderQueryResponse {
     int64 sequence_number = 7;                                            // Message sequence number
     int64 current_chunk = 8; 		                                          // Number of this entry within the chunk context ordering
     google.protobuf.Timestamp created_at = 9;                             // The time at which the message was inserted into the endpoints feed within the agrirouter
+    agrirouter.commons.Metadata metadata = 10;                            // Additional metadata information to help differentiate between messages of the same type
   }
 
   message Feed {
@@ -53,6 +54,7 @@ message MessageQueryResponse {
     string sender_id = 8;                                                 // Sender for the group of messages
     google.protobuf.Timestamp created_at = 9;                             // The time at which the message was inserted into the endpoints feed within the agrirouter
     string message_id = 10;                                               // Internal AgriRouter message ID representing this message and its payload
+    agrirouter.commons.Metadata metadata = 11;                            // Additional metadata information to help differentiate between messages of the same type
   }
 
   message FeedMessage {
