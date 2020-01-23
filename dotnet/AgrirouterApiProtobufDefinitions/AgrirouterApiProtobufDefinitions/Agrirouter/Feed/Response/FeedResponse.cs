@@ -30,55 +30,57 @@ namespace Agrirouter.Feed.Response {
             "cm90bxoVY29tbW9ucy9tZXNzYWdlLnByb3RvGhNjb21tb25zL2NodW5rLnBy",
             "b3RvIiUKBFBhZ2USDgoGbnVtYmVyGAEgASgFEg0KBXRvdGFsGAIgASgFIk4K",
             "DFF1ZXJ5TWV0cmljcxIfChd0b3RhbF9tZXNzYWdlc19pbl9xdWVyeRgBIAEo",
-            "BRIdChVtYXhfY291bnRfcmVzdHJpY3Rpb24YAiABKAUiuAUKE0hlYWRlclF1",
+            "BRIdChVtYXhfY291bnRfcmVzdHJpY3Rpb24YAiABKAUi6AUKE0hlYWRlclF1",
             "ZXJ5UmVzcG9uc2USPQoNcXVlcnlfbWV0cmljcxgBIAEoCzImLmFncmlyb3V0",
             "ZXIuZmVlZC5yZXNwb25zZS5RdWVyeU1ldHJpY3MSLAoEcGFnZRgCIAEoCzIe",
             "LmFncmlyb3V0ZXIuZmVlZC5yZXNwb25zZS5QYWdlEjoKDmNodW5rX2NvbnRl",
             "eHRzGAMgAygLMiIuYWdyaXJvdXRlci5jb21tb25zLkNodW5rQ29tcG9uZW50",
             "EkAKBGZlZWQYBCADKAsyMi5hZ3Jpcm91dGVyLmZlZWQucmVzcG9uc2UuSGVh",
             "ZGVyUXVlcnlSZXNwb25zZS5GZWVkEh8KE3BlbmRpbmdfbWVzc2FnZV9pZHMY",
-            "BSADKAlCAhgBGp0CCgZIZWFkZXISEgoKbWVzc2FnZV9pZBgBIAEoCRIeChZ0",
+            "BSADKAlCAhgBGs0CCgZIZWFkZXISEgoKbWVzc2FnZV9pZBgBIAEoCRIeChZ0",
             "ZWNobmljYWxfbWVzc2FnZV90eXBlGAIgASgJEhsKE3RlYW1fc2V0X2NvbnRl",
             "eHRfaWQYAyABKAkSGAoQY2h1bmtfY29udGV4dF9pZBgEIAEoCRIUCgxwYXls",
             "b2FkX3NpemUYBSABKAMSMgoOc2VudF90aW1lc3RhbXAYBiABKAsyGi5nb29n",
             "bGUucHJvdG9idWYuVGltZXN0YW1wEhcKD3NlcXVlbmNlX251bWJlchgHIAEo",
             "AxIVCg1jdXJyZW50X2NodW5rGAggASgDEi4KCmNyZWF0ZWRfYXQYCSABKAsy",
-            "Gi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wGnUKBEZlZWQSEQoJc2VuZGVy",
-            "X2lkGAEgASgJEhMKC3JlY2VpdmVyX2lkGAIgASgJEkUKB2hlYWRlcnMYAyAD",
-            "KAsyNC5hZ3Jpcm91dGVyLmZlZWQucmVzcG9uc2UuSGVhZGVyUXVlcnlSZXNw",
-            "b25zZS5IZWFkZXIioAUKFE1lc3NhZ2VRdWVyeVJlc3BvbnNlEj0KDXF1ZXJ5",
-            "X21ldHJpY3MYASABKAsyJi5hZ3Jpcm91dGVyLmZlZWQucmVzcG9uc2UuUXVl",
-            "cnlNZXRyaWNzEiwKBHBhZ2UYAiABKAsyHi5hZ3Jpcm91dGVyLmZlZWQucmVz",
-            "cG9uc2UuUGFnZRJMCghtZXNzYWdlcxgDIAMoCzI6LmFncmlyb3V0ZXIuZmVl",
-            "ZC5yZXNwb25zZS5NZXNzYWdlUXVlcnlSZXNwb25zZS5GZWVkTWVzc2FnZRrP",
-            "AgoGSGVhZGVyEhMKC3JlY2VpdmVyX2lkGAEgASgJEh4KFnRlY2huaWNhbF9t",
-            "ZXNzYWdlX3R5cGUYAiABKAkSGwoTdGVhbV9zZXRfY29udGV4dF9pZBgDIAEo",
-            "CRI5Cg1jaHVua19jb250ZXh0GAQgASgLMiIuYWdyaXJvdXRlci5jb21tb25z",
-            "LkNodW5rQ29tcG9uZW50EhQKDHBheWxvYWRfc2l6ZRgFIAEoAxIyCg5zZW50",
-            "X3RpbWVzdGFtcBgGIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXAS",
-            "FwoPc2VxdWVuY2VfbnVtYmVyGAcgASgDEhEKCXNlbmRlcl9pZBgIIAEoCRIu",
-            "CgpjcmVhdGVkX2F0GAkgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFt",
-            "cBISCgptZXNzYWdlX2lkGAogASgJGnsKC0ZlZWRNZXNzYWdlEkUKBmhlYWRl",
-            "chgBIAEoCzI1LmFncmlyb3V0ZXIuZmVlZC5yZXNwb25zZS5NZXNzYWdlUXVl",
-            "cnlSZXNwb25zZS5IZWFkZXISJQoHY29udGVudBgCIAEoCzIULmdvb2dsZS5w",
-            "cm90b2J1Zi5BbnkilgMKGkZhaWxlZE1lc3NhZ2VRdWVyeVJlc3BvbnNlEj0K",
-            "DXF1ZXJ5X21ldHJpY3MYASABKAsyJi5hZ3Jpcm91dGVyLmZlZWQucmVzcG9u",
-            "c2UuUXVlcnlNZXRyaWNzEiwKBHBhZ2UYAiABKAsyHi5hZ3Jpcm91dGVyLmZl",
-            "ZWQucmVzcG9uc2UuUGFnZRJLCgZoZWFkZXIYAyABKAsyOy5hZ3Jpcm91dGVy",
-            "LmZlZWQucmVzcG9uc2UuRmFpbGVkTWVzc2FnZVF1ZXJ5UmVzcG9uc2UuSGVh",
-            "ZGVyEiwKB3JlYXNvbnMYBCADKAsyGy5hZ3Jpcm91dGVyLmNvbW1vbnMuTWVz",
-            "c2FnZRqPAQoGSGVhZGVyEh4KFnRlY2huaWNhbF9tZXNzYWdlX3R5cGUYASAB",
-            "KAkSGwoTdGVhbV9zZXRfY29udGV4dF9pZBgCIAEoCRIUCgxwYXlsb2FkX3Np",
-            "emUYAyABKAMSMgoOc2VudF90aW1lc3RhbXAYBCABKAsyGi5nb29nbGUucHJv",
-            "dG9idWYuVGltZXN0YW1wYgZwcm90bzM="));
+            "Gi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEi4KCG1ldGFkYXRhGAogASgL",
+            "MhwuYWdyaXJvdXRlci5jb21tb25zLk1ldGFkYXRhGnUKBEZlZWQSEQoJc2Vu",
+            "ZGVyX2lkGAEgASgJEhMKC3JlY2VpdmVyX2lkGAIgASgJEkUKB2hlYWRlcnMY",
+            "AyADKAsyNC5hZ3Jpcm91dGVyLmZlZWQucmVzcG9uc2UuSGVhZGVyUXVlcnlS",
+            "ZXNwb25zZS5IZWFkZXIi0AUKFE1lc3NhZ2VRdWVyeVJlc3BvbnNlEj0KDXF1",
+            "ZXJ5X21ldHJpY3MYASABKAsyJi5hZ3Jpcm91dGVyLmZlZWQucmVzcG9uc2Uu",
+            "UXVlcnlNZXRyaWNzEiwKBHBhZ2UYAiABKAsyHi5hZ3Jpcm91dGVyLmZlZWQu",
+            "cmVzcG9uc2UuUGFnZRJMCghtZXNzYWdlcxgDIAMoCzI6LmFncmlyb3V0ZXIu",
+            "ZmVlZC5yZXNwb25zZS5NZXNzYWdlUXVlcnlSZXNwb25zZS5GZWVkTWVzc2Fn",
+            "ZRr/AgoGSGVhZGVyEhMKC3JlY2VpdmVyX2lkGAEgASgJEh4KFnRlY2huaWNh",
+            "bF9tZXNzYWdlX3R5cGUYAiABKAkSGwoTdGVhbV9zZXRfY29udGV4dF9pZBgD",
+            "IAEoCRI5Cg1jaHVua19jb250ZXh0GAQgASgLMiIuYWdyaXJvdXRlci5jb21t",
+            "b25zLkNodW5rQ29tcG9uZW50EhQKDHBheWxvYWRfc2l6ZRgFIAEoAxIyCg5z",
+            "ZW50X3RpbWVzdGFtcBgGIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3Rh",
+            "bXASFwoPc2VxdWVuY2VfbnVtYmVyGAcgASgDEhEKCXNlbmRlcl9pZBgIIAEo",
+            "CRIuCgpjcmVhdGVkX2F0GAkgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVz",
+            "dGFtcBISCgptZXNzYWdlX2lkGAogASgJEi4KCG1ldGFkYXRhGAsgASgLMhwu",
+            "YWdyaXJvdXRlci5jb21tb25zLk1ldGFkYXRhGnsKC0ZlZWRNZXNzYWdlEkUK",
+            "BmhlYWRlchgBIAEoCzI1LmFncmlyb3V0ZXIuZmVlZC5yZXNwb25zZS5NZXNz",
+            "YWdlUXVlcnlSZXNwb25zZS5IZWFkZXISJQoHY29udGVudBgCIAEoCzIULmdv",
+            "b2dsZS5wcm90b2J1Zi5BbnkilgMKGkZhaWxlZE1lc3NhZ2VRdWVyeVJlc3Bv",
+            "bnNlEj0KDXF1ZXJ5X21ldHJpY3MYASABKAsyJi5hZ3Jpcm91dGVyLmZlZWQu",
+            "cmVzcG9uc2UuUXVlcnlNZXRyaWNzEiwKBHBhZ2UYAiABKAsyHi5hZ3Jpcm91",
+            "dGVyLmZlZWQucmVzcG9uc2UuUGFnZRJLCgZoZWFkZXIYAyABKAsyOy5hZ3Jp",
+            "cm91dGVyLmZlZWQucmVzcG9uc2UuRmFpbGVkTWVzc2FnZVF1ZXJ5UmVzcG9u",
+            "c2UuSGVhZGVyEiwKB3JlYXNvbnMYBCADKAsyGy5hZ3Jpcm91dGVyLmNvbW1v",
+            "bnMuTWVzc2FnZRqPAQoGSGVhZGVyEh4KFnRlY2huaWNhbF9tZXNzYWdlX3R5",
+            "cGUYASABKAkSGwoTdGVhbV9zZXRfY29udGV4dF9pZBgCIAEoCRIUCgxwYXls",
+            "b2FkX3NpemUYAyABKAMSMgoOc2VudF90aW1lc3RhbXAYBCABKAsyGi5nb29n",
+            "bGUucHJvdG9idWYuVGltZXN0YW1wYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, global::Agrirouter.Commons.MessageReflection.Descriptor, global::Agrirouter.Commons.ChunkReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Feed.Response.Page), global::Agrirouter.Feed.Response.Page.Parser, new[]{ "Number", "Total" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Feed.Response.QueryMetrics), global::Agrirouter.Feed.Response.QueryMetrics.Parser, new[]{ "TotalMessagesInQuery", "MaxCountRestriction" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Feed.Response.HeaderQueryResponse), global::Agrirouter.Feed.Response.HeaderQueryResponse.Parser, new[]{ "QueryMetrics", "Page", "ChunkContexts", "Feed", "PendingMessageIds" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Feed.Response.HeaderQueryResponse.Types.Header), global::Agrirouter.Feed.Response.HeaderQueryResponse.Types.Header.Parser, new[]{ "MessageId", "TechnicalMessageType", "TeamSetContextId", "ChunkContextId", "PayloadSize", "SentTimestamp", "SequenceNumber", "CurrentChunk", "CreatedAt" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Feed.Response.HeaderQueryResponse), global::Agrirouter.Feed.Response.HeaderQueryResponse.Parser, new[]{ "QueryMetrics", "Page", "ChunkContexts", "Feed", "PendingMessageIds" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Feed.Response.HeaderQueryResponse.Types.Header), global::Agrirouter.Feed.Response.HeaderQueryResponse.Types.Header.Parser, new[]{ "MessageId", "TechnicalMessageType", "TeamSetContextId", "ChunkContextId", "PayloadSize", "SentTimestamp", "SequenceNumber", "CurrentChunk", "CreatedAt", "Metadata" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Feed.Response.HeaderQueryResponse.Types.Feed), global::Agrirouter.Feed.Response.HeaderQueryResponse.Types.Feed.Parser, new[]{ "SenderId", "ReceiverId", "Headers" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Feed.Response.MessageQueryResponse), global::Agrirouter.Feed.Response.MessageQueryResponse.Parser, new[]{ "QueryMetrics", "Page", "Messages" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Feed.Response.MessageQueryResponse.Types.Header), global::Agrirouter.Feed.Response.MessageQueryResponse.Types.Header.Parser, new[]{ "ReceiverId", "TechnicalMessageType", "TeamSetContextId", "ChunkContext", "PayloadSize", "SentTimestamp", "SequenceNumber", "SenderId", "CreatedAt", "MessageId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Feed.Response.MessageQueryResponse), global::Agrirouter.Feed.Response.MessageQueryResponse.Parser, new[]{ "QueryMetrics", "Page", "Messages" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Feed.Response.MessageQueryResponse.Types.Header), global::Agrirouter.Feed.Response.MessageQueryResponse.Types.Header.Parser, new[]{ "ReceiverId", "TechnicalMessageType", "TeamSetContextId", "ChunkContext", "PayloadSize", "SentTimestamp", "SequenceNumber", "SenderId", "CreatedAt", "MessageId", "Metadata" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Feed.Response.MessageQueryResponse.Types.FeedMessage), global::Agrirouter.Feed.Response.MessageQueryResponse.Types.FeedMessage.Parser, new[]{ "Header", "Content" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Feed.Response.FailedMessageQueryResponse), global::Agrirouter.Feed.Response.FailedMessageQueryResponse.Parser, new[]{ "QueryMetrics", "Page", "Header", "Reasons" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Feed.Response.FailedMessageQueryResponse.Types.Header), global::Agrirouter.Feed.Response.FailedMessageQueryResponse.Types.Header.Parser, new[]{ "TechnicalMessageType", "TeamSetContextId", "PayloadSize", "SentTimestamp" }, null, null, null, null)})
           }));
@@ -694,6 +696,7 @@ namespace Agrirouter.Feed.Response {
           sequenceNumber_ = other.sequenceNumber_;
           currentChunk_ = other.currentChunk_;
           createdAt_ = other.createdAt_ != null ? other.createdAt_.Clone() : null;
+          metadata_ = other.metadata_ != null ? other.metadata_.Clone() : null;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
@@ -828,6 +831,20 @@ namespace Agrirouter.Feed.Response {
           }
         }
 
+        /// <summary>Field number for the "metadata" field.</summary>
+        public const int MetadataFieldNumber = 10;
+        private global::Agrirouter.Commons.Metadata metadata_;
+        /// <summary>
+        /// Additional metadata information to help differentiate between messages of the same type
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public global::Agrirouter.Commons.Metadata Metadata {
+          get { return metadata_; }
+          set {
+            metadata_ = value;
+          }
+        }
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override bool Equals(object other) {
           return Equals(other as Header);
@@ -850,6 +867,7 @@ namespace Agrirouter.Feed.Response {
           if (SequenceNumber != other.SequenceNumber) return false;
           if (CurrentChunk != other.CurrentChunk) return false;
           if (!object.Equals(CreatedAt, other.CreatedAt)) return false;
+          if (!object.Equals(Metadata, other.Metadata)) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
@@ -865,6 +883,7 @@ namespace Agrirouter.Feed.Response {
           if (SequenceNumber != 0L) hash ^= SequenceNumber.GetHashCode();
           if (CurrentChunk != 0L) hash ^= CurrentChunk.GetHashCode();
           if (createdAt_ != null) hash ^= CreatedAt.GetHashCode();
+          if (metadata_ != null) hash ^= Metadata.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -914,6 +933,10 @@ namespace Agrirouter.Feed.Response {
             output.WriteRawTag(74);
             output.WriteMessage(CreatedAt);
           }
+          if (metadata_ != null) {
+            output.WriteRawTag(82);
+            output.WriteMessage(Metadata);
+          }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
@@ -948,6 +971,9 @@ namespace Agrirouter.Feed.Response {
           }
           if (createdAt_ != null) {
             size += 1 + pb::CodedOutputStream.ComputeMessageSize(CreatedAt);
+          }
+          if (metadata_ != null) {
+            size += 1 + pb::CodedOutputStream.ComputeMessageSize(Metadata);
           }
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
@@ -992,6 +1018,12 @@ namespace Agrirouter.Feed.Response {
               CreatedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             CreatedAt.MergeFrom(other.CreatedAt);
+          }
+          if (other.metadata_ != null) {
+            if (metadata_ == null) {
+              Metadata = new global::Agrirouter.Commons.Metadata();
+            }
+            Metadata.MergeFrom(other.Metadata);
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
@@ -1044,6 +1076,13 @@ namespace Agrirouter.Feed.Response {
                   CreatedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
                 }
                 input.ReadMessage(CreatedAt);
+                break;
+              }
+              case 82: {
+                if (metadata_ == null) {
+                  Metadata = new global::Agrirouter.Commons.Metadata();
+                }
+                input.ReadMessage(Metadata);
                 break;
               }
             }
@@ -1478,6 +1517,7 @@ namespace Agrirouter.Feed.Response {
           senderId_ = other.senderId_;
           createdAt_ = other.createdAt_ != null ? other.createdAt_.Clone() : null;
           messageId_ = other.messageId_;
+          metadata_ = other.metadata_ != null ? other.metadata_.Clone() : null;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
@@ -1626,6 +1666,20 @@ namespace Agrirouter.Feed.Response {
           }
         }
 
+        /// <summary>Field number for the "metadata" field.</summary>
+        public const int MetadataFieldNumber = 11;
+        private global::Agrirouter.Commons.Metadata metadata_;
+        /// <summary>
+        /// Additional metadata information to help differentiate between messages of the same type
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public global::Agrirouter.Commons.Metadata Metadata {
+          get { return metadata_; }
+          set {
+            metadata_ = value;
+          }
+        }
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override bool Equals(object other) {
           return Equals(other as Header);
@@ -1649,6 +1703,7 @@ namespace Agrirouter.Feed.Response {
           if (SenderId != other.SenderId) return false;
           if (!object.Equals(CreatedAt, other.CreatedAt)) return false;
           if (MessageId != other.MessageId) return false;
+          if (!object.Equals(Metadata, other.Metadata)) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
@@ -1665,6 +1720,7 @@ namespace Agrirouter.Feed.Response {
           if (SenderId.Length != 0) hash ^= SenderId.GetHashCode();
           if (createdAt_ != null) hash ^= CreatedAt.GetHashCode();
           if (MessageId.Length != 0) hash ^= MessageId.GetHashCode();
+          if (metadata_ != null) hash ^= Metadata.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -1718,6 +1774,10 @@ namespace Agrirouter.Feed.Response {
             output.WriteRawTag(82);
             output.WriteString(MessageId);
           }
+          if (metadata_ != null) {
+            output.WriteRawTag(90);
+            output.WriteMessage(Metadata);
+          }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
@@ -1755,6 +1815,9 @@ namespace Agrirouter.Feed.Response {
           }
           if (MessageId.Length != 0) {
             size += 1 + pb::CodedOutputStream.ComputeStringSize(MessageId);
+          }
+          if (metadata_ != null) {
+            size += 1 + pb::CodedOutputStream.ComputeMessageSize(Metadata);
           }
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
@@ -1805,6 +1868,12 @@ namespace Agrirouter.Feed.Response {
           }
           if (other.MessageId.Length != 0) {
             MessageId = other.MessageId;
+          }
+          if (other.metadata_ != null) {
+            if (metadata_ == null) {
+              Metadata = new global::Agrirouter.Commons.Metadata();
+            }
+            Metadata.MergeFrom(other.Metadata);
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
@@ -1864,6 +1933,13 @@ namespace Agrirouter.Feed.Response {
               }
               case 82: {
                 MessageId = input.ReadString();
+                break;
+              }
+              case 90: {
+                if (metadata_ == null) {
+                  Metadata = new global::Agrirouter.Commons.Metadata();
+                }
+                input.ReadMessage(Metadata);
                 break;
               }
             }

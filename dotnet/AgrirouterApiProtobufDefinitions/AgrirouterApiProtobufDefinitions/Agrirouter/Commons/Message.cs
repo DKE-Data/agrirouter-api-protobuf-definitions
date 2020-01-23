@@ -28,12 +28,14 @@ namespace Agrirouter.Commons {
             "AQoHTWVzc2FnZRIPCgdtZXNzYWdlGAEgASgJEhQKDG1lc3NhZ2VfY29kZRgC",
             "IAEoCRIzCgRhcmdzGAMgAygLMiUuYWdyaXJvdXRlci5jb21tb25zLk1lc3Nh",
             "Z2UuQXJnc0VudHJ5GisKCUFyZ3NFbnRyeRILCgNrZXkYASABKAkSDQoFdmFs",
-            "dWUYAiABKAk6AjgBIjkKCE1lc3NhZ2VzEi0KCG1lc3NhZ2VzGAEgAygLMhsu",
-            "YWdyaXJvdXRlci5jb21tb25zLk1lc3NhZ2ViBnByb3RvMw=="));
+            "dWUYAiABKAk6AjgBIh0KCE1ldGFkYXRhEhEKCWZpbGVfbmFtZRgBIAEoCSI5",
+            "CghNZXNzYWdlcxItCghtZXNzYWdlcxgBIAMoCzIbLmFncmlyb3V0ZXIuY29t",
+            "bW9ucy5NZXNzYWdlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Commons.Message), global::Agrirouter.Commons.Message.Parser, new[]{ "Message_", "MessageCode", "Args" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Commons.Metadata), global::Agrirouter.Commons.Metadata.Parser, new[]{ "FileName" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Commons.Messages), global::Agrirouter.Commons.Messages.Parser, new[]{ "Messages_" }, null, null, null, null)
           }));
     }
@@ -227,6 +229,135 @@ namespace Agrirouter.Commons {
 
   }
 
+  public sealed partial class Metadata : pb::IMessage<Metadata> {
+    private static readonly pb::MessageParser<Metadata> _parser = new pb::MessageParser<Metadata>(() => new Metadata());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Metadata> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Agrirouter.Commons.MessageReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Metadata() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Metadata(Metadata other) : this() {
+      fileName_ = other.fileName_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Metadata Clone() {
+      return new Metadata(this);
+    }
+
+    /// <summary>Field number for the "file_name" field.</summary>
+    public const int FileNameFieldNumber = 1;
+    private string fileName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string FileName {
+      get { return fileName_; }
+      set {
+        fileName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Metadata);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Metadata other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (FileName != other.FileName) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (FileName.Length != 0) hash ^= FileName.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (FileName.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(FileName);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (FileName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(FileName);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Metadata other) {
+      if (other == null) {
+        return;
+      }
+      if (other.FileName.Length != 0) {
+        FileName = other.FileName;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            FileName = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   public sealed partial class Messages : pb::IMessage<Messages> {
     private static readonly pb::MessageParser<Messages> _parser = new pb::MessageParser<Messages>(() => new Messages());
     private pb::UnknownFieldSet _unknownFields;
@@ -235,7 +366,7 @@ namespace Agrirouter.Commons {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Agrirouter.Commons.MessageReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Agrirouter.Commons.MessageReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

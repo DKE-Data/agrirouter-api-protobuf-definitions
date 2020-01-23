@@ -27,24 +27,26 @@ namespace Agrirouter.Feed.Push.Notification {
             "CjdtZXNzYWdpbmcvcmVzcG9uc2UvcGF5bG9hZC9mZWVkL3B1c2gtbm90aWZp",
             "Y2F0aW9uLnByb3RvEiFhZ3Jpcm91dGVyLmZlZWQucHVzaC5ub3RpZmljYXRp",
             "b24aH2dvb2dsZS9wcm90b2J1Zi90aW1lc3RhbXAucHJvdG8aGWdvb2dsZS9w",
-            "cm90b2J1Zi9hbnkucHJvdG8aE2NvbW1vbnMvY2h1bmsucHJvdG8iugQKEFB1",
-            "c2hOb3RpZmljYXRpb24SUQoIbWVzc2FnZXMYASADKAsyPy5hZ3Jpcm91dGVy",
-            "LmZlZWQucHVzaC5ub3RpZmljYXRpb24uUHVzaE5vdGlmaWNhdGlvbi5GZWVk",
-            "TWVzc2FnZRrPAgoGSGVhZGVyEhMKC3JlY2VpdmVyX2lkGAEgASgJEh4KFnRl",
-            "Y2huaWNhbF9tZXNzYWdlX3R5cGUYAiABKAkSGwoTdGVhbV9zZXRfY29udGV4",
-            "dF9pZBgDIAEoCRI5Cg1jaHVua19jb250ZXh0GAQgASgLMiIuYWdyaXJvdXRl",
-            "ci5jb21tb25zLkNodW5rQ29tcG9uZW50EhQKDHBheWxvYWRfc2l6ZRgFIAEo",
-            "AxIyCg5zZW50X3RpbWVzdGFtcBgGIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5U",
-            "aW1lc3RhbXASFwoPc2VxdWVuY2VfbnVtYmVyGAcgASgDEhEKCXNlbmRlcl9p",
-            "ZBgIIAEoCRIuCgpjcmVhdGVkX2F0GAkgASgLMhouZ29vZ2xlLnByb3RvYnVm",
-            "LlRpbWVzdGFtcBISCgptZXNzYWdlX2lkGAogASgJGoABCgtGZWVkTWVzc2Fn",
-            "ZRJKCgZoZWFkZXIYASABKAsyOi5hZ3Jpcm91dGVyLmZlZWQucHVzaC5ub3Rp",
-            "ZmljYXRpb24uUHVzaE5vdGlmaWNhdGlvbi5IZWFkZXISJQoHY29udGVudBgC",
-            "IAEoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnliBnByb3RvMw=="));
+            "cm90b2J1Zi9hbnkucHJvdG8aFWNvbW1vbnMvbWVzc2FnZS5wcm90bxoTY29t",
+            "bW9ucy9jaHVuay5wcm90byLqBAoQUHVzaE5vdGlmaWNhdGlvbhJRCghtZXNz",
+            "YWdlcxgBIAMoCzI/LmFncmlyb3V0ZXIuZmVlZC5wdXNoLm5vdGlmaWNhdGlv",
+            "bi5QdXNoTm90aWZpY2F0aW9uLkZlZWRNZXNzYWdlGv8CCgZIZWFkZXISEwoL",
+            "cmVjZWl2ZXJfaWQYASABKAkSHgoWdGVjaG5pY2FsX21lc3NhZ2VfdHlwZRgC",
+            "IAEoCRIbChN0ZWFtX3NldF9jb250ZXh0X2lkGAMgASgJEjkKDWNodW5rX2Nv",
+            "bnRleHQYBCABKAsyIi5hZ3Jpcm91dGVyLmNvbW1vbnMuQ2h1bmtDb21wb25l",
+            "bnQSFAoMcGF5bG9hZF9zaXplGAUgASgDEjIKDnNlbnRfdGltZXN0YW1wGAYg",
+            "ASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIXCg9zZXF1ZW5jZV9u",
+            "dW1iZXIYByABKAMSEQoJc2VuZGVyX2lkGAggASgJEi4KCmNyZWF0ZWRfYXQY",
+            "CSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEhIKCm1lc3NhZ2Vf",
+            "aWQYCiABKAkSLgoIbWV0YWRhdGEYCyABKAsyHC5hZ3Jpcm91dGVyLmNvbW1v",
+            "bnMuTWV0YWRhdGEagAEKC0ZlZWRNZXNzYWdlEkoKBmhlYWRlchgBIAEoCzI6",
+            "LmFncmlyb3V0ZXIuZmVlZC5wdXNoLm5vdGlmaWNhdGlvbi5QdXNoTm90aWZp",
+            "Y2F0aW9uLkhlYWRlchIlCgdjb250ZW50GAIgASgLMhQuZ29vZ2xlLnByb3Rv",
+            "YnVmLkFueWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, global::Agrirouter.Commons.ChunkReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, global::Agrirouter.Commons.MessageReflection.Descriptor, global::Agrirouter.Commons.ChunkReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Feed.Push.Notification.PushNotification), global::Agrirouter.Feed.Push.Notification.PushNotification.Parser, new[]{ "Messages" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Feed.Push.Notification.PushNotification.Types.Header), global::Agrirouter.Feed.Push.Notification.PushNotification.Types.Header.Parser, new[]{ "ReceiverId", "TechnicalMessageType", "TeamSetContextId", "ChunkContext", "PayloadSize", "SentTimestamp", "SequenceNumber", "SenderId", "CreatedAt", "MessageId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Feed.Push.Notification.PushNotification), global::Agrirouter.Feed.Push.Notification.PushNotification.Parser, new[]{ "Messages" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Feed.Push.Notification.PushNotification.Types.Header), global::Agrirouter.Feed.Push.Notification.PushNotification.Types.Header.Parser, new[]{ "ReceiverId", "TechnicalMessageType", "TeamSetContextId", "ChunkContext", "PayloadSize", "SentTimestamp", "SequenceNumber", "SenderId", "CreatedAt", "MessageId", "Metadata" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Agrirouter.Feed.Push.Notification.PushNotification.Types.FeedMessage), global::Agrirouter.Feed.Push.Notification.PushNotification.Types.FeedMessage.Parser, new[]{ "Header", "Content" }, null, null, null, null)})
           }));
     }
@@ -213,6 +215,7 @@ namespace Agrirouter.Feed.Push.Notification {
           senderId_ = other.senderId_;
           createdAt_ = other.createdAt_ != null ? other.createdAt_.Clone() : null;
           messageId_ = other.messageId_;
+          metadata_ = other.metadata_ != null ? other.metadata_.Clone() : null;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
@@ -361,6 +364,20 @@ namespace Agrirouter.Feed.Push.Notification {
           }
         }
 
+        /// <summary>Field number for the "metadata" field.</summary>
+        public const int MetadataFieldNumber = 11;
+        private global::Agrirouter.Commons.Metadata metadata_;
+        /// <summary>
+        /// Additional metadata information to help differentiate between messages of the same type
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public global::Agrirouter.Commons.Metadata Metadata {
+          get { return metadata_; }
+          set {
+            metadata_ = value;
+          }
+        }
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override bool Equals(object other) {
           return Equals(other as Header);
@@ -384,6 +401,7 @@ namespace Agrirouter.Feed.Push.Notification {
           if (SenderId != other.SenderId) return false;
           if (!object.Equals(CreatedAt, other.CreatedAt)) return false;
           if (MessageId != other.MessageId) return false;
+          if (!object.Equals(Metadata, other.Metadata)) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
@@ -400,6 +418,7 @@ namespace Agrirouter.Feed.Push.Notification {
           if (SenderId.Length != 0) hash ^= SenderId.GetHashCode();
           if (createdAt_ != null) hash ^= CreatedAt.GetHashCode();
           if (MessageId.Length != 0) hash ^= MessageId.GetHashCode();
+          if (metadata_ != null) hash ^= Metadata.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -453,6 +472,10 @@ namespace Agrirouter.Feed.Push.Notification {
             output.WriteRawTag(82);
             output.WriteString(MessageId);
           }
+          if (metadata_ != null) {
+            output.WriteRawTag(90);
+            output.WriteMessage(Metadata);
+          }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
@@ -490,6 +513,9 @@ namespace Agrirouter.Feed.Push.Notification {
           }
           if (MessageId.Length != 0) {
             size += 1 + pb::CodedOutputStream.ComputeStringSize(MessageId);
+          }
+          if (metadata_ != null) {
+            size += 1 + pb::CodedOutputStream.ComputeMessageSize(Metadata);
           }
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
@@ -540,6 +566,12 @@ namespace Agrirouter.Feed.Push.Notification {
           }
           if (other.MessageId.Length != 0) {
             MessageId = other.MessageId;
+          }
+          if (other.metadata_ != null) {
+            if (metadata_ == null) {
+              Metadata = new global::Agrirouter.Commons.Metadata();
+            }
+            Metadata.MergeFrom(other.Metadata);
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
@@ -599,6 +631,13 @@ namespace Agrirouter.Feed.Push.Notification {
               }
               case 82: {
                 MessageId = input.ReadString();
+                break;
+              }
+              case 90: {
+                if (metadata_ == null) {
+                  Metadata = new global::Agrirouter.Commons.Metadata();
+                }
+                input.ReadMessage(Metadata);
                 break;
               }
             }
