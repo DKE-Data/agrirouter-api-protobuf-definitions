@@ -331,6 +331,31 @@ public final class PushNotificationOuterClass {
        */
       com.google.protobuf.ByteString
           getMessageIdBytes();
+
+      /**
+       * <pre>
+       * Additional metadata information to help differentiate between messages of the same type
+       * </pre>
+       *
+       * <code>.agrirouter.commons.Metadata metadata = 11;</code>
+       */
+      boolean hasMetadata();
+      /**
+       * <pre>
+       * Additional metadata information to help differentiate between messages of the same type
+       * </pre>
+       *
+       * <code>.agrirouter.commons.Metadata metadata = 11;</code>
+       */
+      agrirouter.commons.MessageOuterClass.Metadata getMetadata();
+      /**
+       * <pre>
+       * Additional metadata information to help differentiate between messages of the same type
+       * </pre>
+       *
+       * <code>.agrirouter.commons.Metadata metadata = 11;</code>
+       */
+      agrirouter.commons.MessageOuterClass.MetadataOrBuilder getMetadataOrBuilder();
     }
     /**
      * Protobuf type {@code agrirouter.feed.push.notification.PushNotification.Header}
@@ -462,6 +487,19 @@ public final class PushNotificationOuterClass {
                 java.lang.String s = input.readStringRequireUtf8();
 
                 messageId_ = s;
+                break;
+              }
+              case 90: {
+                agrirouter.commons.MessageOuterClass.Metadata.Builder subBuilder = null;
+                if (metadata_ != null) {
+                  subBuilder = metadata_.toBuilder();
+                }
+                metadata_ = input.readMessage(agrirouter.commons.MessageOuterClass.Metadata.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(metadata_);
+                  metadata_ = subBuilder.buildPartial();
+                }
+
                 break;
               }
             }
@@ -823,6 +861,39 @@ public final class PushNotificationOuterClass {
         }
       }
 
+      public static final int METADATA_FIELD_NUMBER = 11;
+      private agrirouter.commons.MessageOuterClass.Metadata metadata_;
+      /**
+       * <pre>
+       * Additional metadata information to help differentiate between messages of the same type
+       * </pre>
+       *
+       * <code>.agrirouter.commons.Metadata metadata = 11;</code>
+       */
+      public boolean hasMetadata() {
+        return metadata_ != null;
+      }
+      /**
+       * <pre>
+       * Additional metadata information to help differentiate between messages of the same type
+       * </pre>
+       *
+       * <code>.agrirouter.commons.Metadata metadata = 11;</code>
+       */
+      public agrirouter.commons.MessageOuterClass.Metadata getMetadata() {
+        return metadata_ == null ? agrirouter.commons.MessageOuterClass.Metadata.getDefaultInstance() : metadata_;
+      }
+      /**
+       * <pre>
+       * Additional metadata information to help differentiate between messages of the same type
+       * </pre>
+       *
+       * <code>.agrirouter.commons.Metadata metadata = 11;</code>
+       */
+      public agrirouter.commons.MessageOuterClass.MetadataOrBuilder getMetadataOrBuilder() {
+        return getMetadata();
+      }
+
       private byte memoizedIsInitialized = -1;
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
@@ -864,6 +935,9 @@ public final class PushNotificationOuterClass {
         }
         if (!getMessageIdBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 10, messageId_);
+        }
+        if (metadata_ != null) {
+          output.writeMessage(11, getMetadata());
         }
         unknownFields.writeTo(output);
       }
@@ -907,6 +981,10 @@ public final class PushNotificationOuterClass {
         }
         if (!getMessageIdBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, messageId_);
+        }
+        if (metadata_ != null) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(11, getMetadata());
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -953,6 +1031,11 @@ public final class PushNotificationOuterClass {
         }
         result = result && getMessageId()
             .equals(other.getMessageId());
+        result = result && (hasMetadata() == other.hasMetadata());
+        if (hasMetadata()) {
+          result = result && getMetadata()
+              .equals(other.getMetadata());
+        }
         result = result && unknownFields.equals(other.unknownFields);
         return result;
       }
@@ -992,6 +1075,10 @@ public final class PushNotificationOuterClass {
         }
         hash = (37 * hash) + MESSAGE_ID_FIELD_NUMBER;
         hash = (53 * hash) + getMessageId().hashCode();
+        if (hasMetadata()) {
+          hash = (37 * hash) + METADATA_FIELD_NUMBER;
+          hash = (53 * hash) + getMetadata().hashCode();
+        }
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -1153,6 +1240,12 @@ public final class PushNotificationOuterClass {
           }
           messageId_ = "";
 
+          if (metadataBuilder_ == null) {
+            metadata_ = null;
+          } else {
+            metadata_ = null;
+            metadataBuilder_ = null;
+          }
           return this;
         }
 
@@ -1197,6 +1290,11 @@ public final class PushNotificationOuterClass {
             result.createdAt_ = createdAtBuilder_.build();
           }
           result.messageId_ = messageId_;
+          if (metadataBuilder_ == null) {
+            result.metadata_ = metadata_;
+          } else {
+            result.metadata_ = metadataBuilder_.build();
+          }
           onBuilt();
           return result;
         }
@@ -1272,6 +1370,9 @@ public final class PushNotificationOuterClass {
           if (!other.getMessageId().isEmpty()) {
             messageId_ = other.messageId_;
             onChanged();
+          }
+          if (other.hasMetadata()) {
+            mergeMetadata(other.getMetadata());
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -2278,6 +2379,159 @@ public final class PushNotificationOuterClass {
           messageId_ = value;
           onChanged();
           return this;
+        }
+
+        private agrirouter.commons.MessageOuterClass.Metadata metadata_ = null;
+        private com.google.protobuf.SingleFieldBuilderV3<
+            agrirouter.commons.MessageOuterClass.Metadata, agrirouter.commons.MessageOuterClass.Metadata.Builder, agrirouter.commons.MessageOuterClass.MetadataOrBuilder> metadataBuilder_;
+        /**
+         * <pre>
+         * Additional metadata information to help differentiate between messages of the same type
+         * </pre>
+         *
+         * <code>.agrirouter.commons.Metadata metadata = 11;</code>
+         */
+        public boolean hasMetadata() {
+          return metadataBuilder_ != null || metadata_ != null;
+        }
+        /**
+         * <pre>
+         * Additional metadata information to help differentiate between messages of the same type
+         * </pre>
+         *
+         * <code>.agrirouter.commons.Metadata metadata = 11;</code>
+         */
+        public agrirouter.commons.MessageOuterClass.Metadata getMetadata() {
+          if (metadataBuilder_ == null) {
+            return metadata_ == null ? agrirouter.commons.MessageOuterClass.Metadata.getDefaultInstance() : metadata_;
+          } else {
+            return metadataBuilder_.getMessage();
+          }
+        }
+        /**
+         * <pre>
+         * Additional metadata information to help differentiate between messages of the same type
+         * </pre>
+         *
+         * <code>.agrirouter.commons.Metadata metadata = 11;</code>
+         */
+        public Builder setMetadata(agrirouter.commons.MessageOuterClass.Metadata value) {
+          if (metadataBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            metadata_ = value;
+            onChanged();
+          } else {
+            metadataBuilder_.setMessage(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * Additional metadata information to help differentiate between messages of the same type
+         * </pre>
+         *
+         * <code>.agrirouter.commons.Metadata metadata = 11;</code>
+         */
+        public Builder setMetadata(
+            agrirouter.commons.MessageOuterClass.Metadata.Builder builderForValue) {
+          if (metadataBuilder_ == null) {
+            metadata_ = builderForValue.build();
+            onChanged();
+          } else {
+            metadataBuilder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * Additional metadata information to help differentiate between messages of the same type
+         * </pre>
+         *
+         * <code>.agrirouter.commons.Metadata metadata = 11;</code>
+         */
+        public Builder mergeMetadata(agrirouter.commons.MessageOuterClass.Metadata value) {
+          if (metadataBuilder_ == null) {
+            if (metadata_ != null) {
+              metadata_ =
+                agrirouter.commons.MessageOuterClass.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+            } else {
+              metadata_ = value;
+            }
+            onChanged();
+          } else {
+            metadataBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * Additional metadata information to help differentiate between messages of the same type
+         * </pre>
+         *
+         * <code>.agrirouter.commons.Metadata metadata = 11;</code>
+         */
+        public Builder clearMetadata() {
+          if (metadataBuilder_ == null) {
+            metadata_ = null;
+            onChanged();
+          } else {
+            metadata_ = null;
+            metadataBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * Additional metadata information to help differentiate between messages of the same type
+         * </pre>
+         *
+         * <code>.agrirouter.commons.Metadata metadata = 11;</code>
+         */
+        public agrirouter.commons.MessageOuterClass.Metadata.Builder getMetadataBuilder() {
+          
+          onChanged();
+          return getMetadataFieldBuilder().getBuilder();
+        }
+        /**
+         * <pre>
+         * Additional metadata information to help differentiate between messages of the same type
+         * </pre>
+         *
+         * <code>.agrirouter.commons.Metadata metadata = 11;</code>
+         */
+        public agrirouter.commons.MessageOuterClass.MetadataOrBuilder getMetadataOrBuilder() {
+          if (metadataBuilder_ != null) {
+            return metadataBuilder_.getMessageOrBuilder();
+          } else {
+            return metadata_ == null ?
+                agrirouter.commons.MessageOuterClass.Metadata.getDefaultInstance() : metadata_;
+          }
+        }
+        /**
+         * <pre>
+         * Additional metadata information to help differentiate between messages of the same type
+         * </pre>
+         *
+         * <code>.agrirouter.commons.Metadata metadata = 11;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            agrirouter.commons.MessageOuterClass.Metadata, agrirouter.commons.MessageOuterClass.Metadata.Builder, agrirouter.commons.MessageOuterClass.MetadataOrBuilder> 
+            getMetadataFieldBuilder() {
+          if (metadataBuilder_ == null) {
+            metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                agrirouter.commons.MessageOuterClass.Metadata, agrirouter.commons.MessageOuterClass.Metadata.Builder, agrirouter.commons.MessageOuterClass.MetadataOrBuilder>(
+                    getMetadata(),
+                    getParentForChildren(),
+                    isClean());
+            metadata_ = null;
+          }
+          return metadataBuilder_;
         }
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3990,10 +4244,10 @@ public final class PushNotificationOuterClass {
       "otification.proto\022!agrirouter.feed.push." +
       "notification\032\037google/protobuf/timestamp." +
       "proto\032\031google/protobuf/any.proto\032\025common" +
-      "s/message.proto\032\023commons/chunk.proto\"\272\004\n" +
+      "s/message.proto\032\023commons/chunk.proto\"\352\004\n" +
       "\020PushNotification\022Q\n\010messages\030\001 \003(\0132?.ag" +
       "rirouter.feed.push.notification.PushNoti" +
-      "fication.FeedMessage\032\317\002\n\006Header\022\023\n\013recei" +
+      "fication.FeedMessage\032\377\002\n\006Header\022\023\n\013recei" +
       "ver_id\030\001 \001(\t\022\036\n\026technical_message_type\030\002" +
       " \001(\t\022\033\n\023team_set_context_id\030\003 \001(\t\0229\n\rchu" +
       "nk_context\030\004 \001(\0132\".agrirouter.commons.Ch" +
@@ -4001,11 +4255,12 @@ public final class PushNotificationOuterClass {
       "nt_timestamp\030\006 \001(\0132\032.google.protobuf.Tim" +
       "estamp\022\027\n\017sequence_number\030\007 \001(\003\022\021\n\tsende" +
       "r_id\030\010 \001(\t\022.\n\ncreated_at\030\t \001(\0132\032.google." +
-      "protobuf.Timestamp\022\022\n\nmessage_id\030\n \001(\t\032\200" +
-      "\001\n\013FeedMessage\022J\n\006header\030\001 \001(\0132:.agrirou" +
-      "ter.feed.push.notification.PushNotificat" +
-      "ion.Header\022%\n\007content\030\002 \001(\0132\024.google.pro" +
-      "tobuf.Anyb\006proto3"
+      "protobuf.Timestamp\022\022\n\nmessage_id\030\n \001(\t\022." +
+      "\n\010metadata\030\013 \001(\0132\034.agrirouter.commons.Me" +
+      "tadata\032\200\001\n\013FeedMessage\022J\n\006header\030\001 \001(\0132:" +
+      ".agrirouter.feed.push.notification.PushN" +
+      "otification.Header\022%\n\007content\030\002 \001(\0132\024.go" +
+      "ogle.protobuf.Anyb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4034,7 +4289,7 @@ public final class PushNotificationOuterClass {
     internal_static_agrirouter_feed_push_notification_PushNotification_Header_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_agrirouter_feed_push_notification_PushNotification_Header_descriptor,
-        new java.lang.String[] { "ReceiverId", "TechnicalMessageType", "TeamSetContextId", "ChunkContext", "PayloadSize", "SentTimestamp", "SequenceNumber", "SenderId", "CreatedAt", "MessageId", });
+        new java.lang.String[] { "ReceiverId", "TechnicalMessageType", "TeamSetContextId", "ChunkContext", "PayloadSize", "SentTimestamp", "SequenceNumber", "SenderId", "CreatedAt", "MessageId", "Metadata", });
     internal_static_agrirouter_feed_push_notification_PushNotification_FeedMessage_descriptor =
       internal_static_agrirouter_feed_push_notification_PushNotification_descriptor.getNestedTypes().get(1);
     internal_static_agrirouter_feed_push_notification_PushNotification_FeedMessage_fieldAccessorTable = new

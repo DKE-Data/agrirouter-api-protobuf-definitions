@@ -1586,6 +1586,31 @@ public final class FeedResponse {
        * <code>.google.protobuf.Timestamp created_at = 9;</code>
        */
       com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder();
+
+      /**
+       * <pre>
+       * Additional metadata information to help differentiate between messages of the same type
+       * </pre>
+       *
+       * <code>.agrirouter.commons.Metadata metadata = 10;</code>
+       */
+      boolean hasMetadata();
+      /**
+       * <pre>
+       * Additional metadata information to help differentiate between messages of the same type
+       * </pre>
+       *
+       * <code>.agrirouter.commons.Metadata metadata = 10;</code>
+       */
+      agrirouter.commons.MessageOuterClass.Metadata getMetadata();
+      /**
+       * <pre>
+       * Additional metadata information to help differentiate between messages of the same type
+       * </pre>
+       *
+       * <code>.agrirouter.commons.Metadata metadata = 10;</code>
+       */
+      agrirouter.commons.MessageOuterClass.MetadataOrBuilder getMetadataOrBuilder();
     }
     /**
      * Protobuf type {@code agrirouter.feed.response.HeaderQueryResponse.Header}
@@ -1701,6 +1726,19 @@ public final class FeedResponse {
                 if (subBuilder != null) {
                   subBuilder.mergeFrom(createdAt_);
                   createdAt_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+              case 82: {
+                agrirouter.commons.MessageOuterClass.Metadata.Builder subBuilder = null;
+                if (metadata_ != null) {
+                  subBuilder = metadata_.toBuilder();
+                }
+                metadata_ = input.readMessage(agrirouter.commons.MessageOuterClass.Metadata.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(metadata_);
+                  metadata_ = subBuilder.buildPartial();
                 }
 
                 break;
@@ -2002,6 +2040,39 @@ public final class FeedResponse {
         return getCreatedAt();
       }
 
+      public static final int METADATA_FIELD_NUMBER = 10;
+      private agrirouter.commons.MessageOuterClass.Metadata metadata_;
+      /**
+       * <pre>
+       * Additional metadata information to help differentiate between messages of the same type
+       * </pre>
+       *
+       * <code>.agrirouter.commons.Metadata metadata = 10;</code>
+       */
+      public boolean hasMetadata() {
+        return metadata_ != null;
+      }
+      /**
+       * <pre>
+       * Additional metadata information to help differentiate between messages of the same type
+       * </pre>
+       *
+       * <code>.agrirouter.commons.Metadata metadata = 10;</code>
+       */
+      public agrirouter.commons.MessageOuterClass.Metadata getMetadata() {
+        return metadata_ == null ? agrirouter.commons.MessageOuterClass.Metadata.getDefaultInstance() : metadata_;
+      }
+      /**
+       * <pre>
+       * Additional metadata information to help differentiate between messages of the same type
+       * </pre>
+       *
+       * <code>.agrirouter.commons.Metadata metadata = 10;</code>
+       */
+      public agrirouter.commons.MessageOuterClass.MetadataOrBuilder getMetadataOrBuilder() {
+        return getMetadata();
+      }
+
       private byte memoizedIsInitialized = -1;
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
@@ -2040,6 +2111,9 @@ public final class FeedResponse {
         }
         if (createdAt_ != null) {
           output.writeMessage(9, getCreatedAt());
+        }
+        if (metadata_ != null) {
+          output.writeMessage(10, getMetadata());
         }
         unknownFields.writeTo(output);
       }
@@ -2081,6 +2155,10 @@ public final class FeedResponse {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(9, getCreatedAt());
         }
+        if (metadata_ != null) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(10, getMetadata());
+        }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
         return size;
@@ -2121,6 +2199,11 @@ public final class FeedResponse {
           result = result && getCreatedAt()
               .equals(other.getCreatedAt());
         }
+        result = result && (hasMetadata() == other.hasMetadata());
+        if (hasMetadata()) {
+          result = result && getMetadata()
+              .equals(other.getMetadata());
+        }
         result = result && unknownFields.equals(other.unknownFields);
         return result;
       }
@@ -2156,6 +2239,10 @@ public final class FeedResponse {
         if (hasCreatedAt()) {
           hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
           hash = (53 * hash) + getCreatedAt().hashCode();
+        }
+        if (hasMetadata()) {
+          hash = (37 * hash) + METADATA_FIELD_NUMBER;
+          hash = (53 * hash) + getMetadata().hashCode();
         }
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
@@ -2312,6 +2399,12 @@ public final class FeedResponse {
             createdAt_ = null;
             createdAtBuilder_ = null;
           }
+          if (metadataBuilder_ == null) {
+            metadata_ = null;
+          } else {
+            metadata_ = null;
+            metadataBuilder_ = null;
+          }
           return this;
         }
 
@@ -2350,6 +2443,11 @@ public final class FeedResponse {
             result.createdAt_ = createdAt_;
           } else {
             result.createdAt_ = createdAtBuilder_.build();
+          }
+          if (metadataBuilder_ == null) {
+            result.metadata_ = metadata_;
+          } else {
+            result.metadata_ = metadataBuilder_.build();
           }
           onBuilt();
           return result;
@@ -2422,6 +2520,9 @@ public final class FeedResponse {
           }
           if (other.hasCreatedAt()) {
             mergeCreatedAt(other.getCreatedAt());
+          }
+          if (other.hasMetadata()) {
+            mergeMetadata(other.getMetadata());
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -3224,6 +3325,159 @@ public final class FeedResponse {
             createdAt_ = null;
           }
           return createdAtBuilder_;
+        }
+
+        private agrirouter.commons.MessageOuterClass.Metadata metadata_ = null;
+        private com.google.protobuf.SingleFieldBuilderV3<
+            agrirouter.commons.MessageOuterClass.Metadata, agrirouter.commons.MessageOuterClass.Metadata.Builder, agrirouter.commons.MessageOuterClass.MetadataOrBuilder> metadataBuilder_;
+        /**
+         * <pre>
+         * Additional metadata information to help differentiate between messages of the same type
+         * </pre>
+         *
+         * <code>.agrirouter.commons.Metadata metadata = 10;</code>
+         */
+        public boolean hasMetadata() {
+          return metadataBuilder_ != null || metadata_ != null;
+        }
+        /**
+         * <pre>
+         * Additional metadata information to help differentiate between messages of the same type
+         * </pre>
+         *
+         * <code>.agrirouter.commons.Metadata metadata = 10;</code>
+         */
+        public agrirouter.commons.MessageOuterClass.Metadata getMetadata() {
+          if (metadataBuilder_ == null) {
+            return metadata_ == null ? agrirouter.commons.MessageOuterClass.Metadata.getDefaultInstance() : metadata_;
+          } else {
+            return metadataBuilder_.getMessage();
+          }
+        }
+        /**
+         * <pre>
+         * Additional metadata information to help differentiate between messages of the same type
+         * </pre>
+         *
+         * <code>.agrirouter.commons.Metadata metadata = 10;</code>
+         */
+        public Builder setMetadata(agrirouter.commons.MessageOuterClass.Metadata value) {
+          if (metadataBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            metadata_ = value;
+            onChanged();
+          } else {
+            metadataBuilder_.setMessage(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * Additional metadata information to help differentiate between messages of the same type
+         * </pre>
+         *
+         * <code>.agrirouter.commons.Metadata metadata = 10;</code>
+         */
+        public Builder setMetadata(
+            agrirouter.commons.MessageOuterClass.Metadata.Builder builderForValue) {
+          if (metadataBuilder_ == null) {
+            metadata_ = builderForValue.build();
+            onChanged();
+          } else {
+            metadataBuilder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * Additional metadata information to help differentiate between messages of the same type
+         * </pre>
+         *
+         * <code>.agrirouter.commons.Metadata metadata = 10;</code>
+         */
+        public Builder mergeMetadata(agrirouter.commons.MessageOuterClass.Metadata value) {
+          if (metadataBuilder_ == null) {
+            if (metadata_ != null) {
+              metadata_ =
+                agrirouter.commons.MessageOuterClass.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+            } else {
+              metadata_ = value;
+            }
+            onChanged();
+          } else {
+            metadataBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * Additional metadata information to help differentiate between messages of the same type
+         * </pre>
+         *
+         * <code>.agrirouter.commons.Metadata metadata = 10;</code>
+         */
+        public Builder clearMetadata() {
+          if (metadataBuilder_ == null) {
+            metadata_ = null;
+            onChanged();
+          } else {
+            metadata_ = null;
+            metadataBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * Additional metadata information to help differentiate between messages of the same type
+         * </pre>
+         *
+         * <code>.agrirouter.commons.Metadata metadata = 10;</code>
+         */
+        public agrirouter.commons.MessageOuterClass.Metadata.Builder getMetadataBuilder() {
+          
+          onChanged();
+          return getMetadataFieldBuilder().getBuilder();
+        }
+        /**
+         * <pre>
+         * Additional metadata information to help differentiate between messages of the same type
+         * </pre>
+         *
+         * <code>.agrirouter.commons.Metadata metadata = 10;</code>
+         */
+        public agrirouter.commons.MessageOuterClass.MetadataOrBuilder getMetadataOrBuilder() {
+          if (metadataBuilder_ != null) {
+            return metadataBuilder_.getMessageOrBuilder();
+          } else {
+            return metadata_ == null ?
+                agrirouter.commons.MessageOuterClass.Metadata.getDefaultInstance() : metadata_;
+          }
+        }
+        /**
+         * <pre>
+         * Additional metadata information to help differentiate between messages of the same type
+         * </pre>
+         *
+         * <code>.agrirouter.commons.Metadata metadata = 10;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            agrirouter.commons.MessageOuterClass.Metadata, agrirouter.commons.MessageOuterClass.Metadata.Builder, agrirouter.commons.MessageOuterClass.MetadataOrBuilder> 
+            getMetadataFieldBuilder() {
+          if (metadataBuilder_ == null) {
+            metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                agrirouter.commons.MessageOuterClass.Metadata, agrirouter.commons.MessageOuterClass.Metadata.Builder, agrirouter.commons.MessageOuterClass.MetadataOrBuilder>(
+                    getMetadata(),
+                    getParentForChildren(),
+                    isClean());
+            metadata_ = null;
+          }
+          return metadataBuilder_;
         }
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -6689,6 +6943,31 @@ public final class FeedResponse {
        */
       com.google.protobuf.ByteString
           getMessageIdBytes();
+
+      /**
+       * <pre>
+       * Additional metadata information to help differentiate between messages of the same type
+       * </pre>
+       *
+       * <code>.agrirouter.commons.Metadata metadata = 11;</code>
+       */
+      boolean hasMetadata();
+      /**
+       * <pre>
+       * Additional metadata information to help differentiate between messages of the same type
+       * </pre>
+       *
+       * <code>.agrirouter.commons.Metadata metadata = 11;</code>
+       */
+      agrirouter.commons.MessageOuterClass.Metadata getMetadata();
+      /**
+       * <pre>
+       * Additional metadata information to help differentiate between messages of the same type
+       * </pre>
+       *
+       * <code>.agrirouter.commons.Metadata metadata = 11;</code>
+       */
+      agrirouter.commons.MessageOuterClass.MetadataOrBuilder getMetadataOrBuilder();
     }
     /**
      * Protobuf type {@code agrirouter.feed.response.MessageQueryResponse.Header}
@@ -6820,6 +7099,19 @@ public final class FeedResponse {
                 java.lang.String s = input.readStringRequireUtf8();
 
                 messageId_ = s;
+                break;
+              }
+              case 90: {
+                agrirouter.commons.MessageOuterClass.Metadata.Builder subBuilder = null;
+                if (metadata_ != null) {
+                  subBuilder = metadata_.toBuilder();
+                }
+                metadata_ = input.readMessage(agrirouter.commons.MessageOuterClass.Metadata.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(metadata_);
+                  metadata_ = subBuilder.buildPartial();
+                }
+
                 break;
               }
             }
@@ -7181,6 +7473,39 @@ public final class FeedResponse {
         }
       }
 
+      public static final int METADATA_FIELD_NUMBER = 11;
+      private agrirouter.commons.MessageOuterClass.Metadata metadata_;
+      /**
+       * <pre>
+       * Additional metadata information to help differentiate between messages of the same type
+       * </pre>
+       *
+       * <code>.agrirouter.commons.Metadata metadata = 11;</code>
+       */
+      public boolean hasMetadata() {
+        return metadata_ != null;
+      }
+      /**
+       * <pre>
+       * Additional metadata information to help differentiate between messages of the same type
+       * </pre>
+       *
+       * <code>.agrirouter.commons.Metadata metadata = 11;</code>
+       */
+      public agrirouter.commons.MessageOuterClass.Metadata getMetadata() {
+        return metadata_ == null ? agrirouter.commons.MessageOuterClass.Metadata.getDefaultInstance() : metadata_;
+      }
+      /**
+       * <pre>
+       * Additional metadata information to help differentiate between messages of the same type
+       * </pre>
+       *
+       * <code>.agrirouter.commons.Metadata metadata = 11;</code>
+       */
+      public agrirouter.commons.MessageOuterClass.MetadataOrBuilder getMetadataOrBuilder() {
+        return getMetadata();
+      }
+
       private byte memoizedIsInitialized = -1;
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
@@ -7222,6 +7547,9 @@ public final class FeedResponse {
         }
         if (!getMessageIdBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 10, messageId_);
+        }
+        if (metadata_ != null) {
+          output.writeMessage(11, getMetadata());
         }
         unknownFields.writeTo(output);
       }
@@ -7265,6 +7593,10 @@ public final class FeedResponse {
         }
         if (!getMessageIdBytes().isEmpty()) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, messageId_);
+        }
+        if (metadata_ != null) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(11, getMetadata());
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -7311,6 +7643,11 @@ public final class FeedResponse {
         }
         result = result && getMessageId()
             .equals(other.getMessageId());
+        result = result && (hasMetadata() == other.hasMetadata());
+        if (hasMetadata()) {
+          result = result && getMetadata()
+              .equals(other.getMetadata());
+        }
         result = result && unknownFields.equals(other.unknownFields);
         return result;
       }
@@ -7350,6 +7687,10 @@ public final class FeedResponse {
         }
         hash = (37 * hash) + MESSAGE_ID_FIELD_NUMBER;
         hash = (53 * hash) + getMessageId().hashCode();
+        if (hasMetadata()) {
+          hash = (37 * hash) + METADATA_FIELD_NUMBER;
+          hash = (53 * hash) + getMetadata().hashCode();
+        }
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -7511,6 +7852,12 @@ public final class FeedResponse {
           }
           messageId_ = "";
 
+          if (metadataBuilder_ == null) {
+            metadata_ = null;
+          } else {
+            metadata_ = null;
+            metadataBuilder_ = null;
+          }
           return this;
         }
 
@@ -7555,6 +7902,11 @@ public final class FeedResponse {
             result.createdAt_ = createdAtBuilder_.build();
           }
           result.messageId_ = messageId_;
+          if (metadataBuilder_ == null) {
+            result.metadata_ = metadata_;
+          } else {
+            result.metadata_ = metadataBuilder_.build();
+          }
           onBuilt();
           return result;
         }
@@ -7630,6 +7982,9 @@ public final class FeedResponse {
           if (!other.getMessageId().isEmpty()) {
             messageId_ = other.messageId_;
             onChanged();
+          }
+          if (other.hasMetadata()) {
+            mergeMetadata(other.getMetadata());
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -8636,6 +8991,159 @@ public final class FeedResponse {
           messageId_ = value;
           onChanged();
           return this;
+        }
+
+        private agrirouter.commons.MessageOuterClass.Metadata metadata_ = null;
+        private com.google.protobuf.SingleFieldBuilderV3<
+            agrirouter.commons.MessageOuterClass.Metadata, agrirouter.commons.MessageOuterClass.Metadata.Builder, agrirouter.commons.MessageOuterClass.MetadataOrBuilder> metadataBuilder_;
+        /**
+         * <pre>
+         * Additional metadata information to help differentiate between messages of the same type
+         * </pre>
+         *
+         * <code>.agrirouter.commons.Metadata metadata = 11;</code>
+         */
+        public boolean hasMetadata() {
+          return metadataBuilder_ != null || metadata_ != null;
+        }
+        /**
+         * <pre>
+         * Additional metadata information to help differentiate between messages of the same type
+         * </pre>
+         *
+         * <code>.agrirouter.commons.Metadata metadata = 11;</code>
+         */
+        public agrirouter.commons.MessageOuterClass.Metadata getMetadata() {
+          if (metadataBuilder_ == null) {
+            return metadata_ == null ? agrirouter.commons.MessageOuterClass.Metadata.getDefaultInstance() : metadata_;
+          } else {
+            return metadataBuilder_.getMessage();
+          }
+        }
+        /**
+         * <pre>
+         * Additional metadata information to help differentiate between messages of the same type
+         * </pre>
+         *
+         * <code>.agrirouter.commons.Metadata metadata = 11;</code>
+         */
+        public Builder setMetadata(agrirouter.commons.MessageOuterClass.Metadata value) {
+          if (metadataBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            metadata_ = value;
+            onChanged();
+          } else {
+            metadataBuilder_.setMessage(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * Additional metadata information to help differentiate between messages of the same type
+         * </pre>
+         *
+         * <code>.agrirouter.commons.Metadata metadata = 11;</code>
+         */
+        public Builder setMetadata(
+            agrirouter.commons.MessageOuterClass.Metadata.Builder builderForValue) {
+          if (metadataBuilder_ == null) {
+            metadata_ = builderForValue.build();
+            onChanged();
+          } else {
+            metadataBuilder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * Additional metadata information to help differentiate between messages of the same type
+         * </pre>
+         *
+         * <code>.agrirouter.commons.Metadata metadata = 11;</code>
+         */
+        public Builder mergeMetadata(agrirouter.commons.MessageOuterClass.Metadata value) {
+          if (metadataBuilder_ == null) {
+            if (metadata_ != null) {
+              metadata_ =
+                agrirouter.commons.MessageOuterClass.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+            } else {
+              metadata_ = value;
+            }
+            onChanged();
+          } else {
+            metadataBuilder_.mergeFrom(value);
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * Additional metadata information to help differentiate between messages of the same type
+         * </pre>
+         *
+         * <code>.agrirouter.commons.Metadata metadata = 11;</code>
+         */
+        public Builder clearMetadata() {
+          if (metadataBuilder_ == null) {
+            metadata_ = null;
+            onChanged();
+          } else {
+            metadata_ = null;
+            metadataBuilder_ = null;
+          }
+
+          return this;
+        }
+        /**
+         * <pre>
+         * Additional metadata information to help differentiate between messages of the same type
+         * </pre>
+         *
+         * <code>.agrirouter.commons.Metadata metadata = 11;</code>
+         */
+        public agrirouter.commons.MessageOuterClass.Metadata.Builder getMetadataBuilder() {
+          
+          onChanged();
+          return getMetadataFieldBuilder().getBuilder();
+        }
+        /**
+         * <pre>
+         * Additional metadata information to help differentiate between messages of the same type
+         * </pre>
+         *
+         * <code>.agrirouter.commons.Metadata metadata = 11;</code>
+         */
+        public agrirouter.commons.MessageOuterClass.MetadataOrBuilder getMetadataOrBuilder() {
+          if (metadataBuilder_ != null) {
+            return metadataBuilder_.getMessageOrBuilder();
+          } else {
+            return metadata_ == null ?
+                agrirouter.commons.MessageOuterClass.Metadata.getDefaultInstance() : metadata_;
+          }
+        }
+        /**
+         * <pre>
+         * Additional metadata information to help differentiate between messages of the same type
+         * </pre>
+         *
+         * <code>.agrirouter.commons.Metadata metadata = 11;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            agrirouter.commons.MessageOuterClass.Metadata, agrirouter.commons.MessageOuterClass.Metadata.Builder, agrirouter.commons.MessageOuterClass.MetadataOrBuilder> 
+            getMetadataFieldBuilder() {
+          if (metadataBuilder_ == null) {
+            metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                agrirouter.commons.MessageOuterClass.Metadata, agrirouter.commons.MessageOuterClass.Metadata.Builder, agrirouter.commons.MessageOuterClass.MetadataOrBuilder>(
+                    getMetadata(),
+                    getParentForChildren(),
+                    isClean());
+            metadata_ = null;
+          }
+          return metadataBuilder_;
         }
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -13527,14 +14035,14 @@ public final class FeedResponse {
       "to\032\023commons/chunk.proto\"%\n\004Page\022\016\n\006numbe" +
       "r\030\001 \001(\005\022\r\n\005total\030\002 \001(\005\"N\n\014QueryMetrics\022\037" +
       "\n\027total_messages_in_query\030\001 \001(\005\022\035\n\025max_c" +
-      "ount_restriction\030\002 \001(\005\"\270\005\n\023HeaderQueryRe" +
+      "ount_restriction\030\002 \001(\005\"\350\005\n\023HeaderQueryRe" +
       "sponse\022=\n\rquery_metrics\030\001 \001(\0132&.agrirout" +
       "er.feed.response.QueryMetrics\022,\n\004page\030\002 " +
       "\001(\0132\036.agrirouter.feed.response.Page\022:\n\016c" +
       "hunk_contexts\030\003 \003(\0132\".agrirouter.commons" +
       ".ChunkComponent\022@\n\004feed\030\004 \003(\01322.agrirout" +
       "er.feed.response.HeaderQueryResponse.Fee" +
-      "d\022\037\n\023pending_message_ids\030\005 \003(\tB\002\030\001\032\235\002\n\006H" +
+      "d\022\037\n\023pending_message_ids\030\005 \003(\tB\002\030\001\032\315\002\n\006H" +
       "eader\022\022\n\nmessage_id\030\001 \001(\t\022\036\n\026technical_m" +
       "essage_type\030\002 \001(\t\022\033\n\023team_set_context_id" +
       "\030\003 \001(\t\022\030\n\020chunk_context_id\030\004 \001(\t\022\024\n\014payl" +
@@ -13542,37 +14050,39 @@ public final class FeedResponse {
       ".google.protobuf.Timestamp\022\027\n\017sequence_n" +
       "umber\030\007 \001(\003\022\025\n\rcurrent_chunk\030\010 \001(\003\022.\n\ncr" +
       "eated_at\030\t \001(\0132\032.google.protobuf.Timesta" +
-      "mp\032u\n\004Feed\022\021\n\tsender_id\030\001 \001(\t\022\023\n\013receive" +
-      "r_id\030\002 \001(\t\022E\n\007headers\030\003 \003(\01324.agrirouter" +
-      ".feed.response.HeaderQueryResponse.Heade" +
-      "r\"\240\005\n\024MessageQueryResponse\022=\n\rquery_metr" +
-      "ics\030\001 \001(\0132&.agrirouter.feed.response.Que" +
-      "ryMetrics\022,\n\004page\030\002 \001(\0132\036.agrirouter.fee" +
-      "d.response.Page\022L\n\010messages\030\003 \003(\0132:.agri" +
-      "router.feed.response.MessageQueryRespons" +
-      "e.FeedMessage\032\317\002\n\006Header\022\023\n\013receiver_id\030" +
-      "\001 \001(\t\022\036\n\026technical_message_type\030\002 \001(\t\022\033\n" +
-      "\023team_set_context_id\030\003 \001(\t\0229\n\rchunk_cont" +
-      "ext\030\004 \001(\0132\".agrirouter.commons.ChunkComp" +
-      "onent\022\024\n\014payload_size\030\005 \001(\003\0222\n\016sent_time" +
-      "stamp\030\006 \001(\0132\032.google.protobuf.Timestamp\022" +
-      "\027\n\017sequence_number\030\007 \001(\003\022\021\n\tsender_id\030\010 " +
-      "\001(\t\022.\n\ncreated_at\030\t \001(\0132\032.google.protobu" +
-      "f.Timestamp\022\022\n\nmessage_id\030\n \001(\t\032{\n\013FeedM" +
-      "essage\022E\n\006header\030\001 \001(\01325.agrirouter.feed" +
-      ".response.MessageQueryResponse.Header\022%\n" +
-      "\007content\030\002 \001(\0132\024.google.protobuf.Any\"\226\003\n" +
-      "\032FailedMessageQueryResponse\022=\n\rquery_met" +
-      "rics\030\001 \001(\0132&.agrirouter.feed.response.Qu" +
-      "eryMetrics\022,\n\004page\030\002 \001(\0132\036.agrirouter.fe" +
-      "ed.response.Page\022K\n\006header\030\003 \001(\0132;.agrir" +
-      "outer.feed.response.FailedMessageQueryRe" +
-      "sponse.Header\022,\n\007reasons\030\004 \003(\0132\033.agrirou" +
-      "ter.commons.Message\032\217\001\n\006Header\022\036\n\026techni" +
-      "cal_message_type\030\001 \001(\t\022\033\n\023team_set_conte" +
-      "xt_id\030\002 \001(\t\022\024\n\014payload_size\030\003 \001(\003\0222\n\016sen" +
-      "t_timestamp\030\004 \001(\0132\032.google.protobuf.Time" +
-      "stampb\006proto3"
+      "mp\022.\n\010metadata\030\n \001(\0132\034.agrirouter.common" +
+      "s.Metadata\032u\n\004Feed\022\021\n\tsender_id\030\001 \001(\t\022\023\n" +
+      "\013receiver_id\030\002 \001(\t\022E\n\007headers\030\003 \003(\01324.ag" +
+      "rirouter.feed.response.HeaderQueryRespon" +
+      "se.Header\"\320\005\n\024MessageQueryResponse\022=\n\rqu" +
+      "ery_metrics\030\001 \001(\0132&.agrirouter.feed.resp" +
+      "onse.QueryMetrics\022,\n\004page\030\002 \001(\0132\036.agriro" +
+      "uter.feed.response.Page\022L\n\010messages\030\003 \003(" +
+      "\0132:.agrirouter.feed.response.MessageQuer" +
+      "yResponse.FeedMessage\032\377\002\n\006Header\022\023\n\013rece" +
+      "iver_id\030\001 \001(\t\022\036\n\026technical_message_type\030" +
+      "\002 \001(\t\022\033\n\023team_set_context_id\030\003 \001(\t\0229\n\rch" +
+      "unk_context\030\004 \001(\0132\".agrirouter.commons.C" +
+      "hunkComponent\022\024\n\014payload_size\030\005 \001(\003\0222\n\016s" +
+      "ent_timestamp\030\006 \001(\0132\032.google.protobuf.Ti" +
+      "mestamp\022\027\n\017sequence_number\030\007 \001(\003\022\021\n\tsend" +
+      "er_id\030\010 \001(\t\022.\n\ncreated_at\030\t \001(\0132\032.google" +
+      ".protobuf.Timestamp\022\022\n\nmessage_id\030\n \001(\t\022" +
+      ".\n\010metadata\030\013 \001(\0132\034.agrirouter.commons.M" +
+      "etadata\032{\n\013FeedMessage\022E\n\006header\030\001 \001(\01325" +
+      ".agrirouter.feed.response.MessageQueryRe" +
+      "sponse.Header\022%\n\007content\030\002 \001(\0132\024.google." +
+      "protobuf.Any\"\226\003\n\032FailedMessageQueryRespo" +
+      "nse\022=\n\rquery_metrics\030\001 \001(\0132&.agrirouter." +
+      "feed.response.QueryMetrics\022,\n\004page\030\002 \001(\013" +
+      "2\036.agrirouter.feed.response.Page\022K\n\006head" +
+      "er\030\003 \001(\0132;.agrirouter.feed.response.Fail" +
+      "edMessageQueryResponse.Header\022,\n\007reasons" +
+      "\030\004 \003(\0132\033.agrirouter.commons.Message\032\217\001\n\006" +
+      "Header\022\036\n\026technical_message_type\030\001 \001(\t\022\033" +
+      "\n\023team_set_context_id\030\002 \001(\t\022\024\n\014payload_s" +
+      "ize\030\003 \001(\003\0222\n\016sent_timestamp\030\004 \001(\0132\032.goog" +
+      "le.protobuf.Timestampb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -13613,7 +14123,7 @@ public final class FeedResponse {
     internal_static_agrirouter_feed_response_HeaderQueryResponse_Header_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_agrirouter_feed_response_HeaderQueryResponse_Header_descriptor,
-        new java.lang.String[] { "MessageId", "TechnicalMessageType", "TeamSetContextId", "ChunkContextId", "PayloadSize", "SentTimestamp", "SequenceNumber", "CurrentChunk", "CreatedAt", });
+        new java.lang.String[] { "MessageId", "TechnicalMessageType", "TeamSetContextId", "ChunkContextId", "PayloadSize", "SentTimestamp", "SequenceNumber", "CurrentChunk", "CreatedAt", "Metadata", });
     internal_static_agrirouter_feed_response_HeaderQueryResponse_Feed_descriptor =
       internal_static_agrirouter_feed_response_HeaderQueryResponse_descriptor.getNestedTypes().get(1);
     internal_static_agrirouter_feed_response_HeaderQueryResponse_Feed_fieldAccessorTable = new
@@ -13631,7 +14141,7 @@ public final class FeedResponse {
     internal_static_agrirouter_feed_response_MessageQueryResponse_Header_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_agrirouter_feed_response_MessageQueryResponse_Header_descriptor,
-        new java.lang.String[] { "ReceiverId", "TechnicalMessageType", "TeamSetContextId", "ChunkContext", "PayloadSize", "SentTimestamp", "SequenceNumber", "SenderId", "CreatedAt", "MessageId", });
+        new java.lang.String[] { "ReceiverId", "TechnicalMessageType", "TeamSetContextId", "ChunkContext", "PayloadSize", "SentTimestamp", "SequenceNumber", "SenderId", "CreatedAt", "MessageId", "Metadata", });
     internal_static_agrirouter_feed_response_MessageQueryResponse_FeedMessage_descriptor =
       internal_static_agrirouter_feed_response_MessageQueryResponse_descriptor.getNestedTypes().get(1);
     internal_static_agrirouter_feed_response_MessageQueryResponse_FeedMessage_fieldAccessorTable = new
