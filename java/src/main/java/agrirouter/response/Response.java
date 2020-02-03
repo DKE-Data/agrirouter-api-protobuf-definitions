@@ -20,7 +20,7 @@ public final class Response {
 
     /**
      * <pre>
-     * HTTP Response Codes will be used here (200, 400, 201, etc)
+     * HTTP Response Codes will be used here (200, 400, 201, etc) For push notifications the value would be 0 as it is not a response to anything
      * </pre>
      *
      * <code>int32 response_code = 1;</code>
@@ -461,7 +461,7 @@ public final class Response {
     private int responseCode_;
     /**
      * <pre>
-     * HTTP Response Codes will be used here (200, 400, 201, etc)
+     * HTTP Response Codes will be used here (200, 400, 201, etc) For push notifications the value would be 0 as it is not a response to anything
      * </pre>
      *
      * <code>int32 response_code = 1;</code>
@@ -977,7 +977,7 @@ public final class Response {
       private int responseCode_ ;
       /**
        * <pre>
-       * HTTP Response Codes will be used here (200, 400, 201, etc)
+       * HTTP Response Codes will be used here (200, 400, 201, etc) For push notifications the value would be 0 as it is not a response to anything
        * </pre>
        *
        * <code>int32 response_code = 1;</code>
@@ -987,7 +987,7 @@ public final class Response {
       }
       /**
        * <pre>
-       * HTTP Response Codes will be used here (200, 400, 201, etc)
+       * HTTP Response Codes will be used here (200, 400, 201, etc) For push notifications the value would be 0 as it is not a response to anything
        * </pre>
        *
        * <code>int32 response_code = 1;</code>
@@ -1000,7 +1000,7 @@ public final class Response {
       }
       /**
        * <pre>
-       * HTTP Response Codes will be used here (200, 400, 201, etc)
+       * HTTP Response Codes will be used here (200, 400, 201, etc) For push notifications the value would be 0 as it is not a response to anything
        * </pre>
        *
        * <code>int32 response_code = 1;</code>
