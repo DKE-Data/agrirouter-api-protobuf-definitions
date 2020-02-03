@@ -266,6 +266,9 @@ namespace Agrirouter.Commons {
     /// <summary>Field number for the "file_name" field.</summary>
     public const int FileNameFieldNumber = 1;
     private string fileName_ = "";
+    /// <summary>
+    /// Filename can be used for easier identification of a message and its payload. Reason being that internal AgriRouter message ID is not intuitive
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string FileName {
       get { return fileName_; }

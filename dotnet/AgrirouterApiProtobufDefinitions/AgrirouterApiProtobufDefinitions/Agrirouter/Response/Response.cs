@@ -92,7 +92,7 @@ namespace Agrirouter.Response {
     public const int ResponseCodeFieldNumber = 1;
     private int responseCode_;
     /// <summary>
-    /// HTTP Response Codes will be used here (200, 400, 201, etc)
+    /// HTTP Response Codes will be used here (200, 400, 201, etc) For push notifications the value would be 0 as it is not a response to anything
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int ResponseCode {
