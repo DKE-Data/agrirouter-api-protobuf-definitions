@@ -2,6 +2,7 @@ syntax = "proto3";
 import "google/protobuf/any.proto";
 import "google/protobuf/timestamp.proto";
 import "commons/chunk.proto";
+import "commons/message.proto";
 
 package agrirouter.request;
 
@@ -26,6 +27,7 @@ message RequestEnvelope{
     repeated string recipients = 6;  		                                   // Directly Addressed agrirouter Endpoint ID's
     agrirouter.commons.ChunkComponent chunk_info = 7;                          // If this is part of a chunked message details are here
     google.protobuf.Timestamp timestamp = 8;                                   // Client generated UTC Timestamp at which the client sent the message
+    agrirouter.commons.Metadata metadata = 9;                                  // Additional metadata information to help differentiate between messages of the same type
 }
 
 message RequestPayloadWrapper {

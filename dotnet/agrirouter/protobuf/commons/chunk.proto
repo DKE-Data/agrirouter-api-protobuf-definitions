@@ -2,8 +2,8 @@ syntax = "proto3";
 package agrirouter.commons;
 
 message ChunkComponent {
-    string context_id= 1; 		                    // client generated unique identifier for larger binaries
-    int64 current= 2; 		                        // number of the current chunk 
+    string context_id= 1; 		                // client generated unique identifier for larger binaries
+    int64 current= 2; 		                    // number of the current chunk 
     int64 total= 3; 		                        // total number of chunks of binary
     int64 total_size= 4; 		                    // total size of binary
 }

@@ -7,6 +7,10 @@ message Message {
     map<string, string> args = 3;                       // List of argument names and values which would be inserted into the message text
 }
 
+message Metadata {
+    string file_name = 1;                               // Filename can be used for easier identification of a message and its payload. Reason being that internal AgriRouter message ID is not intuitive
+}
+
 message Messages {
     repeated Message messages = 1;                      // Collection of the Message object listed above used in scenario's when there are multiple messages in a response
 }
