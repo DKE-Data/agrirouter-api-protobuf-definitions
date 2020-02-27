@@ -1,4 +1,4 @@
-name: Push NuGet Packages
+name: Deploy NuGet packages
 
 on:
   push:
