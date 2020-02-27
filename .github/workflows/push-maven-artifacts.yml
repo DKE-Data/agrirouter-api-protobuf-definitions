@@ -22,5 +22,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          mv ./java/cd/mavensettings.xml ~/.m2/settings.xml
-          mvn clean deploy -Pjdk11 -fjava/pom.xml
+          mvn -s java/cd/mavensettings.xml -f java/pom.xml clean deploy -Pjdk11
