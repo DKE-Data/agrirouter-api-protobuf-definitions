@@ -1,0 +1,20 @@
+name: Deploy maven packages for JDK 11
+
+on:
+  push:
+    branches:
+      - 'release/java/jdk11'
+
+jobs:
+  build:
+    runs-on: linux-latest
+    name: Deploy maven artifact
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@release/java/jdk11
+
+      - name: Build artifacts and deploy them using profile
+        run: |
+          cd .\java\
+          mvn clean deploy
