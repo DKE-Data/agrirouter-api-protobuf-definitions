@@ -18,7 +18,7 @@ jobs:
         with:
           java-version: 11
 
-      - name: Build artifacts and deploy them using profile
+      - name: Build & deploy artifacts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
