@@ -39,7 +39,7 @@
         <repository>
             <id>github</id>
             <name>GitHub OWNER Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/DKE-Data/agrirouter-api-protobuf-definitions</url>
+            <url>https://maven.pkg.github.com/DKE-Data/com/agrirouter/proto/agrirouter-api-protobuf-definitions</url>
         </repository>
     </distributionManagement>
 
@@ -53,7 +53,7 @@
         <repository>
             <id>github</id>
             <name>GitHub OWNER Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/DKE-Data/agrirouter-api-protobuf-definitions</url>
+            <url>https://maven.pkg.github.com/DKE-Data/com/agrirouter/proto/agrirouter-api-protobuf-definitions</url>
         </repository>
     </repositories>
 
