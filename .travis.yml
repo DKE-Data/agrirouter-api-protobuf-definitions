@@ -11,17 +11,9 @@ matrix:
         fast_finish: true
         include:
           - jdk: openjdk8
-            env:
-              - DESC="Build all branches on JDK 8"
           - jdk: openjdk9
-            env:
-              - DESC="Build all branches on JDK 9"
           - jdk: openjdk10
-            env:
-              - DESC="Build all branches on JDK 10"
           - jdk: openjdk11
-            env:
-              - DESC="Build all branches on JDK 11"
 
       before_install:
         - cd java
