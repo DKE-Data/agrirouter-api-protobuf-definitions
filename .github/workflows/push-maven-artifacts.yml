@@ -17,5 +17,7 @@ jobs:
 
       - name: Build artifacts and deploy them using profile
         run: |
+          mkdir ~/.m2
+          echo "<settings><servers><server><id>github</id><username>DKE-Data</username><password>${GITHUB_TOKEN}</password></server></servers></settings>" > ~/.m2/settings.xml
           cd .\java\
           mvn clean deploy
