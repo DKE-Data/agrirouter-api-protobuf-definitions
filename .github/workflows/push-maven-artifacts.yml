@@ -25,4 +25,4 @@ jobs:
 
       - name: Build & deploy artifacts 
         run: |
-          mvn clean deploy -Pjdk11
+          mvn clean deploy -Pjdk11 -fjava/pom.xml
