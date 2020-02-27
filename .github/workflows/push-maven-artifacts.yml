@@ -10,9 +10,8 @@ jobs:
     runs-on: windows-latest
     name: Deploy maven artifact
     steps:
-
       - name: Checkout repository
-        uses: actions/checkout@release/java/jdk11
+        uses: actions/checkout@v2
 
       - name: Build artifacts and deploy them using profile
         run: |
