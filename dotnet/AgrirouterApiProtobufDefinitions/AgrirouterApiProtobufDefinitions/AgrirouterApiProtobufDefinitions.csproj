@@ -3,6 +3,14 @@
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
         <AssemblyName>agrirouter-api-protobuf-definitions</AssemblyName>
+        <PackageVersion>1.1.0</PackageVersion>
+        <Title>Agrirouter API Protobuf Definitions</Title>
+        <Authors>Sascha Dömer</Authors>
+        <Description>These are the protobuf definitons for the communication with the agrirouter.</Description>
+        <Copyright>DKE-Data GmbH &amp; Co. KG</Copyright>
+        <PackageProjectUrl>https://my-agrirouter.com/</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/DKE-Data/agrirouter-api-protobuf-definitions/blob/develop/LICENSE</PackageLicenseUrl>
+        <PackageReleaseNotes>Adding meta information to messages.</PackageReleaseNotes>
     </PropertyGroup>
 
     <ItemGroup>
