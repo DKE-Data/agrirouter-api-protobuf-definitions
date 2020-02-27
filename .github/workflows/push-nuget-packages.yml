@@ -3,7 +3,7 @@ name: Push NuGet Packages
 on:
   push:
     branches:
-      - 'releases/dotnet/*'
+      - 'release/dotnet/*'
 
 jobs:
   build:
