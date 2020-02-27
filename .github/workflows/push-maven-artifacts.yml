@@ -7,17 +7,22 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
-    name: Deploy maven artifact
-    env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    runs-on: ubuntu-latest
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
+
       - name: Build artifacts and deploy them using profile
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           mkdir ~/.m2
           echo "<settings><servers><server><id>github</id><username>DKE-Data</username><password>${GITHUB_TOKEN}</password></server></servers></settings>" > ~/.m2/settings.xml
           cd .\java\
-          mvn clean deploy
+          mvn clean deploy -Pjdk11
