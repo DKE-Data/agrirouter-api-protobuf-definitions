@@ -41,66 +41,9 @@ Generating the Java classes for the given `*.proto` is quite simple. The project
 
 and the generated source files will be placed underneath `src/main/generated`. Additional references - like native Google APIs - are resolved by the plugin itself.
 
-If you want to add a Maven dependency feel free to fetch the latest snapshot from Maven Central. Just add the following repository:
+=== Integration
 
-```xml
-<repositories>
-    <repository>
-        <id>snapshots-repo</id>
-        <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-    </repository>
-</repositories>
-```
-
-Currently we are supporting the JDK 11 for the SNAPSHOT version (feel free to build it by yourself).
-
-Releases will be available for JDK 8, JDK 9, JDK 10 and JDK 11 - see documentation below.
-
-==== JDK 8
-
-```xml
-<dependency>
-    <groupId>com.agrirouter.proto</groupId>
-    <artifactId>agrirouter-api-protobuf-definitions</artifactId>
-    <version>1.0.0-jdk8</version>
-</dependency>
-```
-
-==== JDK 9
-
-```xml
-<dependency>
-    <groupId>com.agrirouter.proto</groupId>
-    <artifactId>agrirouter-api-protobuf-definitions</artifactId>
-    <version>1.0.0-jdk9</version>
-</dependency>
-```
-
-==== JDK 10
-
-```xml
-<dependency>
-    <groupId>com.agrirouter.proto</groupId>
-    <artifactId>agrirouter-api-protobuf-definitions</artifactId>
-    <version>1.0.0-jdk10</version>
-</dependency>
-```
-
-==== JDK 11
-
-```xml
-<dependency>
-    <groupId>com.agrirouter.proto</groupId>
-    <artifactId>agrirouter-api-protobuf-definitions</artifactId>
-    <version>1.0.0-jdk11</version>
-</dependency>
-```
+If you want to add a dependency feel free to fetch the latest snapshot or release from Github Packages. Please find the documentation right https://help.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-apache-maven-for-use-with-github-packages[here].
 
 === C#
 
