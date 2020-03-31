@@ -3,7 +3,6 @@ name: Continuous delivery
 on:
   push:
     branches:
-      - master
       - develop
 
 jobs:
@@ -18,19 +17,4 @@ jobs:
       - name: Build with Maven
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: mvn -B deploy --file pom.xml --settings ci/settings.xml
-  deploy_nuget_packages:
-    runs-on: windows-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@master
-      - name: Build solution and generate NuGet package
-        run: |
-          cd .\dotnet\AgrirouterApiProtobufDefinitions\
-          dotnet pack -c Release -o out
-      - name: Install NuGet client
-        uses: warrenbuckley/Setup-Nuget@v1
-      - name: Add private GitHub registry to NuGet
-        run: nuget sources add -name "GPR" -Source https://nuget.pkg.github.com/DKE-Data/index.json -Username DKE-Data -Password ${{ secrets.GITHUB_TOKEN }}
-      - name: Push generated package to GitHub registry
-        run: nuget push .\dotnet\AgrirouterApiProtobufDefinitions\out\*.nupkg -Source "GPR" -SkipDuplicate
+        run: mvn -B deploy --file java/pom.xml --settings java/ci/settings.xml
