@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
         <AssemblyName>agrirouter-api-protobuf-definitions</AssemblyName>
-        <PackageVersion>1.1.1</PackageVersion>
+        <PackageVersion>1.2.0</PackageVersion>
         <Title>Agrirouter API Protobuf Definitions</Title>
         <Authors>Sascha Dömer</Authors>
         <Description>These are the protobuf definitons for the communication with the agrirouter.</Description>
