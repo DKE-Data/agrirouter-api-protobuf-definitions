@@ -4,7 +4,7 @@
 
     <groupId>com.agrirouter.proto</groupId>
     <artifactId>agrirouter-api-protobuf-definitions</artifactId>
-    <version>1.2.0-SNAPSHOT</version>
+    <version>1.1.1-SNAPSHOT</version>
 
     <name>AGRIROUTER - API Protobuf Definitions</name>
     <description>This project contains the internal Google Protocol Buffer (protobuf) definitions for the communication
