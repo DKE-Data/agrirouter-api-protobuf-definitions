@@ -1,9 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netstandard2.1</TargetFramework>
+        <TargetFramework>netstandard2.0</TargetFramework>
         <AssemblyName>agrirouter-api-protobuf-definitions</AssemblyName>
-        <PackageVersion>1.1.0</PackageVersion>
+        <PackageVersion>1.2.1</PackageVersion>
         <Title>Agrirouter API Protobuf Definitions</Title>
         <Authors>Sascha Dömer</Authors>
         <Description>These are the protobuf definitons for the communication with the agrirouter.</Description>
@@ -14,7 +14,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Google.Protobuf" Version="3.11.1" />
+      <PackageReference Include="Google.Protobuf" Version="3.15.5" />
     </ItemGroup>
 
 </Project>
