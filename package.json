@@ -1,0 +1,19 @@
+{
+  "name": "agrirouter-api-protobuf-definitions",
+  "version": "1.0.0",
+  "description": "Meta package that contains source protobuf files and compiles them to all languages officially supported by agrirouter",
+  "repository": "https://github.com/DKE-Data/agrirouter-api-protobuf-definitions.git",
+  "author": "Oliver Rahner <o.rahner@dke-data.com>",
+  "license": "Apache-2.0",
+  "scripts": {
+    "generate-all": "yarn-or-npm run generate-csharp; yarn-or-npm run generate-js; yarn-or-npm run generate-java",
+    "pregenerate-csharp": "rm -rf dotnet/AgrirouterApiProtobufDefinitions/AgrirouterApiProtobufDefinitions/Agrirouter/*",
+    "generate-csharp": "protoc --csharp_out=dotnet/AgrirouterApiProtobufDefinitions/AgrirouterApiProtobufDefinitions/Agrirouter --csharp_opt=base_namespace=Agrirouter  -Isrc/agrirouter/protobuf $(find src/agrirouter/protobuf -iname '*.proto')",
+    "pregenerate-js": "find js/ -mindepth 1 -not -name package.json -delete",
+    "generate-js": "protoc.exe --js_out=import_style=commonjs,binary:js -Isrc/agrirouter/protobuf $(find src/agrirouter/protobuf -iname '*.proto')",
+    "generate-java": ""
+  },
+  "dependencies": {
+    "yarn-or-npm": "^3.0.1"
+  }
+}

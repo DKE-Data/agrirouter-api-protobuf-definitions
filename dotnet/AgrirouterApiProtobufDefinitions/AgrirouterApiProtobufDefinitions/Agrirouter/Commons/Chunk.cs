@@ -38,23 +38,31 @@ namespace Agrirouter.Commons {
 
   }
   #region Messages
-  public sealed partial class ChunkComponent : pb::IMessage<ChunkComponent> {
+  public sealed partial class ChunkComponent : pb::IMessage<ChunkComponent>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<ChunkComponent> _parser = new pb::MessageParser<ChunkComponent>(() => new ChunkComponent());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ChunkComponent> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Agrirouter.Commons.ChunkReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ChunkComponent() {
       OnConstruction();
     }
@@ -62,6 +70,7 @@ namespace Agrirouter.Commons {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ChunkComponent(ChunkComponent other) : this() {
       contextId_ = other.contextId_;
       current_ = other.current_;
@@ -71,6 +80,7 @@ namespace Agrirouter.Commons {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ChunkComponent Clone() {
       return new ChunkComponent(this);
     }
@@ -82,6 +92,7 @@ namespace Agrirouter.Commons {
     /// client generated unique identifier for larger binaries
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ContextId {
       get { return contextId_; }
       set {
@@ -96,6 +107,7 @@ namespace Agrirouter.Commons {
     /// number of the current chunk 
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long Current {
       get { return current_; }
       set {
@@ -110,6 +122,7 @@ namespace Agrirouter.Commons {
     /// total number of chunks of binary
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long Total {
       get { return total_; }
       set {
@@ -124,6 +137,7 @@ namespace Agrirouter.Commons {
     /// total size of binary
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long TotalSize {
       get { return totalSize_; }
       set {
@@ -132,11 +146,13 @@ namespace Agrirouter.Commons {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ChunkComponent);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ChunkComponent other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -152,6 +168,7 @@ namespace Agrirouter.Commons {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (ContextId.Length != 0) hash ^= ContextId.GetHashCode();
@@ -165,12 +182,17 @@ namespace Agrirouter.Commons {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (ContextId.Length != 0) {
         output.WriteRawTag(10);
         output.WriteString(ContextId);
@@ -190,9 +212,37 @@ namespace Agrirouter.Commons {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
 
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ContextId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(ContextId);
+      }
+      if (Current != 0L) {
+        output.WriteRawTag(16);
+        output.WriteInt64(Current);
+      }
+      if (Total != 0L) {
+        output.WriteRawTag(24);
+        output.WriteInt64(Total);
+      }
+      if (TotalSize != 0L) {
+        output.WriteRawTag(32);
+        output.WriteInt64(TotalSize);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (ContextId.Length != 0) {
@@ -214,6 +264,7 @@ namespace Agrirouter.Commons {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ChunkComponent other) {
       if (other == null) {
         return;
@@ -234,7 +285,11 @@ namespace Agrirouter.Commons {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -259,7 +314,39 @@ namespace Agrirouter.Commons {
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            ContextId = input.ReadString();
+            break;
+          }
+          case 16: {
+            Current = input.ReadInt64();
+            break;
+          }
+          case 24: {
+            Total = input.ReadInt64();
+            break;
+          }
+          case 32: {
+            TotalSize = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
   }
 

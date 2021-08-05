@@ -41,23 +41,31 @@ namespace Agrirouter.Request.Payload.Account {
 
   }
   #region Messages
-  public sealed partial class ListEndpointsQuery : pb::IMessage<ListEndpointsQuery> {
+  public sealed partial class ListEndpointsQuery : pb::IMessage<ListEndpointsQuery>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<ListEndpointsQuery> _parser = new pb::MessageParser<ListEndpointsQuery>(() => new ListEndpointsQuery());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ListEndpointsQuery> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Agrirouter.Request.Payload.Account.EndpointsReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ListEndpointsQuery() {
       OnConstruction();
     }
@@ -65,6 +73,7 @@ namespace Agrirouter.Request.Payload.Account {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ListEndpointsQuery(ListEndpointsQuery other) : this() {
       technicalMessageType_ = other.technicalMessageType_;
       direction_ = other.direction_;
@@ -72,6 +81,7 @@ namespace Agrirouter.Request.Payload.Account {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ListEndpointsQuery Clone() {
       return new ListEndpointsQuery(this);
     }
@@ -83,6 +93,7 @@ namespace Agrirouter.Request.Payload.Account {
     /// The technical message type which is relevant for the endpoint listing. If not provided we consider all possible rules
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string TechnicalMessageType {
       get { return technicalMessageType_; }
       set {
@@ -97,6 +108,7 @@ namespace Agrirouter.Request.Payload.Account {
     /// The direction as mentioned above - Default is SEND if not provided
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Agrirouter.Request.Payload.Account.ListEndpointsQuery.Types.Direction Direction {
       get { return direction_; }
       set {
@@ -105,11 +117,13 @@ namespace Agrirouter.Request.Payload.Account {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ListEndpointsQuery);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ListEndpointsQuery other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -123,6 +137,7 @@ namespace Agrirouter.Request.Payload.Account {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (TechnicalMessageType.Length != 0) hash ^= TechnicalMessageType.GetHashCode();
@@ -134,12 +149,17 @@ namespace Agrirouter.Request.Payload.Account {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (TechnicalMessageType.Length != 0) {
         output.WriteRawTag(10);
         output.WriteString(TechnicalMessageType);
@@ -151,9 +171,29 @@ namespace Agrirouter.Request.Payload.Account {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
 
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (TechnicalMessageType.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(TechnicalMessageType);
+      }
+      if (Direction != global::Agrirouter.Request.Payload.Account.ListEndpointsQuery.Types.Direction.Send) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) Direction);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (TechnicalMessageType.Length != 0) {
@@ -169,6 +209,7 @@ namespace Agrirouter.Request.Payload.Account {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ListEndpointsQuery other) {
       if (other == null) {
         return;
@@ -183,7 +224,11 @@ namespace Agrirouter.Request.Payload.Account {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -200,11 +245,36 @@ namespace Agrirouter.Request.Payload.Account {
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            TechnicalMessageType = input.ReadString();
+            break;
+          }
+          case 16: {
+            Direction = (global::Agrirouter.Request.Payload.Account.ListEndpointsQuery.Types.Direction) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
     #region Nested types
     /// <summary>Container for nested types declared in the ListEndpointsQuery message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// Defines the direction the rules should be configured for the endpoint lists

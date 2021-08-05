@@ -49,23 +49,31 @@ namespace Agrirouter.Response.Payload.Account {
 
   }
   #region Messages
-  public sealed partial class ListEndpointsResponse : pb::IMessage<ListEndpointsResponse> {
+  public sealed partial class ListEndpointsResponse : pb::IMessage<ListEndpointsResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<ListEndpointsResponse> _parser = new pb::MessageParser<ListEndpointsResponse>(() => new ListEndpointsResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ListEndpointsResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Agrirouter.Response.Payload.Account.EndpointsReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ListEndpointsResponse() {
       OnConstruction();
     }
@@ -73,12 +81,14 @@ namespace Agrirouter.Response.Payload.Account {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ListEndpointsResponse(ListEndpointsResponse other) : this() {
       endpoints_ = other.endpoints_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ListEndpointsResponse Clone() {
       return new ListEndpointsResponse(this);
     }
@@ -92,16 +102,19 @@ namespace Agrirouter.Response.Payload.Account {
     /// Collection of endpoints pertaining to the requested endpoint listing
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Agrirouter.Response.Payload.Account.ListEndpointsResponse.Types.Endpoint> Endpoints {
       get { return endpoints_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ListEndpointsResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ListEndpointsResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -114,6 +127,7 @@ namespace Agrirouter.Response.Payload.Account {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= endpoints_.GetHashCode();
@@ -124,19 +138,37 @@ namespace Agrirouter.Response.Payload.Account {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       endpoints_.WriteTo(output, _repeated_endpoints_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
 
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      endpoints_.WriteTo(ref output, _repeated_endpoints_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       size += endpoints_.CalculateSize(_repeated_endpoints_codec);
@@ -147,6 +179,7 @@ namespace Agrirouter.Response.Payload.Account {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ListEndpointsResponse other) {
       if (other == null) {
         return;
@@ -156,7 +189,11 @@ namespace Agrirouter.Response.Payload.Account {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -169,11 +206,32 @@ namespace Agrirouter.Response.Payload.Account {
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            endpoints_.AddEntriesFrom(ref input, _repeated_endpoints_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
     #region Nested types
     /// <summary>Container for nested types declared in the ListEndpointsResponse message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// Defines the direction the rules should be configured for the endpoint lists
@@ -193,23 +251,31 @@ namespace Agrirouter.Response.Payload.Account {
         [pbr::OriginalName("SEND_RECEIVE")] SendReceive = 2,
       }
 
-      public sealed partial class MessageType : pb::IMessage<MessageType> {
+      public sealed partial class MessageType : pb::IMessage<MessageType>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
         private static readonly pb::MessageParser<MessageType> _parser = new pb::MessageParser<MessageType>(() => new MessageType());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<MessageType> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Agrirouter.Response.Payload.Account.ListEndpointsResponse.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public MessageType() {
           OnConstruction();
         }
@@ -217,6 +283,7 @@ namespace Agrirouter.Response.Payload.Account {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public MessageType(MessageType other) : this() {
           technicalMessageType_ = other.technicalMessageType_;
           direction_ = other.direction_;
@@ -224,6 +291,7 @@ namespace Agrirouter.Response.Payload.Account {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public MessageType Clone() {
           return new MessageType(this);
         }
@@ -235,6 +303,7 @@ namespace Agrirouter.Response.Payload.Account {
         /// The agrirouter technical message type
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string TechnicalMessageType {
           get { return technicalMessageType_; }
           set {
@@ -249,6 +318,7 @@ namespace Agrirouter.Response.Payload.Account {
         /// The direction in which the message type can flow
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Agrirouter.Response.Payload.Account.ListEndpointsResponse.Types.Direction Direction {
           get { return direction_; }
           set {
@@ -257,11 +327,13 @@ namespace Agrirouter.Response.Payload.Account {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as MessageType);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(MessageType other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -275,6 +347,7 @@ namespace Agrirouter.Response.Payload.Account {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (TechnicalMessageType.Length != 0) hash ^= TechnicalMessageType.GetHashCode();
@@ -286,12 +359,17 @@ namespace Agrirouter.Response.Payload.Account {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
           if (TechnicalMessageType.Length != 0) {
             output.WriteRawTag(10);
             output.WriteString(TechnicalMessageType);
@@ -303,9 +381,29 @@ namespace Agrirouter.Response.Payload.Account {
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
+        #endif
         }
 
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (TechnicalMessageType.Length != 0) {
+            output.WriteRawTag(10);
+            output.WriteString(TechnicalMessageType);
+          }
+          if (Direction != global::Agrirouter.Response.Payload.Account.ListEndpointsResponse.Types.Direction.Send) {
+            output.WriteRawTag(16);
+            output.WriteEnum((int) Direction);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (TechnicalMessageType.Length != 0) {
@@ -321,6 +419,7 @@ namespace Agrirouter.Response.Payload.Account {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(MessageType other) {
           if (other == null) {
             return;
@@ -335,7 +434,11 @@ namespace Agrirouter.Response.Payload.Account {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
             switch(tag) {
@@ -352,27 +455,59 @@ namespace Agrirouter.Response.Payload.Account {
               }
             }
           }
+        #endif
         }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 10: {
+                TechnicalMessageType = input.ReadString();
+                break;
+              }
+              case 16: {
+                Direction = (global::Agrirouter.Response.Payload.Account.ListEndpointsResponse.Types.Direction) input.ReadEnum();
+                break;
+              }
+            }
+          }
+        }
+        #endif
 
       }
 
-      public sealed partial class Endpoint : pb::IMessage<Endpoint> {
+      public sealed partial class Endpoint : pb::IMessage<Endpoint>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
         private static readonly pb::MessageParser<Endpoint> _parser = new pb::MessageParser<Endpoint>(() => new Endpoint());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<Endpoint> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Agrirouter.Response.Payload.Account.ListEndpointsResponse.Descriptor.NestedTypes[1]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Endpoint() {
           OnConstruction();
         }
@@ -380,6 +515,7 @@ namespace Agrirouter.Response.Payload.Account {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Endpoint(Endpoint other) : this() {
           endpointId_ = other.endpointId_;
           endpointName_ = other.endpointName_;
@@ -391,6 +527,7 @@ namespace Agrirouter.Response.Payload.Account {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Endpoint Clone() {
           return new Endpoint(this);
         }
@@ -402,6 +539,7 @@ namespace Agrirouter.Response.Payload.Account {
         /// ID Of the endpoint for which the message types can be sent
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string EndpointId {
           get { return endpointId_; }
           set {
@@ -416,6 +554,7 @@ namespace Agrirouter.Response.Payload.Account {
         /// Text name of the endpoint
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string EndpointName {
           get { return endpointName_; }
           set {
@@ -430,6 +569,7 @@ namespace Agrirouter.Response.Payload.Account {
         /// The type of end point IE: Application, Paired Account, Virtual CU, etc
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string EndpointType {
           get { return endpointType_; }
           set {
@@ -444,6 +584,7 @@ namespace Agrirouter.Response.Payload.Account {
         /// Specifies if the endpoint is active or inactive
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string Status {
           get { return status_; }
           set {
@@ -460,6 +601,7 @@ namespace Agrirouter.Response.Payload.Account {
         /// Details of the message types as detailed above
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Agrirouter.Response.Payload.Account.ListEndpointsResponse.Types.MessageType> MessageTypes {
           get { return messageTypes_; }
         }
@@ -471,6 +613,7 @@ namespace Agrirouter.Response.Payload.Account {
         /// External id of the endpoint
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string ExternalId {
           get { return externalId_; }
           set {
@@ -479,11 +622,13 @@ namespace Agrirouter.Response.Payload.Account {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as Endpoint);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(Endpoint other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -501,6 +646,7 @@ namespace Agrirouter.Response.Payload.Account {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (EndpointId.Length != 0) hash ^= EndpointId.GetHashCode();
@@ -516,12 +662,17 @@ namespace Agrirouter.Response.Payload.Account {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
           if (EndpointId.Length != 0) {
             output.WriteRawTag(10);
             output.WriteString(EndpointId);
@@ -546,9 +697,42 @@ namespace Agrirouter.Response.Payload.Account {
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
+        #endif
         }
 
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (EndpointId.Length != 0) {
+            output.WriteRawTag(10);
+            output.WriteString(EndpointId);
+          }
+          if (EndpointName.Length != 0) {
+            output.WriteRawTag(18);
+            output.WriteString(EndpointName);
+          }
+          if (EndpointType.Length != 0) {
+            output.WriteRawTag(26);
+            output.WriteString(EndpointType);
+          }
+          if (Status.Length != 0) {
+            output.WriteRawTag(34);
+            output.WriteString(Status);
+          }
+          messageTypes_.WriteTo(ref output, _repeated_messageTypes_codec);
+          if (ExternalId.Length != 0) {
+            output.WriteRawTag(50);
+            output.WriteString(ExternalId);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (EndpointId.Length != 0) {
@@ -574,6 +758,7 @@ namespace Agrirouter.Response.Payload.Account {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(Endpoint other) {
           if (other == null) {
             return;
@@ -598,7 +783,11 @@ namespace Agrirouter.Response.Payload.Account {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
             switch(tag) {
@@ -631,7 +820,47 @@ namespace Agrirouter.Response.Payload.Account {
               }
             }
           }
+        #endif
         }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 10: {
+                EndpointId = input.ReadString();
+                break;
+              }
+              case 18: {
+                EndpointName = input.ReadString();
+                break;
+              }
+              case 26: {
+                EndpointType = input.ReadString();
+                break;
+              }
+              case 34: {
+                Status = input.ReadString();
+                break;
+              }
+              case 42: {
+                messageTypes_.AddEntriesFrom(ref input, _repeated_messageTypes_codec);
+                break;
+              }
+              case 50: {
+                ExternalId = input.ReadString();
+                break;
+              }
+            }
+          }
+        }
+        #endif
 
       }
 

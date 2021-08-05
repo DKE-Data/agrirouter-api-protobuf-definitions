@@ -41,23 +41,31 @@ namespace Agrirouter.Message.Settings {
   /// <summary>
   /// Used to control application communications (Based on configuration options we have within the DH)
   /// </summary>
-  public sealed partial class DataHubControlSettings : pb::IMessage<DataHubControlSettings> {
+  public sealed partial class DataHubControlSettings : pb::IMessage<DataHubControlSettings>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<DataHubControlSettings> _parser = new pb::MessageParser<DataHubControlSettings>(() => new DataHubControlSettings());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<DataHubControlSettings> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Agrirouter.Message.Settings.DhSettingsReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DataHubControlSettings() {
       OnConstruction();
     }
@@ -65,6 +73,7 @@ namespace Agrirouter.Message.Settings {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DataHubControlSettings(DataHubControlSettings other) : this() {
       maxMessageSize_ = other.maxMessageSize_;
       maxMessagesPerQuery_ = other.maxMessagesPerQuery_;
@@ -72,6 +81,7 @@ namespace Agrirouter.Message.Settings {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DataHubControlSettings Clone() {
       return new DataHubControlSettings(this);
     }
@@ -80,6 +90,7 @@ namespace Agrirouter.Message.Settings {
     public const int MaxMessageSizeFieldNumber = 1;
     private int maxMessageSize_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int MaxMessageSize {
       get { return maxMessageSize_; }
       set {
@@ -91,6 +102,7 @@ namespace Agrirouter.Message.Settings {
     public const int MaxMessagesPerQueryFieldNumber = 2;
     private int maxMessagesPerQuery_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int MaxMessagesPerQuery {
       get { return maxMessagesPerQuery_; }
       set {
@@ -99,11 +111,13 @@ namespace Agrirouter.Message.Settings {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as DataHubControlSettings);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(DataHubControlSettings other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -117,6 +131,7 @@ namespace Agrirouter.Message.Settings {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (MaxMessageSize != 0) hash ^= MaxMessageSize.GetHashCode();
@@ -128,12 +143,17 @@ namespace Agrirouter.Message.Settings {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (MaxMessageSize != 0) {
         output.WriteRawTag(8);
         output.WriteInt32(MaxMessageSize);
@@ -145,9 +165,29 @@ namespace Agrirouter.Message.Settings {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
 
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (MaxMessageSize != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(MaxMessageSize);
+      }
+      if (MaxMessagesPerQuery != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(MaxMessagesPerQuery);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (MaxMessageSize != 0) {
@@ -163,6 +203,7 @@ namespace Agrirouter.Message.Settings {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(DataHubControlSettings other) {
       if (other == null) {
         return;
@@ -177,7 +218,11 @@ namespace Agrirouter.Message.Settings {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -194,7 +239,31 @@ namespace Agrirouter.Message.Settings {
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            MaxMessageSize = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            MaxMessagesPerQuery = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
   }
 

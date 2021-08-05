@@ -50,23 +50,31 @@ namespace Agrirouter.Request {
 
   }
   #region Messages
-  public sealed partial class RequestEnvelope : pb::IMessage<RequestEnvelope> {
+  public sealed partial class RequestEnvelope : pb::IMessage<RequestEnvelope>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<RequestEnvelope> _parser = new pb::MessageParser<RequestEnvelope>(() => new RequestEnvelope());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<RequestEnvelope> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Agrirouter.Request.RequestReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RequestEnvelope() {
       OnConstruction();
     }
@@ -74,6 +82,7 @@ namespace Agrirouter.Request {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RequestEnvelope(RequestEnvelope other) : this() {
       applicationMessageId_ = other.applicationMessageId_;
       applicationMessageSeqNo_ = other.applicationMessageSeqNo_;
@@ -88,6 +97,7 @@ namespace Agrirouter.Request {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RequestEnvelope Clone() {
       return new RequestEnvelope(this);
     }
@@ -99,6 +109,7 @@ namespace Agrirouter.Request {
     /// Client generated Message ID it would use to uniquly identify the message it is sending
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ApplicationMessageId {
       get { return applicationMessageId_; }
       set {
@@ -113,6 +124,7 @@ namespace Agrirouter.Request {
     /// Sequence Number from the client indicating the order in which it has sent messages
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long ApplicationMessageSeqNo {
       get { return applicationMessageSeqNo_; }
       set {
@@ -127,6 +139,7 @@ namespace Agrirouter.Request {
     /// agrirouter technical message type
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string TechnicalMessageType {
       get { return technicalMessageType_; }
       set {
@@ -141,6 +154,7 @@ namespace Agrirouter.Request {
     /// If this message is in reference to a team-set context the ID would be placed here
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string TeamSetContextId {
       get { return teamSetContextId_; }
       set {
@@ -155,6 +169,7 @@ namespace Agrirouter.Request {
     /// The sending mode so the agrirouter can properly process the message.     
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Agrirouter.Request.RequestEnvelope.Types.Mode Mode {
       get { return mode_; }
       set {
@@ -171,6 +186,7 @@ namespace Agrirouter.Request {
     /// Directly Addressed agrirouter Endpoint ID's
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<string> Recipients {
       get { return recipients_; }
     }
@@ -182,6 +198,7 @@ namespace Agrirouter.Request {
     /// If this is part of a chunked message details are here
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Agrirouter.Commons.ChunkComponent ChunkInfo {
       get { return chunkInfo_; }
       set {
@@ -196,6 +213,7 @@ namespace Agrirouter.Request {
     /// Client generated UTC Timestamp at which the client sent the message
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp Timestamp {
       get { return timestamp_; }
       set {
@@ -210,6 +228,7 @@ namespace Agrirouter.Request {
     /// Additional metadata information to help differentiate between messages of the same type
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Agrirouter.Commons.Metadata Metadata {
       get { return metadata_; }
       set {
@@ -218,11 +237,13 @@ namespace Agrirouter.Request {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as RequestEnvelope);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(RequestEnvelope other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -243,6 +264,7 @@ namespace Agrirouter.Request {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (ApplicationMessageId.Length != 0) hash ^= ApplicationMessageId.GetHashCode();
@@ -261,12 +283,17 @@ namespace Agrirouter.Request {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (ApplicationMessageId.Length != 0) {
         output.WriteRawTag(10);
         output.WriteString(ApplicationMessageId);
@@ -303,9 +330,54 @@ namespace Agrirouter.Request {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
 
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ApplicationMessageId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(ApplicationMessageId);
+      }
+      if (ApplicationMessageSeqNo != 0L) {
+        output.WriteRawTag(16);
+        output.WriteInt64(ApplicationMessageSeqNo);
+      }
+      if (TechnicalMessageType.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(TechnicalMessageType);
+      }
+      if (TeamSetContextId.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(TeamSetContextId);
+      }
+      if (Mode != global::Agrirouter.Request.RequestEnvelope.Types.Mode.Direct) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) Mode);
+      }
+      recipients_.WriteTo(ref output, _repeated_recipients_codec);
+      if (chunkInfo_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(ChunkInfo);
+      }
+      if (timestamp_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(Timestamp);
+      }
+      if (metadata_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(Metadata);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (ApplicationMessageId.Length != 0) {
@@ -340,6 +412,7 @@ namespace Agrirouter.Request {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(RequestEnvelope other) {
       if (other == null) {
         return;
@@ -382,7 +455,11 @@ namespace Agrirouter.Request {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -436,11 +513,73 @@ namespace Agrirouter.Request {
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            ApplicationMessageId = input.ReadString();
+            break;
+          }
+          case 16: {
+            ApplicationMessageSeqNo = input.ReadInt64();
+            break;
+          }
+          case 26: {
+            TechnicalMessageType = input.ReadString();
+            break;
+          }
+          case 34: {
+            TeamSetContextId = input.ReadString();
+            break;
+          }
+          case 40: {
+            Mode = (global::Agrirouter.Request.RequestEnvelope.Types.Mode) input.ReadEnum();
+            break;
+          }
+          case 50: {
+            recipients_.AddEntriesFrom(ref input, _repeated_recipients_codec);
+            break;
+          }
+          case 58: {
+            if (chunkInfo_ == null) {
+              ChunkInfo = new global::Agrirouter.Commons.ChunkComponent();
+            }
+            input.ReadMessage(ChunkInfo);
+            break;
+          }
+          case 66: {
+            if (timestamp_ == null) {
+              Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(Timestamp);
+            break;
+          }
+          case 74: {
+            if (metadata_ == null) {
+              Metadata = new global::Agrirouter.Commons.Metadata();
+            }
+            input.ReadMessage(Metadata);
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
     #region Nested types
     /// <summary>Container for nested types declared in the RequestEnvelope message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       public enum Mode {
         [pbr::OriginalName("DIRECT")] Direct = 0,
@@ -453,23 +592,31 @@ namespace Agrirouter.Request {
 
   }
 
-  public sealed partial class RequestPayloadWrapper : pb::IMessage<RequestPayloadWrapper> {
+  public sealed partial class RequestPayloadWrapper : pb::IMessage<RequestPayloadWrapper>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<RequestPayloadWrapper> _parser = new pb::MessageParser<RequestPayloadWrapper>(() => new RequestPayloadWrapper());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<RequestPayloadWrapper> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Agrirouter.Request.RequestReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RequestPayloadWrapper() {
       OnConstruction();
     }
@@ -477,12 +624,14 @@ namespace Agrirouter.Request {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RequestPayloadWrapper(RequestPayloadWrapper other) : this() {
       details_ = other.details_ != null ? other.details_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RequestPayloadWrapper Clone() {
       return new RequestPayloadWrapper(this);
     }
@@ -494,6 +643,7 @@ namespace Agrirouter.Request {
     /// Content relevant for the technical message type
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Any Details {
       get { return details_; }
       set {
@@ -502,11 +652,13 @@ namespace Agrirouter.Request {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as RequestPayloadWrapper);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(RequestPayloadWrapper other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -519,6 +671,7 @@ namespace Agrirouter.Request {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (details_ != null) hash ^= Details.GetHashCode();
@@ -529,12 +682,17 @@ namespace Agrirouter.Request {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (details_ != null) {
         output.WriteRawTag(10);
         output.WriteMessage(Details);
@@ -542,9 +700,25 @@ namespace Agrirouter.Request {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
 
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (details_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Details);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (details_ != null) {
@@ -557,6 +731,7 @@ namespace Agrirouter.Request {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(RequestPayloadWrapper other) {
       if (other == null) {
         return;
@@ -571,7 +746,11 @@ namespace Agrirouter.Request {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -587,7 +766,30 @@ namespace Agrirouter.Request {
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            if (details_ == null) {
+              Details = new global::Google.Protobuf.WellKnownTypes.Any();
+            }
+            input.ReadMessage(Details);
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
   }
 

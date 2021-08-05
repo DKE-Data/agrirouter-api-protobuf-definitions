@@ -1,0 +1,13 @@
+{
+  "name": "agrirouter-api-protobuf-definitions",
+  "version": "1.0.0",
+  "description": "Compiled protobuf definitions for agrirouter communication",
+  "main": "index.js",
+  "author": "Oliver Rahner <o.rahner@dke-data.com>",
+  "license": "Apache-2.0",
+  "type": "commonjs",
+  "dependencies": {
+    "google-protobuf": "^3.17.3",
+    "protobufjs": "^6.11.2"
+  }
+}
