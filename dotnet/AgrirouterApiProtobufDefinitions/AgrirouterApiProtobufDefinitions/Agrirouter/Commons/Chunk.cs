@@ -38,7 +38,11 @@ namespace Agrirouter.Commons {
 
   }
   #region Messages
-  public sealed partial class ChunkComponent : pb::IMessage<ChunkComponent> {
+  public sealed partial class ChunkComponent : pb::IMessage<ChunkComponent>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<ChunkComponent> _parser = new pb::MessageParser<ChunkComponent>(() => new ChunkComponent());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -171,6 +175,9 @@ namespace Agrirouter.Commons {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (ContextId.Length != 0) {
         output.WriteRawTag(10);
         output.WriteString(ContextId);
@@ -190,7 +197,33 @@ namespace Agrirouter.Commons {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ContextId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(ContextId);
+      }
+      if (Current != 0L) {
+        output.WriteRawTag(16);
+        output.WriteInt64(Current);
+      }
+      if (Total != 0L) {
+        output.WriteRawTag(24);
+        output.WriteInt64(Total);
+      }
+      if (TotalSize != 0L) {
+        output.WriteRawTag(32);
+        output.WriteInt64(TotalSize);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
@@ -235,6 +268,9 @@ namespace Agrirouter.Commons {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -259,7 +295,38 @@ namespace Agrirouter.Commons {
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            ContextId = input.ReadString();
+            break;
+          }
+          case 16: {
+            Current = input.ReadInt64();
+            break;
+          }
+          case 24: {
+            Total = input.ReadInt64();
+            break;
+          }
+          case 32: {
+            TotalSize = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
   }
 
