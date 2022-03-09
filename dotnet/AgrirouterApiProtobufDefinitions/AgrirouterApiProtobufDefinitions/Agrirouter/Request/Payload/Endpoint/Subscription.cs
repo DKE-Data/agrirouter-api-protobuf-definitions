@@ -42,7 +42,11 @@ namespace Agrirouter.Request.Payload.Endpoint {
 
   }
   #region Messages
-  public sealed partial class Subscription : pb::IMessage<Subscription> {
+  public sealed partial class Subscription : pb::IMessage<Subscription>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<Subscription> _parser = new pb::MessageParser<Subscription>(() => new Subscription());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,11 +127,25 @@ namespace Agrirouter.Request.Payload.Endpoint {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       technicalMessageTypes_.WriteTo(output, _repeated_technicalMessageTypes_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      technicalMessageTypes_.WriteTo(ref output, _repeated_technicalMessageTypes_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
@@ -150,6 +168,9 @@ namespace Agrirouter.Request.Payload.Endpoint {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -162,13 +183,36 @@ namespace Agrirouter.Request.Payload.Endpoint {
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            technicalMessageTypes_.AddEntriesFrom(ref input, _repeated_technicalMessageTypes_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
     #region Nested types
     /// <summary>Container for nested types declared in the Subscription message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static partial class Types {
-      public sealed partial class MessageTypeSubscriptionItem : pb::IMessage<MessageTypeSubscriptionItem> {
+      public sealed partial class MessageTypeSubscriptionItem : pb::IMessage<MessageTypeSubscriptionItem>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
         private static readonly pb::MessageParser<MessageTypeSubscriptionItem> _parser = new pb::MessageParser<MessageTypeSubscriptionItem>(() => new MessageTypeSubscriptionItem());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -283,6 +327,9 @@ namespace Agrirouter.Request.Payload.Endpoint {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
           if (TechnicalMessageType.Length != 0) {
             output.WriteRawTag(10);
             output.WriteString(TechnicalMessageType);
@@ -295,7 +342,26 @@ namespace Agrirouter.Request.Payload.Endpoint {
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
+        #endif
         }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (TechnicalMessageType.Length != 0) {
+            output.WriteRawTag(10);
+            output.WriteString(TechnicalMessageType);
+          }
+          ddis_.WriteTo(ref output, _repeated_ddis_codec);
+          if (Position != false) {
+            output.WriteRawTag(24);
+            output.WriteBool(Position);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int CalculateSize() {
@@ -330,6 +396,9 @@ namespace Agrirouter.Request.Payload.Endpoint {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
             switch(tag) {
@@ -351,7 +420,35 @@ namespace Agrirouter.Request.Payload.Endpoint {
               }
             }
           }
+        #endif
         }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 10: {
+                TechnicalMessageType = input.ReadString();
+                break;
+              }
+              case 18:
+              case 16: {
+                ddis_.AddEntriesFrom(ref input, _repeated_ddis_codec);
+                break;
+              }
+              case 24: {
+                Position = input.ReadBool();
+                break;
+              }
+            }
+          }
+        }
+        #endif
 
       }
 

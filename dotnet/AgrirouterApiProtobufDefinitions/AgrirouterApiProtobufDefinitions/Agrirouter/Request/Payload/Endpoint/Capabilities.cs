@@ -49,7 +49,11 @@ namespace Agrirouter.Request.Payload.Endpoint {
 
   }
   #region Messages
-  public sealed partial class CapabilitySpecification : pb::IMessage<CapabilitySpecification> {
+  public sealed partial class CapabilitySpecification : pb::IMessage<CapabilitySpecification>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<CapabilitySpecification> _parser = new pb::MessageParser<CapabilitySpecification>(() => new CapabilitySpecification());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -181,6 +185,9 @@ namespace Agrirouter.Request.Payload.Endpoint {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       capabilities_.WriteTo(output, _repeated_capabilities_codec);
       if (AppCertificationId.Length != 0) {
         output.WriteRawTag(18);
@@ -197,7 +204,30 @@ namespace Agrirouter.Request.Payload.Endpoint {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      capabilities_.WriteTo(ref output, _repeated_capabilities_codec);
+      if (AppCertificationId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(AppCertificationId);
+      }
+      if (AppCertificationVersionId.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(AppCertificationVersionId);
+      }
+      if (EnablePushNotifications != global::Agrirouter.Request.Payload.Endpoint.CapabilitySpecification.Types.PushNotification.Disabled) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) EnablePushNotifications);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
@@ -238,6 +268,9 @@ namespace Agrirouter.Request.Payload.Endpoint {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -262,7 +295,38 @@ namespace Agrirouter.Request.Payload.Endpoint {
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            capabilities_.AddEntriesFrom(ref input, _repeated_capabilities_codec);
+            break;
+          }
+          case 18: {
+            AppCertificationId = input.ReadString();
+            break;
+          }
+          case 26: {
+            AppCertificationVersionId = input.ReadString();
+            break;
+          }
+          case 32: {
+            EnablePushNotifications = (global::Agrirouter.Request.Payload.Endpoint.CapabilitySpecification.Types.PushNotification) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
     #region Nested types
     /// <summary>Container for nested types declared in the CapabilitySpecification message type.</summary>
@@ -283,7 +347,11 @@ namespace Agrirouter.Request.Payload.Endpoint {
         [pbr::OriginalName("ENABLED_HIGH_FREQUENCY")] EnabledHighFrequency = 2,
       }
 
-      public sealed partial class Capability : pb::IMessage<Capability> {
+      public sealed partial class Capability : pb::IMessage<Capability>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
         private static readonly pb::MessageParser<Capability> _parser = new pb::MessageParser<Capability>(() => new Capability());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -382,6 +450,9 @@ namespace Agrirouter.Request.Payload.Endpoint {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
           if (TechnicalMessageType.Length != 0) {
             output.WriteRawTag(10);
             output.WriteString(TechnicalMessageType);
@@ -393,7 +464,25 @@ namespace Agrirouter.Request.Payload.Endpoint {
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
+        #endif
         }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (TechnicalMessageType.Length != 0) {
+            output.WriteRawTag(10);
+            output.WriteString(TechnicalMessageType);
+          }
+          if (Direction != global::Agrirouter.Request.Payload.Endpoint.CapabilitySpecification.Types.Direction.Send) {
+            output.WriteRawTag(16);
+            output.WriteEnum((int) Direction);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int CalculateSize() {
@@ -426,6 +515,9 @@ namespace Agrirouter.Request.Payload.Endpoint {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
             switch(tag) {
@@ -442,7 +534,30 @@ namespace Agrirouter.Request.Payload.Endpoint {
               }
             }
           }
+        #endif
         }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 10: {
+                TechnicalMessageType = input.ReadString();
+                break;
+              }
+              case 16: {
+                Direction = (global::Agrirouter.Request.Payload.Endpoint.CapabilitySpecification.Types.Direction) input.ReadEnum();
+                break;
+              }
+            }
+          }
+        }
+        #endif
 
       }
 
