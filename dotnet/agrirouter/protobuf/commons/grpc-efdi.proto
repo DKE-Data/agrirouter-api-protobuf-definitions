@@ -1,0 +1,864 @@
+syntax="proto3";
+
+package efdi; 
+
+// reuse given representations as distributed in the official protobuf
+// releases:
+// - timestamp: make sure to read the file to understand how time is
+//   is meant to be encoded
+// - any: for self-describing extensions
+// and as reminders to not forget how to do things properly, but not
+// yet needed:
+// - duration
+// - field mask: very useful for queries
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/any.proto";
+
+// import "duration.proto"
+// import "field_mask.proto"
+
+// Composite Unique Identifier
+// Reference to elements
+// e.g. 
+//    Format: (DVC|DVC-)([0-9])+
+//    Format: (DET|DET-)([0-9])+
+//    Format: (CTP|CTP-)([0-9])+
+// without leading zeros, so the approach of using an sint64 is correct and the 
+// patterns in the provided schemas are not restrictive enough to check against.
+// We are not encoding the three-letter element codes. They only make sense in
+// the ISOXML context, where we need to guarantee uniqueness across a complete
+// document (type xs:ID/xs:IDREF). There is no such concept of uniqueness and
+// keys in protobufs. Except for the XFR filename and linklist references, there
+// are no occurences in ISOXML where an IDREF can point to several different
+// elements. We thus do not run into any problems here if we omit the codes and
+// can save quite some bytes in lots of cases. 
+message UID {
+	sint64 number = 1;
+	repeated string uri = 2;
+}
+
+// D.2 AllocationStamp - ASP (page ?)
+message AllocationStamp {
+	enum AllocationStampType {
+		D_NOTSET = 0;
+		D_PLANNED = 1;
+		D_EFFECTIVE = 4;
+	}
+	google.protobuf.Timestamp start = 1;
+	google.protobuf.Timestamp stop = 2;
+	uint64 duration = 3;
+	AllocationStampType type = 4;
+	repeated Position position = 5;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.3 AttachedFile - AFE (page ?)
+message AttachedFile {
+	enum Preserve {
+		B_NOTSET = 0;
+		B_PRESERVE_NO = 1;
+		B_PRESERVE_YES = 2;
+	}
+	UID filename_with_extension = 1;
+	Preserve preserve = 2;
+	string manufacturer_gln = 3;
+	uint32 file_type = 4;
+	string file_version = 5;
+	uint64 file_length = 6;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.4 BaseStation - BSN (page ?)
+message BaseStation {
+	UID base_station_id = 1;
+	string base_station_designator = 2;
+	double base_station_north = 3;
+	double base_station_east = 4;
+	sint64 base_station_up = 5;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.5 CodedComment - CCT (page ?)
+message CodedComment {
+	enum CodedCommentScope {
+		C_NOTSET = 0;
+		C_POINT = 1;
+		C_GLOBAL = 2;
+		C_CONTINUOUS = 3;
+	}
+	UID coded_comment_id = 1;
+	string coded_comment_designator = 2;
+	CodedCommentScope coded_comment_scope = 3;
+	UID coded_comment_group_id_ref = 4;
+	repeated CodedCommentListValue coded_comment_list_value = 5; 
+	repeated google.protobuf.Any extension = 2048;	
+}
+
+// D.6 CodedCommentGroup - CCG (page ?)
+message CodedCommentGroup {
+	UID coded_comment_group_id = 1;
+	string coded_comment_group_designator = 2;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.7 CodedCommentListValue - CCL (page ?)
+message CodedCommentListValue {
+	UID coded_comment_list_value_id = 1;
+	string coded_comment_list_value_designator = 2;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.8 ColourLegend - CLD (page ?)
+message ColourLegend {
+	UID colour_legend_id = 1;
+	uint32 default_colour = 2;
+	repeated ColourRange colour_range = 3;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.9 ColourRange - CRG (page ?)
+message ColourRange {
+	sint64 minimum_value = 1;
+	sint64 maximum_value = 2;
+	uint32 colour = 3;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.10 CommentAllocation - CAN (page ?)
+message CommentAllocation {
+	UID coded_comment_id_ref = 1;
+	UID coded_comment_list_value = 2;
+	string free_comment_text = 3;
+	AllocationStamp allocation_stamp = 4;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.11 Connection - CNN (page ?)
+// TODO: check whether this could be done better using repeated
+message Connection {
+	UID device_id_ref_0 = 1;
+	UID device_element_id_ref_0 = 2;
+	UID device_id_ref_1 = 3;
+	UID device_element_id_ref_1 = 4;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.12 ControlAssignment - CAT (page ?)
+message ControlAssignment {
+	bytes source_client_name = 1;
+	bytes user_client_name = 2;
+	bytes source_device_structure_label = 3;
+	bytes user_device_structure_label = 4;
+	uint32 source_device_element_number = 5;
+	uint32 user_device_element_number = 6;
+	uint32 process_data_ddi = 7;
+	AllocationStamp allocation_stamp = 8;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.13 CropType - CTP (page ?)
+message CropType {
+	UID crop_type_id = 1;
+	string crop_type_designator = 2;
+	UID product_group_id_ref = 3;
+	repeated CropVariety crop_variety = 4;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.14 CropVariety - CVT (page ?)
+message CropVariety {
+	UID crop_variety_id = 1;
+	string crop_variety_designator = 2;
+	UID product_id_ref = 3;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.15 CulturalPractice - CPC (page ?)
+message CulturalPractice {
+	UID cultural_practice_id = 1;
+	string cultural_practice_designator = 2;
+	repeated OperationTechniqueReference operation_technique_reference = 3;
+}
+
+// D.16 Customer - CTR (page ?)
+message Customer {
+	UID customer_id = 1;
+	string customer_last_name = 2;
+	string customer_first_name = 3;
+	string customer_street = 4;
+	string customer_po_box = 5;
+	string customer_postal_code = 6;
+	string customer_city = 7;
+	string customer_state = 8;
+	string customer_country = 9;
+	string customer_phone = 10;
+	string customer_mobile = 11;
+	string customer_fax = 12;
+	string customer_email = 13;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.17 DataLogTrigger - DLT (page ?)
+message DataLogTrigger {
+	uint32 data_log_ddi = 1;
+	uint32 data_log_method = 2;
+	sint64 data_log_distance_interval = 3;
+	sint64 data_log_time_interval = 4;
+	sint64 data_log_threshold_minimum = 5;
+	sint64 data_log_threshold_maximum = 6;
+	sint64 data_log_threshold_change = 7;
+	UID device_element_id_ref = 8;
+	UID value_presentation_id_ref = 9;
+	uint64 data_log_pgn = 10;
+	uint32 data_log_pgn_start_bit = 11;
+	uint32 data_log_pgn_stop_bit = 12;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.18 DataLogValue - DLV (page 92)
+message DataLogValue {
+	uint32 process_data_ddi = 1;
+	sint64 process_data_value = 2;
+	UID device_element_id_ref = 3;
+	uint64 data_log_pgn = 4;
+	uint32 data_log_pgn_start_bit = 5;
+	uint32 data_log_pgn_stop_bit = 6;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.19 Device - DVC (page 93)
+message Device {
+	UID device_id = 1;
+	string device_designator = 2;
+	string device_software_version = 3;
+	bytes client_name = 4;
+	string device_serial_number = 5;
+	bytes device_structure_label = 6;
+	bytes device_localization_label = 7;
+	repeated DeviceElement device_element = 8;
+	repeated DeviceProcessData device_process_data = 9;
+	repeated DeviceProperty device_property = 10;
+	repeated DeviceValuePresentation device_value_presentation = 11;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.20 DeviceAllocation - DAN (page ?) 
+message DeviceAllocation {
+	bytes client_name_value = 1;
+	bytes client_name_mask = 2;
+	UID device_id_ref = 3;
+	AllocationStamp allocation_stamp = 4;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.21 DeviceElement - DET (page 97)
+message DeviceElement {
+	enum DeviceElementType {
+		C_NOTSET = 0;
+		C_DEVICE = 1;
+		C_FUNCTION = 2;
+		C_BIN = 3;
+		C_SECTION = 4;
+		C_UNIT = 5;
+		C_CONNECTOR = 6;
+		C_NAVIGATION = 7;
+	}
+	UID device_element_id = 1;
+	uint32 device_element_object_id = 2;
+	DeviceElementType device_element_type = 3;
+	string device_element_designator = 4;
+	uint32 device_element_number = 5;
+	uint32 parent_object_id = 6;
+	repeated DeviceObjectReference device_object_reference = 7;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.22 DeviceObjectReference - DOR (page 98)
+message DeviceObjectReference {
+	uint32 device_object_id = 1;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.23 DeviceProcessData - DPD (page 98)
+message DeviceProcessData {
+	uint32 device_process_data_object_id = 1;
+	uint32 device_process_data_ddi = 2;
+	uint32 device_process_data_property = 3;
+	uint32 device_process_data_trigger_methods = 4;
+	string device_process_data_designator = 5;
+	uint32 device_value_presentation_object_id = 6;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.24 DeviceProperty - DPT (page 99)
+message DeviceProperty {
+	uint32 device_property_object_id = 1;
+	uint32 device_property_ddi = 2;
+	sint64 device_property_value = 3;
+	string device_property_designator = 4;
+	uint32 device_value_presentation_object_id = 5;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.25 DeviceValuePresentation - DVP (page 100)
+message DeviceValuePresentation {
+	uint32 device_value_presentation_object_id = 1;
+	sint64 offset = 2;
+	double scale = 3;
+	uint32 number_of_decimals = 4;
+	string unit_designator = 5;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.26 Farm - FRM (page ?)
+message Farm {
+	UID farm_id = 1;
+	string farm_designator = 2;
+	string farm_street = 3;
+	string farm_po_box = 4;
+	string farm_postal_code = 5;
+	string farm_city = 6;
+	string farm_state = 7;
+	string farm_country = 8;
+	UID customer_id_ref = 9;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.27 Grid - GRD (page ?)
+message Grid {
+	enum GridType {
+		I_NOTSET = 0;
+		I_GRID_TYPE_1 = 1;
+		I_GRID_TYPE_2 = 2;
+	}
+	double grid_minimum_north_position = 1;
+	double grid_minimum_east_position = 2;
+	double grid_cell_north_size = 3;
+	double grid_cell_east_size = 4;
+	uint64 grid_maximum_column = 5;
+	uint64 grid_maximum_row = 6;
+	UID filename = 7;
+	uint64 filelength = 8;
+	GridType grid_type = 9;
+	uint32 treatment_zone_code = 10;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.28 GuidanceAllocation - GAN (page ?)
+message GuidanceAllocation {
+	UID guidance_group_id_ref = 1;
+	AllocationStamp allocation_stamp = 2;
+	repeated GuidanceShift guidance_shift = 3;
+	repeated google.protobuf.Any extension = 2048;	
+}
+
+// D.29 GuidanceGroup - GGP (page ?)
+message GuidanceGroup {
+	UID guidance_group_id = 1;
+	string guidance_group_designator = 2;
+	repeated GuidancePattern guidance_pattern = 3;
+	repeated Polygon boundary_polygon = 4;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.30 GuidancePattern - GPN (page ?)
+message GuidancePattern {
+	enum GuidancePatternType {
+		C_NOTSET = 0;
+		C_AB = 1;
+		C_A_PLUS = 2;
+		C_CURVE = 3;
+		C_PIVOT = 4;
+		C_SPIRAL = 5;	
+	}
+	enum GuidancePatternOptions {
+		D_NOTSET = 0;
+		D_CLOCKWISE = 1;
+		D_COUNTER_CLOCKWISE = 2;
+		D_FULL_CIRCLE = 3;
+	}
+	enum GuidancePatternPropagationDirection {
+		E_NOTSET = 0;
+		E_BOTH = 1;
+		E_LEFT = 2;
+		E_RIGHT = 3;
+		E_NO_PROP = 4;
+	}
+	enum GuidancePatternExtension {
+		F_NOTSET = 0;
+		F_BOTH = 1;
+		F_FIRST_ONLY = 2;
+		F_LAST_ONLY = 3;
+		F_NO_EXT = 4;
+	}
+	enum GuidancePatternGNSSMethod {
+		I_NOTSET = 0;
+		I_GNSS_FIX = 1;
+		I_DGNSS_FIX = 2;
+		I_PRECISE_GNSS = 3;
+		I_RTK_FIXED_INTEGER = 4;
+		I_RTK_FLOAT = 5;
+		I_ESTIMATED_DR_MODE = 6;
+		I_MANUAL_INPUT = 7;
+		I_SIMULATE_MODE = 8;
+		I_DESKTOP_GENERATED_DATA = 16;
+		I_OTHER = 17;
+	}
+	UID guidance_pattern_id = 1;
+	string guidance_pattern_designator = 2;
+	GuidancePatternType guidance_pattern_type = 3;
+	GuidancePatternOptions guidance_pattern_options = 4;
+	GuidancePatternPropagationDirection guidance_pattern_propagation_direction = 5;
+	GuidancePatternExtension guidance_pattern_extension = 6;
+	double guidance_pattern_heading = 7;
+	uint64 guidance_pattern_radius = 8;
+	GuidancePatternGNSSMethod guidance_pattern_gnss_method = 9;
+	double guidance_pattern_horizontal_accuracy = 10;
+	double guidance_pattern_vertical_accuracy = 11;
+	UID base_station_id_ref = 12;
+	string original_srid = 13;
+	uint64 number_of_swaths_left = 14;
+	uint64 number_of_swaths_right = 15;
+	LineString line_string = 16;
+	repeated Polygon boundary_polygon = 17;
+	repeated google.protobuf.Any extension = 2048;	
+}
+
+// D.31 GuidanceShift - GST (page ?)
+message GuidanceShift {
+	UID guidance_group_id_ref = 1;
+	UID guidance_pattern_id_ref = 2;
+	sint64 guidance_east_shift = 3;
+	sint64 guidance_north_shift = 4;
+	sint64 propagation_offset = 5;
+	AllocationStamp allocation_stamp = 6;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.32 ISO11783_TaskData
+message ISO11783_TaskData {
+	enum VersionMajor {
+		VERSION_MAJOR_DIS = 0;
+		VERSION_MAJOR_FDIS_1 = 1;
+		VERSION_MAJOR_FDIS_2 = 2;
+		VERSION_MAJOR_E2_DIS = 3;
+		VERSION_MAJOR_E2_FDIS = 4;
+	}
+	enum DataTransferOrigin {
+		DATA_TRANSFER_ORIGIN_NOTSET = 0;
+		DATA_TRANSFER_ORIGIN_FMIS = 1;
+		DATA_TRANSFER_ORIGIN_MICS = 2;
+	}
+	
+	VersionMajor version_major = 1;
+	uint32 version_minor = 2;
+	string management_software_manufacturer = 3;
+	string management_software_version = 4;
+	string task_controller_manufacturer = 5;
+	string task_controller_version = 6;
+	DataTransferOrigin data_transfer_origin = 7;
+	string data_transfer_language = 8;
+	repeated AttachedFile attached_file = 9;
+	repeated BaseStation base_station = 10;
+	repeated CodedComment coded_comment = 11;
+	repeated CodedCommentGroup coded_comment_group = 12;
+	repeated ColourLegend colour_legend = 13;
+	repeated CropType crop_type = 14;
+	repeated CulturalPractice cultural_practice = 15;
+	repeated Customer customer = 16;
+	repeated Device device = 17;
+	repeated Farm farm = 18;
+	repeated OperationTechnique operation_technique = 19;
+	repeated Partfield partfield = 20;
+	repeated Product product = 21;
+	repeated ProductGroup product_group = 22;
+	repeated Task task = 23;
+	// Note by S. Plum:
+	// TaskControllerCapabilities is a single element. "repeated" shall be removed
+	repeated TaskControllerCapabilities task_controller_capabilities = 24;
+	repeated ValuePresentation value_presentation = 25;
+	repeated Worker worker = 26;
+	repeated ExternalFileReference external_file_reference = 27;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.33 LineString - LSG (page 117)
+message LineString {
+	enum LinestringType {
+		A_NOTSET = 0;
+		A_POLYGON_EXTERIOR = 1;
+		A_POLYGON_INTERIOR = 2;
+		A_TRAM_LINE = 3;
+		A_SAMPLING_ROUTE = 4;
+		A_GUIDANCE_PATTERN = 5;
+		A_DRAINAGE = 6;
+		A_FENCE = 7;
+		A_FLAG = 8;
+		A_OBSTACLE = 9;
+	}
+	LinestringType line_string_type = 1;
+	string line_string_designator = 2;
+	uint32 line_string_width = 3;
+	uint32 line_string_length = 4;
+	uint32 line_string_colour = 5;
+	UID line_string_id = 6;
+	repeated Point point = 7;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.34 OperationTechnique - OTQ (page ?)
+message OperationTechnique {
+	UID operation_technique_id = 1;
+	string operation_technique_designator = 2;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.35 OperationTechniqueReference - OTR (page ?)
+message OperationTechniqueReference {
+	UID operation_technique_id_ref = 1;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.36 OperTechPractice - OTP (page ?)
+message OperTechPractice {
+	UID cultural_practice_id_ref = 1;
+	UID operation_technique_id_ref = 2;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D. 37 Partfield - PFD (page ?)
+message Partfield {
+	UID partfield_id = 1;
+	string partfield_code = 2;
+	string partfield_designator = 3;
+	uint64 partfield_area = 4;
+	UID customer_id_ref = 5;
+	UID farm_id_ref = 6;
+	UID crop_type_id_ref = 7;
+	UID crop_variety_id_ref = 8;
+	UID field_id_ref = 9;
+	repeated Polygon polygon = 10;
+	repeated LineString line_string = 11;
+	repeated Point point = 12;
+	repeated GuidanceGroup guidance_group = 13;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// geospatial data representation should be redesigned following
+// common standards like OGC, geojson, OSM plus unifying TLG and
+// PNT.
+// D.38 Point - PNT (page 122)
+message Point {
+	enum PointType {
+		A_NOTSET = 0;
+		A_FLAG = 1;
+		A_OTHER = 2;
+		A_FIELD_ACCESS = 3;
+		A_STORAGE = 4;
+		A_OBSTACLE = 5;
+		A_GUID_REF_A = 6;
+		A_GUID_REF_B = 7;
+		A_GUID_REF_CENTER = 8;
+		A_GUID_POINT = 9;
+		A_PARTFIELD_REF_POINT = 10;
+		A_HOMEBASE = 11;
+	}
+	PointType point_type = 1;
+	string point_designator = 2;
+	double point_north = 3;
+	double point_east = 4;
+	sint64 point_up = 5;
+	uint32 point_colour = 6;
+	UID point_id = 7;
+	double point_horizontal_accuracy = 8;
+	double point_vertical_accuracy = 9;
+	string filename = 10;
+	uint64 filelength = 11;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.39 Polygon - PLN (page 124)
+message Polygon {
+	enum PolygonType {
+		A_NOTSET = 0;
+		A_PARTFIELD_BOUNDARY = 1;
+		A_TREATMENT_ZONE = 2;
+		A_WATER_SURFACE = 3;
+		A_BUILDING = 4;
+		A_ROAD = 5;
+		A_OBSTACLE = 6;
+		A_FLAG = 7;
+		A_OTHER = 8;
+		A_MAINFIELD = 9;
+		A_HEADLAND = 10;
+		A_BUFFER_ZONE = 11;
+		A_WINDBREAK = 12;
+	}
+	PolygonType polygon_type = 1;
+	string polygon_designator = 2;
+	uint64 polygon_area = 3;
+	uint32 polygon_colour = 4;
+	UID polygon_id = 5;
+	repeated LineString line_string = 6;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.40 Position - PTN (page 126)
+message Position {
+	enum PositionStatus {
+		D_NO_GPS = 0;
+		D_GNSS = 1;
+		D_DGNSS = 2;
+		D_PRECISE_GNSS = 3;
+		D_RTK_FINTEGER = 4;
+		D_RTK_FLOAT = 5;
+		D_EST_DR_MODE = 6;
+		D_MANUAL_INPUT = 7;
+		D_SIMULATE_MODE = 8;
+		// 9-13 Reserved
+		D_ERROR = 14;
+		D_NOT_AVAILABLE = 15;
+	}
+	double position_north = 1;
+	double position_east = 2;
+	sint64 position_up = 3;
+	PositionStatus position_status = 4;
+	double pdop = 5;
+	double hdop = 6;
+	uint32 number_of_satellites = 7;
+	google.protobuf.Timestamp gps_utc_timestamp = 8;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.41 ProcessdataVariable - PDV (page ?)
+message ProcessDataVariable {
+	uint32 process_data_ddi = 1;
+	sint64 process_data_value = 2;
+	UID product_id_ref = 3;
+	UID device_element_id_ref = 4;
+	UID value_presentation_id_ref = 5;
+	sint64 actual_cultural_practice_value = 6;
+	sint64 element_type_instance_value = 7;
+	repeated ProcessDataVariable process_data_variable = 8;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.42 Product - PDT (page ?)
+message Product {
+	enum ProductType {
+		F_NOTSET = 0;
+		F_SINGLE = 1;
+		F_MIXTURE = 2;
+		F_TEMPORARY_MIXTURE = 3;
+	}
+	
+	UID product_id = 1;
+	string product_designator = 2;
+	UID product_group_id_ref = 3;
+	UID value_presentation_id_ref = 4;
+	uint32 quantity_ddi = 5;
+	ProductType product_type = 6;
+	sint64 mixture_recipe_quantity = 7;
+	sint64 density_mass_per_volume = 8;
+	sint64 density_mass_per_count = 9;
+	sint64 density_volume_per_count = 10;
+	repeated ProductRelation product_relation = 11;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.43 ProductAllocation - PAN (page ?)
+message ProductAllocation {
+	enum TransferMode {
+		D_NOTSET = 0;
+		D_FILLING = 1;
+		D_EMPTYING = 2;
+		D_REMAINDER = 3;
+	}
+	UID product_id_ref = 1;
+	uint32 quantity_ddi = 2;
+	sint64 quantity_value = 3;
+	TransferMode transfer_mode = 4;
+	UID device_element_id_ref = 5;
+	UID value_presentation_id_ref = 6;
+	UID product_sub_type_id_ref = 7;
+	AllocationStamp allocation_stamp =  8;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.44 ProductGroup - PGP (page ?)
+message ProductGroup {
+	enum ProductGroupType {
+		C_NOTSET = 0;
+		C_PRODUCT_GROUP = 1;
+		C_CROP_TYPE = 2;
+	}
+	UID product_group_id = 1;
+	string product_group_designator = 2;
+	ProductGroupType product_group_type = 3;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.45 ProductRelation  - PRN (page ?)
+message ProductRelation {
+	UID product_id_ref = 1;
+	sint64 quantity_value = 2;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.46 Task - TSK (page ?)
+message Task {
+	enum TaskStatus {
+		G_NOTSET = 0;
+		G_PLANNED = 1;
+		G_RUNNING = 2;
+		G_PAUSED = 3;
+		G_COMPLETED = 4;
+		G_TEMPLATE = 5;
+		G_CANCELED = 6;
+	}
+	UID task_id = 1;
+	string task_designator = 2;
+	UID customer_id_ref = 3;
+	UID farm_id_ref = 4;
+	UID partfield_id_ref = 5;
+	UID responsible_worker_id_ref = 6;
+	TaskStatus task_status = 7;
+	uint32 default_treatment_zone_code = 8;
+	uint32 position_lost_treatment_zone_code = 9;
+	uint32 out_of_field_treatment_zone_code = 10;
+	repeated TreatmentZone treatment_zone = 11;
+	repeated Time time = 12;
+	OperTechPractice oper_tech_practice = 13;
+	repeated WorkerAllocation worker_allocation = 14;
+	repeated DeviceAllocation device_allocation = 15;
+	repeated Connection connection = 16;
+	repeated ProductAllocation product_allocation = 17;
+	repeated DataLogTrigger data_log_trigger = 18;
+	repeated CommentAllocation comment_allocation = 19;
+	repeated TimeLog time_log = 20;
+	Grid grid = 21;
+	repeated ControlAssignment control_assignment = 22;
+	repeated GuidanceAllocation guidance_allocation = 23;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.47 TaskControllerCapabilities = TCC
+message TaskControllerCapabilities {
+	enum VersionNumber {
+		C_DIS = 0;
+		C_FDIS_1 = 1;
+		C_FDIS_2 = 2;
+		C_E2_DIS = 3;
+		C_E2_FDIS = 4;
+	}
+	bytes task_controller_control_function_name = 1;
+	string task_controller_designator = 2;
+	VersionNumber version_number = 3;
+	uint32 provided_capabilities = 4;
+	uint32 number_of_booms_section_control = 5;
+	uint32 number_of_sections_section_control = 6;
+	uint32 number_of_control_channels = 7;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.48 Time - TIM (page 144)
+message Time {
+	enum TimeType {
+		D_NOTSET = 0;
+		D_PLANNED = 1;
+		D_PRELIMINARY = 2;
+		D_EFFECTIVE = 4;
+		D_INEFFECTIVE = 5;
+		D_REPAIR = 6;
+		D_CLEARING = 7;
+		D_POWERED_DOWN = 8;
+	}
+// TODO:	eid string = 1; (element id: URN/URL whatever, aber prefix muss spezifiziert sein) => Vorschlag
+	google.protobuf.Timestamp start = 1;
+	google.protobuf.Timestamp stop = 2;
+	uint64 duration = 3;
+	TimeType type = 4;
+	Position position_start = 5;
+	Position position_stop = 6;
+	repeated DataLogValue data_log_value = 7;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// We add a repeated Time message for the actual data. TimeLogs are always integrated.
+// If we would allow for other serializations to be packed with protobuf data we also have
+// to include a specification for the file structure (zip-container), which should be avoided,
+// because all of the efficiencies gained using protobufs is then lost again.
+// We leave the filelength and filename fields in. These are to be interpreted as source
+// files for the integrated time log data on the sender side and serve the purpose to
+// allow for loss-less reconstruction of the original task data set on the receiving
+// side.
+// D.49 TimeLog - TLG (page 146)
+message TimeLog {
+	enum TimeLogType {
+		C_NOTSET = 0;
+		C_BINARY_TIMELOG = 1;
+	}
+	string filename = 2;
+	uint64 filelength = 3;
+	TimeLogType time_log_type = 1;
+	repeated Time time = 4;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.50 TreatmentZone - TZN (page ?)
+message TreatmentZone {
+	uint32 treatment_zone_code = 1;
+	string treatment_zone_designator = 2;
+	uint32 treatment_zone_colour = 3;
+	repeated Polygon polygon = 4;
+	repeated ProcessDataVariable process_data_variable = 5;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.51 ValuePresentation - VPN (page ?)
+message ValuePresentation {
+	UID value_presentation_id = 1;
+	sint64 offset = 2;
+	double scale = 3;
+	uint32 number_of_decimals = 4;
+	string unit_designator = 5;
+	UID colour_legend_id_ref = 6;
+	repeated google.protobuf.Any extension = 2048;
+} 
+
+// D.52 Worker - WKR (page ?)
+message Worker {
+	UID worker_id = 1;
+	string worker_last_name = 2;
+	string worker_first_name = 3;
+	string worker_street = 4;
+	string worker_po_box = 5;
+	string worker_postal_code = 6;
+	string worker_city = 7;
+	string worker_state = 8;
+	string worker_country = 9;
+	string worker_phone = 10;
+	string worker_mobile = 11;
+	string worker_license_number = 12;
+	string worker_email = 13;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.53 WorkerAllocation - WAN (page ?)
+message WorkerAllocation {
+	UID worker_id_ref = 1;
+	AllocationStamp allocation_stamp = 2;
+	repeated google.protobuf.Any extension = 2048;
+}
+
+// D.54 ExternalFileReference - XFR (page ?)
+message ExternalFileReference {
+	enum FileType {
+		B_NOTSET = 0;
+		B_XML = 1;
+	}
+	UID filename = 1;
+	FileType file_type = 2;
+	repeated google.protobuf.Any extension = 2048;
+}
